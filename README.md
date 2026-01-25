@@ -7,7 +7,7 @@
 ---
 
 ## 👨‍💻 About Me
-I am a pre-final year student specializing in **Artificial Intelligence** and **Machine Learning**. I enjoy bridging the gap between data science and practical web applications. Whether it's optimizing a computer vision model or building a responsive full-stack platform, I love the process of turning complex logic into clean, usable software.
+I am a 2nd year student specializing in **Artificial Intelligence** and **Machine Learning**. I enjoy bridging the gap between data science and practical web applications. Whether it's optimizing a computer vision model or building a responsive full-stack platform, I love the process of turning complex logic into clean, usable software.
 
 Currently, I'm focusing on open-source contributions and sharpening my skills in system architecture.
 
