@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.herokuapp.com?font=Product+Sans&weight=700&size=60&pause=1000&color=FFFFFF&center=true&vCenter=true&width=800&height=100&lines=Ayush+Gupta;Experience+Liftoff" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.herokuapp.com?font=Product+Sans&weight=700&size=60&pause=1000&color=FFFFFF&center=true&vCenter=true&width=800&height=100&lines=Ayush+Gupta;Experience+Liftoff." alt="Typing SVG" />
   </a>
 
   <p style="font-family: sans-serif; color: #9aa0a6; font-size: 18px;">
@@ -42,8 +42,6 @@ I am a **Sophomore at VIT Bhopal University** specializing in Artificial Intelli
 
 ---
 
----
-
 ## <img src="https://cdn-icons-png.flaticon.com/512/900/900782.png" width="25"/> &nbsp;Technical DNA
 
 <p align="left">
@@ -57,9 +55,3 @@ I am a **Sophomore at VIT Bhopal University** specializing in Artificial Intelli
 
 ---
 
-<br>
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Ayush-kathil&show_icons=true&theme=dark&hide_border=true" height="160" alt="Ayush's Stats" />
-  
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Ayush-kathil&layout=compact&theme=dark&hide_border=true" height="160" alt="Top Languages" />
-</div>
