@@ -42,6 +42,8 @@ I am a **Sophomore at VIT Bhopal University** specializing in Artificial Intelli
 
 ---
 
+---
+
 ## <img src="https://cdn-icons-png.flaticon.com/512/900/900782.png" width="25"/> &nbsp;Technical DNA
 
 <p align="left">
@@ -57,5 +59,7 @@ I am a **Sophomore at VIT Bhopal University** specializing in Artificial Intelli
 
 <br>
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Ayush-kathil&show_icons=true&theme=dark&hide_border=true&count_private=true" height="150" />
+  <img src="https://github-readme-stats.vercel.app/api?username=Ayush-kathil&show_icons=true&theme=dark&hide_border=true" height="160" alt="Ayush's Stats" />
+  
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Ayush-kathil&layout=compact&theme=dark&hide_border=true" height="160" alt="Top Languages" />
 </div>
