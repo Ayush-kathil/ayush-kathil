@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.herokuapp.com?font=Product+Sans&weight=700&size=60&pause=1000&color=FFFFFF&center=true&vCenter=true&width=800&height=100&lines=Ayush+Gupta;Experience+Liftoff." alt="Typing SVG" />
+    <img src="https://readme-typing-svg.herokuapp.com?font=Product+Sans&weight=700&size=60&pause=1000&color=FFFFFF&center=true&vCenter=true&width=800&height=100&lines=Ayush+Gupta;Experience+Liftoff" alt="Typing SVG" />
   </a>
 
   <p style="font-family: sans-serif; color: #9aa0a6; font-size: 18px;">
@@ -36,7 +36,7 @@ I am a **Sophomore at VIT Bhopal University** specializing in Artificial Intelli
 
 | **Project** | **The Innovation** | **Links** |
 | :--- | :--- | :--- |
-| **🧘‍♂️ Yoga Pose System** | **Real-time Vector Geometry.** Calculates angles between 33 body landmarks to correct posture instantly using MediaPipe & OpenCV. | [**View Repo**](https://github.com/Ayush-kathil/Yoga-Pose-Detecting-System) |
+| **🧘‍♂️ Yoga Pose System** | **Real-time Vector Geometry.** Calculates angles between 33 body landmarks to correct posture instantly using MediaPipe & OpenCV. | [**View Repo**](https://github.com/Ayush-kathil/YPDS-Yoga-Pose-Detection-System) |
 | **☀️ Sunrise Hotel** | **The "Smart" Booking Engine.** A robust hotel management system handling reservations, inventory, and secure user data. | [**Live App**](https://welcomesunrise.vercel.app) |
 | **📄 PDFEditX** | **Document Utility Suite.** A lightweight, browser-based tool for merging, splitting, and editing PDF documents seamlessly. | [**Live App**](https://pdfeditx.vercel.app) |
 
