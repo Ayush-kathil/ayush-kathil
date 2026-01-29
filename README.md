@@ -1,52 +1,61 @@
-# Ayush Gupta
-### B.Tech (AIML) Student & Full-Stack Developer
-**VIT Bhopal University** | *DSC Winter of Code Contributor*
+<div align="center">
+  <a href="https://git.io/typing-svg">
+    <img src="https://readme-typing-svg.herokuapp.com?font=Product+Sans&weight=700&size=60&pause=1000&color=FFFFFF&center=true&vCenter=true&width=800&height=100&lines=Ayush+Gupta;Experience+Liftoff" alt="Typing SVG" />
+  </a>
 
-[LinkedIn](https://www.linkedin.com/in/ayushkathil) • [Email](mailto:kathilshiva@gmail.com) • [Portfolio](https://ayushgupta3.vercel.app)
+  <p style="font-family: sans-serif; color: #9aa0a6; font-size: 18px;">
+    <b>AIML Engineer</b> &nbsp;|&nbsp; <b>Full-Stack Developer</b> &nbsp;|&nbsp; <b>Open Source Contributor</b>
+  </p>
 
----
+  <br>
 
-## 👨‍💻 About Me
-I am a 2nd year student specializing in **Artificial Intelligence** and **Machine Learning**. I enjoy bridging the gap between data science and practical web applications. Whether it's optimizing a computer vision model or building a responsive full-stack platform, I love the process of turning complex logic into clean, usable software.
+  <a href="mailto:kathilshiva@gmail.com">
+    <img src="https://img.shields.io/badge/Email-Contact_Me-202124?style=flat&logo=gmail&logoColor=EA4335&labelColor=202124" height="35" alt="Email" />
+  </a>
+  &nbsp;
+  <a href="https://ayushgupta3.vercel.app">
+    <img src="https://img.shields.io/badge/Portfolio-Visit_Site-202124?style=flat&logo=vercel&logoColor=white&labelColor=202124" height="35" alt="Portfolio" />
+  </a>
+  &nbsp;
+  <a href="https://www.linkedin.com/in/ayushkathil">
+    <img src="https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=flat&logo=linkedin&logoColor=white" height="35" alt="LinkedIn" />
+  </a>
+</div>
 
-Currently, I'm focusing on open-source contributions and sharpening my skills in system architecture.
+<br><br>
 
----
+## <img src="https://cdn-icons-png.flaticon.com/512/3242/3242257.png" width="25"/> &nbsp;About Me
+I am a **Sophomore at VIT Bhopal University** specializing in Artificial Intelligence. Like the "Next-Generation IDE," I believe in tools that are clean, fast, and powerful. I build systems that bridge the gap between **Computer Vision** models and **User Interfaces**.
 
-## 🛠 Tech Stack
-
-* **Languages:** Python (Advanced), C++, JavaScript, SQL
-* **AI/ML:** Computer Vision, OpenCV, TensorFlow, PyTorch
-* **Web Dev:** React.js, Node.js, Express, Django
-* **Tools:** Git, GitHub, Supabase, Netlify
-
----
-
-## 🏆 Achievements
-* **DSC Winter of Code (DSCWoC) 2026:** Selected as a Contributor to work on open-source software.
-* **Leadership:** Serving as a Core Technical Team Member for the **Technomech** and **Matrix** clubs at VIT Bhopal.
-* **Research:** Successfully filed a patent regarding technological innovation in engineering.
-
----
-
-## 📂 Featured Projects
-
-**Yoga Pose Detecting System**
-> *Python, OpenCV, ML Models*
->
-> I built a real-time computer vision system that helps users maintain correct posture during exercise. It detects key body points and provides instant feedback to ensure safety and accuracy.
-
-**Hotel Management System**
-> *Full-Stack Web Technologies*
->
-> A complete booking platform I developed to handle reservations and user management. It features a custom-built UI, secure authentication, and a backend for managing room inventory.
-
-**Mechanical Tools E-Commerce Platform**
-> *HTML, CSS, JavaScript, Backend*
->
-> A digital marketplace for industrial tools. I focused on creating a smooth user experience for browsing products, managing carts, and processing secure data transactions.
+* **Current Focus:** DSC Winter of Code '26 Contributor.
+* **Signature Skill:** Deploying heavy AI models into responsive web apps.
 
 ---
 
-## 📈 GitHub Stats
-![Ayush's Stats](https://github-readme-stats.vercel.app/api?username=Ayush-kathil&show_icons=true&theme=buefy&hide_border=true)
+## <img src="https://cdn-icons-png.flaticon.com/512/2621/2621040.png" width="25"/> &nbsp;Selected Works
+
+| **Project** | **The Innovation** | **Links** |
+| :--- | :--- | :--- |
+| **🧘‍♂️ Yoga Pose System** | **Real-time Vector Geometry.** Calculates angles between 33 body landmarks to correct posture instantly using MediaPipe & OpenCV. | [**View Repo**](https://github.com/Ayush-kathil/Yoga-Pose-Detecting-System) |
+| **☀️ Sunrise Hotel** | **The "Smart" Booking Engine.** A robust hotel management system handling reservations, inventory, and secure user data. | [**Live App**](https://welcomesunrise.vercel.app) |
+| **📄 PDFEditX** | **Document Utility Suite.** A lightweight, browser-based tool for merging, splitting, and editing PDF documents seamlessly. | [**Live App**](https://pdfeditx.vercel.app) |
+
+---
+
+## <img src="https://cdn-icons-png.flaticon.com/512/900/900782.png" width="25"/> &nbsp;Technical DNA
+
+<p align="left">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=flat&logo=tensorflow&logoColor=white" />
+  <img src="https://img.shields.io/badge/OpenCV-5C3EE8?style=flat&logo=opencv&logoColor=white" />
+  <img src="https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=black" />
+  <img src="https://img.shields.io/badge/Node.js-339933?style=flat&logo=node.js&logoColor=white" />
+  <img src="https://img.shields.io/badge/C++-00599C?style=flat&logo=c%2B%2B&logoColor=white" />
+</p>
+
+---
+
+<br>
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=Ayush-kathil&show_icons=true&theme=dark&hide_border=true&count_private=true" height="150" />
+</div>
