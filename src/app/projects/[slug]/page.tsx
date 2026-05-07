@@ -46,7 +46,7 @@ export default function ProjectPage() {
     <main ref={containerRef} className="min-h-screen bg-white text-black selection:bg-black selection:text-white pb-32">
       {/* HEADER NAVIGATION */}
       <nav className="fixed top-0 left-0 w-full z-[100] px-6 py-8 flex justify-between items-center pointer-events-none">
-        <Link href="/" className="pointer-events-auto flex items-center gap-2 group p-4 rounded-full bg-white/50 backdrop-blur-md border border-gray-100 shadow-sm">
+        <Link href="/#projects" className="pointer-events-auto flex items-center gap-2 group p-4 rounded-full bg-white/50 backdrop-blur-md border border-gray-100 shadow-sm">
           <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
           <span className="text-sm font-semibold uppercase tracking-widest">Back</span>
         </Link>

@@ -66,7 +66,7 @@ export default function Hero({ preloaderComplete = true }: { preloaderComplete?:
           </div>
           
           <h1 className="text-white text-[clamp(2.5rem,9vw,6.5rem)] font-semibold tracking-[-0.04em] leading-[0.95] mb-8">
-            Building Scalable <br className="hidden md:block" /> AI Systems.
+            Scaling Intelligence with <br className="hidden md:block" /> Distributed RAG Systems
           </h1>
 
           <p className="mx-auto max-w-3xl text-white/60 text-[clamp(1.1rem,2.2vw,1.4rem)] font-light leading-relaxed mb-12">
