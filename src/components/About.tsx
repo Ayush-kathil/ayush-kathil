@@ -56,7 +56,7 @@ export default function About() {
       <div className="max-w-[1600px] mx-auto">
         <div className="mb-16">
           <p className="text-[10px] uppercase tracking-[0.24em] text-[var(--text-secondary)] mb-4 font-semibold uppercase tracking-widest">Professional Overview</p>
-          <h2 className="text-[clamp(3.5rem,10vw,7.5rem)] font-semibold tracking-[-0.05em] leading-[0.9] uppercase">
+          <h2 className="text-[clamp(2.5rem,8.5vw,6.5rem)] font-semibold tracking-[-0.05em] leading-[0.9] uppercase">
             <TextReveal>Systems Engineering & AI</TextReveal>
           </h2>
         </div>
