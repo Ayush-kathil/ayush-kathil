@@ -9,21 +9,22 @@
 
 @layer base {
   :root {
-    --bg-primary: #fafaf8;
-    --bg-secondary: #f2f0eb;
-    --text-primary: #111111;
-    --text-secondary: #4b4b4b;
-    --border-color: #d9d5cd;
-    --accent: #111111;
+    --bg-primary: #FFFFFF;
+    --bg-secondary: #F9FAFB;
+    --text-primary: #000000;
+    --text-secondary: #4B5563;
+    --border-color: #F3F4F6;
+    --accent: #000000;
+    --radius-uber: 32px;
   }
 
   .dark {
-    --bg-primary: #0b0b0c;
-    --bg-secondary: #151517;
-    --text-primary: #f5f3ef;
-    --text-secondary: #b6b2ab;
-    --border-color: #2a2a2d;
-    --accent: #f5f3ef;
+    --bg-primary: #000000;
+    --bg-secondary: #111111;
+    --text-primary: #FFFFFF;
+    --text-secondary: #FFFFFF; /* Pure B&W requested */
+    --border-color: #333333;
+    --accent: #FFFFFF;
   }
 }
 

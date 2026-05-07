@@ -12,22 +12,22 @@ const snapshotItems = [
   {
     icon: TrendingUp,
     title: "Current Focus",
-    body: "Seeking Summer 2026 internships in software engineering, ML systems, and product-focused full-stack roles.",
+    body: "Scaling ML infrastructure at Kubeflow and architecting high-throughput backend systems for real-time data processing.",
   },
   {
     icon: Sparkles,
-    title: "How I Work",
-    body: "I optimize for speed, clarity, and maintainability. I like small iterations, measurable outcomes, and clean handoff paths.",
+    title: "Engineering Style",
+    body: "I prioritize production-ready, heavily tested code. I focus on optimizing system latency and building reliable distributed architectures.",
   },
   {
     icon: ShieldCheck,
-    title: "Engineering Bias",
-    body: "Privacy-first defaults, responsive UIs, and CPU-friendly execution matter more to me than flashy complexity.",
+    title: "Core Expertise",
+    body: "Deep understanding of Computer Vision (CNN/RNN), ML orchestration (Kubeflow), and scalable full-stack development with Next.js.",
   },
   {
     icon: Users,
     title: "Proof Signals",
-    body: "5+ deployed projects, open-source contributions, technical leadership experience, and real-time ML work on standard hardware.",
+    body: "Active open-source contributor, architected tools for 5,000+ users, and successfully merged core PRs into global ML platforms.",
   },
 ];
 

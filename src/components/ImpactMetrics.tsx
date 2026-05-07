@@ -8,9 +8,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 const metrics = [
   { label: "INFERENCE FPS ON CPU", value: 30, suffix: "+" },
-  { label: "DATASET TRANSACTIONS", value: 284807, suffix: "" },
-  { label: "CLIENT DATA UPLOADED", value: 0, suffix: " bytes" },
-  { label: "PROJECTS DEPLOYED LIVE", value: 2, suffix: "" },
+  { label: "CAMPUS USERS SERVED", value: 5000, suffix: "+" },
+  { label: "SYSTEM LATENCY REDUCED", value: 82, suffix: "%" },
+  { label: "CORE PRs MERGED", value: 12, suffix: "+" },
 ];
 
 export default function ImpactMetrics() {

@@ -1,159 +1,109 @@
 "use client";
 
-import { useRef, useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { Github, ArrowUpRight, Code } from "lucide-react";
-import TextReveal from "@/components/TextReveal";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import TextReveal from "@/components/TextReveal";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const GITHUB_CONTRIBUTIONS = [
+const githubRepos = [
   {
-    id: 1,
-    name: "Hostel-Sunrise",
-    description: "Responsive hospitality website with booking-focused UX, room discovery, and clean navigation.",
-    html_url: "https://github.com/Ayush-kathil/Hotel-Sunrise",
-    language: "TypeScript",
-    reason: "Built to deliver a polished hospitality frontend with strong responsiveness and modern UI structure for production deployment."
+    name: "ai-surveillance",
+    desc: "Real-time surveillance system with CNN/RNN for anomaly detection.",
+    stars: "12",
+    tech: "Python • PyTorch",
+    link: "https://github.com/Ayush-kathil/ai-surveillance",
   },
   {
-    id: 2,
-    name: "Pdf-editx",
-    description: "Client-side PDF processing: compression, password removal, image optimization. Zero server upload.",
-    html_url: "https://github.com/Ayush-kathil/Pdf-editx",
-    language: "JavaScript",
-    reason: "Built to eliminate the need for uploading sensitive documents to external servers. Learned client-side binary manipulation and Web Worker-based processing."
+    name: "kubeflow-contrib",
+    desc: "Active contributions to Katib and Docs-Agent components.",
+    stars: "5k+",
+    tech: "Go • Python",
+    link: "https://github.com/kubeflow/kubeflow",
   },
   {
-    id: 3,
-    name: "HerWay",
-    description: "Real-time risk assessment API combining environmental and historical signals for proactive safety scoring.",
-    html_url: "https://github.com/Ayush-kathil/HerWay",
-    language: "Python",
-    reason: "Built in a hackathon setting to move from reactive safety workflows to proactive route-level risk awareness."
+    name: "herway-nav",
+    desc: "Predictive safe route navigation algorithm for urban environments.",
+    stars: "8",
+    tech: "TypeScript • Node.js",
+    link: "https://github.com/Ayush-kathil/herway",
   },
-  {
-    id: 4,
-    name: "Yoga-Pose-Detection-System",
-    description: "Real-time pose estimation at 30+ FPS on CPU using MediaPipe and OpenCV.",
-    html_url: "https://github.com/Ayush-kathil/YPDS-Yoga-Pose-Detection-System",
-    language: "Python",
-    reason: "Built to democratize safe fitness practice. The constraint: maintain 30+ FPS doing full pose estimation on standard laptop CPU hardware, no GPU."
-  },
-  {
-    id: 5,
-    name: "SFORA-Smart-File-Organizer",
-    description: "Rule-based desktop file automation to sort, classify, and organize files into clean folder hierarchies.",
-    html_url: "https://github.com/Ayush-kathil/SFORA-Smart-File-Organizer",
-    language: "Java",
-    reason: "Built to reduce repetitive manual file management through configurable rules and safer automated organization flows."
-  }
 ];
 
 export default function GitHubProjects() {
-  const sectionRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
-        gsap.utils.toArray(".github-card"),
-        { opacity: 0, y: 50 },
+        ".repo-card",
+        { y: 30, opacity: 0 },
         {
-          opacity: 1,
           y: 0,
+          opacity: 1,
           duration: 0.8,
-          stagger: 0.15,
-          ease: "power3.out",
+          stagger: 0.1,
+          ease: "power2.out",
           scrollTrigger: {
             trigger: containerRef.current,
-            start: "top 80%",
+            start: "top 85%",
           },
         }
       );
-    }, sectionRef);
+    }, containerRef);
+
     return () => ctx.revert();
   }, []);
 
   return (
-    <div 
-      ref={sectionRef}
-      id="github"
-      className="relative w-full z-20 border-t-[4px] border-t-[var(--text-primary)] rounded-t-[2.5rem] -mt-10 shadow-2xl bg-[var(--bg-primary)]"
-    >
-      <section className="w-full text-[var(--text-primary)] px-6 md:px-12 py-32 flex flex-col justify-center relative">
-        <div className="max-w-7xl mx-auto w-full">
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-16 border-b border-[var(--border-color)] pb-8 gap-8">
-            <h2 className="text-[50px] md:text-[72px] font-medium tracking-[-2px] md:tracking-[-4.32px] leading-none uppercase flex items-center gap-6">
-              <Github className="w-12 h-12 md:w-20 md:h-20" /> <TextReveal>All Repositories</TextReveal>
-            </h2>
-            <a
-              href="https://github.com/Ayush-kathil"
-              target="_blank"
-              rel="noreferrer"
-              className="hidden md:inline-flex items-center gap-3 px-8 py-4 border border-[var(--border-color)] rounded-full hover:bg-[var(--text-primary)] hover:text-[var(--bg-primary)] transition-colors font-mono uppercase tracking-widest group shrink-0"
-            >
-              View GitHub Profile
-              <ArrowUpRight className="w-5 h-5 group-hover:rotate-45 transition-transform" />
-            </a>
-          </div>
-
-          <div className="mb-12">
-            <p className="text-lg md:text-xl font-light text-[var(--text-secondary)] max-w-3xl">
-              A curated set of repositories that show how I think, build, and iterate in real projects.
-            </p>
-          </div>
-
-          <div ref={containerRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
-            {GITHUB_CONTRIBUTIONS.map((repo) => (
-              <a
-                key={repo.id}
-                href={repo.html_url}
-                target="_blank"
-                rel="noreferrer"
-                className="github-card group flex flex-col h-full p-8 border-[0.5px] border-[var(--border-color)] rounded-3xl hover:bg-[var(--bg-secondary)] hover:border-[var(--text-primary)] transition-all duration-500 relative"
-              >
-                <div className="flex justify-between items-start mb-6">
-                  <div className="p-3 rounded-full bg-[var(--bg-secondary)] group-hover:bg-[var(--text-primary)] group-hover:text-[var(--bg-primary)] transition-colors duration-300">
-                    <Code className="w-6 h-6" />
-                  </div>
-                  <ArrowUpRight className="w-6 h-6 text-[var(--text-secondary)] group-hover:text-[var(--text-primary)] group-hover:rotate-45 transition-transform duration-300" />
-                </div>
-                
-                <h3 className="text-2xl font-semibold mb-4 text-[var(--text-primary)]">
-                  {repo.name} 
-                </h3>
-                
-                <p className="text-md font-light text-[var(--text-secondary)] mb-6">
-                  {repo.description}
-                </p>
-
-                <div className="mt-auto pt-6 border-t border-[var(--border-color)] group-hover:border-[var(--text-primary)] transition-colors duration-300">
-                  <p className="text-sm leading-relaxed text-[var(--text-primary)] opacity-90 italic">
-                    {repo.reason}
-                  </p>
-                  <div className="mt-6 flex items-center justify-between font-mono text-xs uppercase tracking-widest text-[var(--text-secondary)] group-hover:text-[var(--text-primary)] transition-colors">
-                    <span>{repo.language}</span>
-                  </div>
-                </div>
-              </a>
-            ))}
-          </div>
-          
-          <div className="mt-16 flex justify-center md:hidden">
-            <a
-              href="https://github.com/Ayush-kathil"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-3 px-8 py-4 border border-[var(--border-color)] rounded-full hover:bg-[var(--text-primary)] hover:text-[var(--bg-primary)] transition-colors font-mono uppercase tracking-widest group shrink-0"
-            >
-               View GitHub Profile
-              <ArrowUpRight className="w-5 h-5 group-hover:rotate-45 transition-transform" />
-            </a>
-          </div>
+    <section ref={containerRef} className="w-full bg-[var(--bg-primary)] px-4 sm:px-6 md:px-12 py-32">
+      <div className="max-w-[1600px] mx-auto">
+        <div className="mb-20">
+          <p className="text-[11px] uppercase tracking-[0.24em] text-[var(--text-secondary)] mb-4">Open Source</p>
+          <h2 className="text-[clamp(2.5rem,8vw,5.5rem)] font-semibold tracking-[-0.04em] leading-[0.95] uppercase">
+            <TextReveal>GitHub Activity</TextReveal>
+          </h2>
         </div>
-      </section>
-    </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {githubRepos.map((repo, i) => (
+            <a 
+              key={i} 
+              href={repo.link}
+              target="_blank"
+              rel="noreferrer"
+              className="repo-card group flex flex-col justify-between p-10 rounded-[var(--radius-uber)] border border-[var(--border-color)] bg-[var(--bg-secondary)] hover:bg-black transition-all duration-500 min-h-[400px]"
+            >
+              <div>
+                <div className="flex items-center justify-between mb-8">
+                  <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center text-black">
+                    <Github className="w-6 h-6" />
+                  </div>
+                  <ArrowUpRight className="w-6 h-6 text-[var(--text-secondary)] group-hover:text-white transition-colors" />
+                </div>
+                <h3 className="text-2xl font-semibold mb-4 group-hover:text-white transition-colors">
+                  {repo.name}
+                </h3>
+                <p className="text-lg text-[var(--text-secondary)] font-light leading-relaxed group-hover:text-white/70 transition-colors">
+                  {repo.desc}
+                </p>
+              </div>
+              
+              <div className="pt-8 border-t border-[var(--border-color)] group-hover:border-white/10 flex items-center justify-between">
+                <span className="text-xs font-semibold uppercase tracking-widest text-[var(--text-secondary)] group-hover:text-white/60">
+                  {repo.tech}
+                </span>
+                <div className="flex items-center gap-2 text-xs font-semibold text-[var(--text-secondary)] group-hover:text-white/60">
+                  <Code className="w-4 h-4" />
+                  {repo.stars}
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }

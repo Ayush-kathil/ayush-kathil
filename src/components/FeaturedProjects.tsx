@@ -1,99 +1,117 @@
 "use client";
 
-import { ArrowUpRight } from "lucide-react";
-import { projectsData } from "@/data/projects";
+import { useRef, useEffect } from "react";
 import Link from "next/link";
-import CurvedSection from "@/components/CurvedSection";
+import { ArrowUpRight, Github, ExternalLink } from "lucide-react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import TextReveal from "@/components/TextReveal";
+import { projectsData } from "@/data/projects";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function FeaturedProjects() {
-  return (
-    <CurvedSection className="bg-[var(--bg-secondary)] border-t-[4px] border-t-[var(--text-primary)]" id="projects">
-      <section className="w-full text-[var(--text-primary)] relative z-20 bg-transparent py-20 sm:py-24 md:py-28 px-4 sm:px-6 md:px-12">
-        <div className="max-w-7xl mx-auto">
-          <div className="max-w-3xl mb-10 sm:mb-12 md:mb-16">
-            <p className="text-[11px] uppercase tracking-[0.24em] text-[var(--text-secondary)] mb-3">Selected case studies</p>
-            <h2 className="text-[clamp(2.3rem,9vw,4.8rem)] font-medium tracking-[-0.05em] leading-[0.95] uppercase">
-              Projects that show engineering judgment, not just polish.
-            </h2>
-            <p className="mt-4 text-[clamp(1rem,2.5vw,1.2rem)] text-[var(--text-secondary)] leading-relaxed">
-              Each project is structured for quick scanning: problem context, implementation approach, and measurable impact.
-            </p>
-          </div>
+  const containerRef = useRef<HTMLDivElement>(null);
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-5 lg:gap-6">
-            {projectsData.map((proj, index) => (
-              <article
-                key={proj.slug}
-                className="group rounded-[2rem] border border-[var(--border-color)] bg-[var(--bg-primary)] p-5 sm:p-6 md:p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
-              >
-                <div className="flex items-start justify-between gap-4 mb-5">
-                  <div>
-                    <p className="text-[11px] uppercase tracking-[0.22em] text-[var(--text-secondary)] mb-2">
-                      0{index + 1}
-                    </p>
-                    <h3 className="text-[clamp(1.7rem,5vw,2.7rem)] font-semibold tracking-[-0.05em] leading-[1.02]">
-                      {proj.title}
-                    </h3>
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        ".project-card",
+        { y: 30, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          stagger: 0.1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "top 80%",
+          },
+        }
+      );
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, []);
+
+  return (
+    <section id="projects" ref={containerRef} className="w-full bg-[var(--bg-primary)] px-4 sm:px-6 md:px-12 py-24">
+      <div className="max-w-[1600px] mx-auto">
+        <div className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8">
+          <div>
+            <p className="text-[10px] uppercase tracking-[0.24em] text-[var(--text-secondary)] mb-4 font-semibold uppercase tracking-widest">Systems Engineering</p>
+            <h2 className="text-[clamp(2.5rem,6vw,4.5rem)] font-semibold tracking-[-0.04em] leading-[0.95] uppercase">
+              <TextReveal>Project Portfolio</TextReveal>
+            </h2>
+          </div>
+          <p className="text-[var(--text-secondary)] font-light max-w-md text-lg">
+            A focused collection of systems architecture, machine learning infrastructure, and production-ready tools.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {projectsData.map((project, i) => (
+            <div 
+              key={project.slug}
+              className="project-card group relative flex flex-col justify-between bg-[var(--bg-secondary)] border border-[var(--border-color)] rounded-[var(--radius-uber)] p-8 hover:bg-white hover:shadow-[0_20px_50px_rgba(0,0,0,0.05)] transition-all duration-500"
+            >
+              <div>
+                <div className="flex items-center justify-between mb-8">
+                  <span className="px-3 py-1 rounded-full border border-[var(--border-color)] text-[10px] uppercase tracking-widest font-semibold text-[var(--text-secondary)] bg-white">
+                    {project.role}
+                  </span>
+                  <div className="flex gap-3">
+                    {project.githubUrl && (
+                      <a href={project.githubUrl} target="_blank" rel="noreferrer" className="text-[var(--text-secondary)] hover:text-black transition-colors">
+                        <Github className="w-5 h-5" />
+                      </a>
+                    )}
+                    {project.liveUrl !== "#" && (
+                      <a href={project.liveUrl} target="_blank" rel="noreferrer" className="text-[var(--text-secondary)] hover:text-black transition-colors">
+                        <ExternalLink className="w-5 h-5" />
+                      </a>
+                    )}
                   </div>
-                  <Link
-                    href={`/project/${proj.slug}`}
-                    className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[var(--border-color)] transition-colors hover:bg-[var(--text-primary)] hover:text-[var(--bg-primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--text-primary)]"
-                    aria-label={`Open case study for ${proj.title}`}
-                  >
-                    <ArrowUpRight className="h-5 w-5" />
-                  </Link>
                 </div>
 
-                <p className="max-w-2xl text-[clamp(0.98rem,2.7vw,1.1rem)] leading-relaxed text-[var(--text-secondary)]">
-                  {proj.summary}
+                <h3 className="text-2xl font-semibold mb-3 group-hover:text-black transition-colors">
+                  {project.title}
+                </h3>
+                <p className="text-[var(--text-secondary)] font-light leading-relaxed mb-8 line-clamp-3">
+                  {project.desc}
                 </p>
 
-                <div className="mt-6 grid gap-3 sm:grid-cols-3">
-                  <div className="rounded-2xl border border-[var(--border-color)] bg-[var(--bg-secondary)] p-4">
-                    <p className="text-[10px] uppercase tracking-[0.22em] text-[var(--text-secondary)] mb-2">Problem</p>
-                    <p className="text-sm leading-relaxed text-[var(--text-primary)]">{proj.caseStudy.problem}</p>
-                  </div>
-                  <div className="rounded-2xl border border-[var(--border-color)] bg-[var(--bg-secondary)] p-4">
-                    <p className="text-[10px] uppercase tracking-[0.22em] text-[var(--text-secondary)] mb-2">Solution</p>
-                    <p className="text-sm leading-relaxed text-[var(--text-primary)]">{proj.caseStudy.solution}</p>
-                  </div>
-                  <div className="rounded-2xl border border-[var(--border-color)] bg-[var(--bg-secondary)] p-4">
-                    <p className="text-[10px] uppercase tracking-[0.22em] text-[var(--text-secondary)] mb-2">Impact</p>
-                    <p className="text-sm leading-relaxed text-[var(--text-primary)]">{proj.caseStudy.impact}</p>
-                  </div>
-                </div>
-
-                <div className="mt-5 flex flex-wrap gap-2">
-                  {proj.tags.map((tag) => (
-                    <span key={tag} className="rounded-full border border-[var(--border-color)] px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-[var(--text-secondary)]">
+                <div className="flex flex-wrap gap-2 mb-8">
+                  {project.tags.slice(0, 3).map((tag) => (
+                    <span key={tag} className="text-[10px] font-medium uppercase tracking-wider text-black/40 dark:text-white/60">
                       {tag}
                     </span>
                   ))}
                 </div>
+              </div>
 
-                <div className="mt-6 flex flex-wrap items-center gap-3">
-                  <Link
-                    href={`/project/${proj.slug}`}
-                    className="inline-flex items-center gap-2 rounded-full bg-[var(--text-primary)] px-4 py-2.5 text-sm font-medium text-[var(--bg-primary)] transition-transform duration-300 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--text-primary)]"
-                  >
-                    Read case study <ArrowUpRight className="h-4 w-4" />
-                  </Link>
-                  {proj.liveUrl !== "#" && (
-                    <a
-                      href={proj.liveUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center gap-2 rounded-full border border-[var(--border-color)] px-4 py-2.5 text-sm font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-secondary)] hover:text-[var(--text-primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--text-primary)]"
-                    >
-                      Live preview <ArrowUpRight className="h-4 w-4" />
-                    </a>
-                  )}
+              <div className="pt-6 border-t border-[var(--border-color)] flex flex-col gap-4">
+                <div className="flex flex-col gap-1">
+                  {project.outcomes.slice(0, 2).map((outcome, idx) => (
+                    <div key={idx} className="flex items-center gap-2 text-[11px] font-semibold text-black/60 dark:text-white/80">
+                      <div className="w-1 h-1 rounded-full bg-black/20 dark:bg-white/20" />
+                      {outcome}
+                    </div>
+                  ))}
                 </div>
-              </article>
-            ))}
-          </div>
+                
+                <Link 
+                  href={`/projects/${project.slug}`}
+                  className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest hover:gap-3 transition-all"
+                >
+                  Case Study <ArrowUpRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </div>
+          ))}
         </div>
-      </section>
-    </CurvedSection>
+      </div>
+    </section>
   );
 }

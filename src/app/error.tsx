@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect } from "react";
+import Link from "next/link";
 
-export default function GlobalError({
+export default function Error({
   error,
   reset,
 }: {
@@ -10,24 +11,31 @@ export default function GlobalError({
   reset: () => void;
 }) {
   useEffect(() => {
-    console.error("Unhandled app error:", error);
+    console.error(error);
   }, [error]);
 
   return (
-    <main className="min-h-screen w-full bg-[var(--bg-primary)] text-[var(--text-primary)] flex items-center justify-center px-6">
-      <section className="w-full max-w-2xl rounded-3xl border border-[var(--border-color)] bg-[var(--bg-secondary)]/70 p-8 md:p-12 text-center">
-        <h1 className="text-3xl md:text-5xl font-semibold tracking-tight">Something went wrong</h1>
-        <p className="mt-4 text-[var(--text-secondary)] text-base md:text-lg">
-          The page hit an unexpected runtime error. Please retry.
-        </p>
+    <main className="min-h-screen bg-white flex flex-col items-center justify-center p-8 text-center">
+      <h1 className="text-6xl font-bold tracking-tighter mb-8">SYSTEM CRASH</h1>
+      <p className="text-2xl font-light text-gray-500 mb-12">
+        Something went wrong in the infrastructure. <br />
+        <span className="text-black font-medium italic">"pls visit again we are working on this currently"</span>
+      </p>
+      
+      <div className="flex gap-4">
         <button
-          type="button"
-          onClick={reset}
-          className="mt-8 inline-flex items-center justify-center rounded-full border border-[var(--border-color)] px-6 py-3 text-sm font-medium uppercase tracking-wider hover:bg-[var(--text-primary)] hover:text-[var(--bg-primary)] transition-colors"
+          onClick={() => reset()}
+          className="px-8 py-4 bg-black text-white rounded-full font-semibold hover:scale-105 transition-all"
         >
-          Try again
+          Retry Node
         </button>
-      </section>
+        <Link 
+          href="/" 
+          className="px-8 py-4 border border-black text-black rounded-full font-semibold hover:bg-black hover:text-white transition-all"
+        >
+          Go Home
+        </Link>
+      </div>
     </main>
   );
 }

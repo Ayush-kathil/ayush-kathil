@@ -4,14 +4,12 @@ import { useCallback, useState, useSyncExternalStore } from "react";
 import dynamic from "next/dynamic";
 import Hero from "@/components/Hero";
 import Preloader from "@/components/Preloader";
-import MobileGateway from "@/components/MobileGateway";
 
-const ImpactMetrics = dynamic(() => import("@/components/ImpactMetrics"));
-const ProfessionalSnapshot = dynamic(() => import("@/components/ProfessionalSnapshot"));
 const About = dynamic(() => import("@/components/About"));
 const Experience = dynamic(() => import("@/components/Experience"));
+const Achievements = dynamic(() => import("@/components/Achievements"));
+const Responsibility = dynamic(() => import("@/components/Responsibility"));
 const FeaturedProjects = dynamic(() => import("@/components/FeaturedProjects"));
-const GitHubProjects = dynamic(() => import("@/components/GitHubProjects"));
 const Contact = dynamic(() => import("@/components/Contact"));
 const Footer = dynamic(() => import("@/components/Footer"));
 
@@ -45,22 +43,17 @@ export default function Home() {
         <Preloader onComplete={handlePreloaderComplete} />
       )}
 
-      <div className="md:hidden relative z-10 w-full">
-        <MobileGateway preloaderComplete={preloaderComplete} />
-      </div>
-
-      <div className="hidden md:block relative z-10 w-full">
+      <div className="relative z-10 w-full">
         <section aria-label="Hero section" className="w-full">
           <Hero preloaderComplete={preloaderComplete} />
         </section>
 
         <section aria-label="Portfolio sections" className="w-full">
-          <ImpactMetrics />
-          <ProfessionalSnapshot />
           <About />
           <Experience />
+          <Achievements />
+          <Responsibility />
           <FeaturedProjects />
-          <GitHubProjects />
           <Contact />
           <Footer />
         </section>

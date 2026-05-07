@@ -22,7 +22,7 @@ const subscribeToTheme = (onStoreChange: () => void) => {
 
 const getThemeSnapshot = () => {
   if (typeof window === "undefined") {
-    return "dark" as const;
+    return "light" as const;
   }
 
   const storedTheme = localStorage.getItem(THEME_STORAGE_KEY);
@@ -30,11 +30,11 @@ const getThemeSnapshot = () => {
     return storedTheme;
   }
 
-  return window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+  return "light"; // Force light default
 };
 
 export default function ThemeToggle() {
-  const theme = useSyncExternalStore(subscribeToTheme, getThemeSnapshot, () => "dark");
+  const theme = useSyncExternalStore(subscribeToTheme, getThemeSnapshot, () => "light");
   const [isMobile, setIsMobile] = useState(false);
   const [mobilePos, setMobilePos] = useState<{ x: number; y: number }>(() => {
     if (typeof window === "undefined") {
@@ -174,42 +174,22 @@ export default function ThemeToggle() {
   };
 
   return (
-    <>
-      <button
-        onClick={toggleTheme}
-        className="hidden md:block fixed top-8 right-8 z-[9999] p-4 rounded-full bg-[var(--bg-primary)]/70 backdrop-blur-md text-[var(--text-primary)] border border-[var(--border-color)] hover:border-[var(--text-primary)] hover:bg-[var(--text-primary)] hover:text-[var(--bg-primary)] hover:scale-110 active:scale-95 transition-all duration-300 shadow-[0_8px_32px_0_rgba(0,0,0,0.1)] dark:shadow-[0_8px_32px_0_rgba(255,255,255,0.05)]"
-        aria-label={theme === "dark" ? "Switch to light theme" : "Switch to dark theme"}
-        aria-pressed={theme === "light"}
-        title={theme === "dark" ? "Switch to light theme" : "Switch to dark theme"}
-        suppressHydrationWarning
-      >
-        {theme === "dark" ? <Sun size={24} /> : <Moon size={24} />}
-      </button>
-
-      <button
-        onPointerDown={handlePointerDown}
-        onPointerMove={handlePointerMove}
-        onPointerUp={handlePointerUp}
-        onPointerCancel={() => {
-          dragStartRef.current = null;
-          setDragging(false);
-        }}
-        onClick={(event) => event.preventDefault()}
-        onKeyDown={(event) => {
-          if (event.key === "Enter" || event.key === " ") {
-            event.preventDefault();
-            toggleTheme();
-          }
-        }}
-        className="md:hidden fixed z-[9999] p-4 rounded-full bg-[var(--bg-primary)]/85 backdrop-blur-md text-[var(--text-primary)] border border-[var(--border-color)] shadow-[0_8px_20px_0_rgba(0,0,0,0.2)] dark:shadow-[0_8px_20px_0_rgba(255,255,255,0.08)] active:scale-95 touch-none"
-        style={{ left: `${mobilePos.x}px`, top: `${mobilePos.y}px`, transition: dragging ? "none" : "left 220ms ease, top 220ms ease" }}
-        aria-label={theme === "dark" ? "Switch to light theme" : "Switch to dark theme"}
-        aria-pressed={theme === "light"}
-        title="Drag to move. Tap to switch theme."
-        suppressHydrationWarning
-      >
-        {theme === "dark" ? <Sun size={22} /> : <Moon size={22} />}
-      </button>
-    </>
+    <button
+      onClick={toggleTheme}
+      onPointerDown={handlePointerDown}
+      onPointerMove={handlePointerMove}
+      onPointerUp={handlePointerUp}
+      onPointerCancel={() => {
+        dragStartRef.current = null;
+        setDragging(false);
+      }}
+      className="fixed z-[9999] p-4 rounded-full bg-[var(--bg-primary)]/80 backdrop-blur-md text-[var(--text-primary)] border border-[var(--border-color)] shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 touch-none"
+      style={isMobile ? { left: `${mobilePos.x}px`, top: `${mobilePos.y}px`, transition: dragging ? "none" : "all 220ms ease" } : { top: "2rem", right: "2rem" }}
+      aria-label={theme === "dark" ? "Switch to light theme" : "Switch to dark theme"}
+      aria-pressed={theme === "light"}
+      suppressHydrationWarning
+    >
+      {theme === "dark" ? <Sun size={24} /> : <Moon size={24} />}
+    </button>
   );
 }

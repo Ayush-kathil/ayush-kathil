@@ -4,28 +4,21 @@ import { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import TextReveal from "@/components/TextReveal";
-import CardSection from "@/components/CardSection";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const experiences = [
   {
     title: "Open Source Contributor",
-    organization: "DSC Winter of Code 2026",
+    organization: "Kubeflow",
     description:
-      "Contributed bug fixes and feature improvements across Python and JavaScript repositories, collaborated with maintainers through review cycles, and improved issue turnaround reliability.",
+      "Contributing to Katib (AutoML) and Docs-Agent. Fixed HuggingFace trainer startup crashes, ensured backward compatibility for empty payloads, and optimized backend retrieval for the documentation agent.",
   },
   {
-    title: "Technical Lead",
-    organization: "MATRIX Club, VIT Bhopal",
+    title: "Contributor",
+    organization: "DSC Winter of Code",
     description:
-      "Led a 6-member team and designed hands-on Python data-structure sessions for juniors, translating complex topics into practical implementation workflows.",
-  },
-  {
-    title: "Technical Team Member",
-    organization: "TechnoMech Club, VIT Bhopal",
-    description:
-      "Built internal event tooling and supported frontend delivery, deployment setup, and post-launch fixes to keep execution stable under deadlines.",
+      "Contributed to various open-source repositories, focusing on bug fixes, code maintainability, and passing automated CI/CD checks during technical reviews.",
   },
 ];
 
@@ -34,20 +27,19 @@ export default function Experience() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // UNIFIED ANIMATION (CLEAN SLIDE IN FADE)
       gsap.fromTo(
-        gsap.utils.toArray(".exp-card"),
-        { opacity: 0, y: 28 },
+        ".exp-item",
+        { y: 40, opacity: 0 },
         {
-          opacity: 1,
           y: 0,
-          duration: 0.65,
-          stagger: 0.1,
-          ease: "power2.out",
+          opacity: 1,
+          duration: 1,
+          stagger: 0.2,
+          ease: "power3.out",
           scrollTrigger: {
             trigger: containerRef.current,
-            start: "top 85%",
-          }
+            start: "top 80%",
+          },
         }
       );
     }, containerRef);
@@ -56,45 +48,40 @@ export default function Experience() {
   }, []);
 
   return (
-    <CardSection className="bg-[var(--bg-primary)] relative z-20 shadow-2xl border-t-[4px] border-t-[var(--text-primary)]" id="experience">
-      <section ref={containerRef} className="w-full text-[var(--text-primary)] px-6 md:px-12 py-32 flex flex-col items-center justify-center relative">
-        
-        <div className="w-full max-w-7xl md:text-center z-10 mb-24">
-          <h2 className="text-5xl sm:text-6xl md:text-[72px] font-medium tracking-tight md:tracking-[-4.32px] leading-none uppercase">
-            <TextReveal>Experience</TextReveal>
+    <section id="experience" ref={containerRef} className="w-full bg-[var(--bg-secondary)] px-4 sm:px-6 md:px-12 py-24 rounded-[var(--radius-uber)] -mt-12 relative z-30 border-t border-[var(--border-color)]">
+      <div className="max-w-[1600px] mx-auto">
+        <div className="mb-16">
+          <p className="text-[10px] uppercase tracking-[0.24em] text-[var(--text-secondary)] mb-4 font-semibold uppercase tracking-widest">Technical Track Record</p>
+          <h2 className="text-[clamp(2.5rem,6vw,4.5rem)] font-semibold tracking-[-0.04em] leading-[0.95] uppercase">
+            <TextReveal>Work Experience</TextReveal>
           </h2>
-          <p className="mt-4 mx-auto max-w-3xl text-[clamp(1rem,2.6vw,1.25rem)] text-[var(--text-secondary)] leading-relaxed">
-            Roles that demonstrate leadership, collaboration, and execution quality beyond coursework.
-          </p>
         </div>
-        
-        {/* PREMIUM STACK EFFECT */}
-        <div className="w-full max-w-4xl flex flex-col gap-8 md:gap-12 relative z-10">
+
+        <div className="grid grid-cols-1 gap-4">
           {experiences.map((exp, i) => (
             <div 
               key={i} 
-              className="exp-card bg-[var(--bg-secondary)]/60 backdrop-blur-xl border border-[var(--border-color)] p-8 md:p-12 lg:p-16 rounded-3xl flex flex-col md:flex-row md:items-center py-12 md:justify-between shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 hover:border-[var(--accent)] group"
+              className="exp-item group relative overflow-hidden rounded-[var(--radius-uber)] bg-[var(--bg-primary)] p-8 md:p-12 border border-[var(--border-color)] hover:border-black/10 transition-colors duration-500"
             >
-              <div className="md:w-1/3 mb-6 md:mb-0">
-                <p className="text-sm md:text-base text-[var(--accent)] font-medium uppercase tracking-wide border-l-2 border-[var(--accent)] pl-4 group-hover:pl-6 transition-all duration-300">
-                  {exp.organization}
-                </p>
-              </div>
-              <div className="md:w-2/3 md:pl-12 md:border-l border-[var(--border-color)] group-hover:border-[var(--accent)] transition-colors duration-300">
-                <h3 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4 group-hover:text-[var(--accent)] transition-colors duration-300">
-                  {exp.title}
-                </h3>
-                <p className="text-lg md:text-xl font-light leading-relaxed text-[var(--text-secondary)]">
-                  {exp.description}
-                </p>
+              <div className="flex flex-col md:flex-row md:items-center justify-between gap-8">
+                <div className="md:w-1/3">
+                  <p className="text-[10px] font-semibold uppercase tracking-widest text-[var(--text-secondary)] mb-2">
+                    {exp.organization}
+                  </p>
+                  <h3 className="text-2xl md:text-4xl font-semibold tracking-tight group-hover:translate-x-2 transition-transform duration-500">
+                    {exp.title}
+                  </h3>
+                </div>
+                <div className="md:w-2/3 md:pl-16 border-l border-[var(--border-color)] group-hover:border-black/10 transition-colors duration-500">
+                  <p className="text-lg md:text-xl font-light leading-relaxed text-[var(--text-secondary)] group-hover:text-black transition-colors duration-500">
+                    {exp.description}
+                  </p>
+                </div>
               </div>
             </div>
           ))}
         </div>
-
-
-        
-      </section>
-    </CardSection>
+      </div>
+    </section>
   );
 }

@@ -87,10 +87,11 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `
               try {
-                if (localStorage.getItem('portfolio-theme') === 'light' || (!('portfolio-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: light)').matches)) {
-                  document.documentElement.classList.remove('dark');
-                } else {
+                var savedTheme = localStorage.getItem('portfolio-theme');
+                if (savedTheme === 'dark') {
                   document.documentElement.classList.add('dark');
+                } else {
+                  document.documentElement.classList.remove('dark');
                 }
 
                 var ua = navigator.userAgent || '';
