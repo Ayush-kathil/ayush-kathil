@@ -59,11 +59,11 @@ export const projectsData = [
       problem: "Mobile users struggle with small tap targets and cluttered layouts.",
       solution: "I designed a gesture-first interface with massive tap targets.",
       impact: "Achieved a 95% positive feedback score.",
-    },
-    outcomes: ["1k+ Active Users", "Glassmorphic UI Design", "Mobile-First UX"],
+    },    outcomes: ["1k+ Active Users", "Glassmorphic UI Design", "Mobile-First UX"],
     githubUrl: "https://github.com/Ayush-kathil/Grade-Calculator",
     liveUrl: "https://getyourgrades.vercel.app",
-    image: "/projects/grade-calc.png"
+    image: "/projects/grade-calc.png",
+    video: "/projects/grade-calc.mp4"
   },
   {
     slug: "pdf-editx",
@@ -85,7 +85,8 @@ export const projectsData = [
     outcomes: ["100% Private Processing", "Zero Latency", "Cross-Platform Support"],
     githubUrl: "https://github.com/Ayush-kathil/Pdf-editx",
     liveUrl: "https://pdfeditx.vercel.app",
-    image: "/projects/pdf-editx.png"
+    image: "/projects/pdf-editx.png",
+    video: "/projects/pdf-editx.mp4"
   },
   {
     slug: "hotel-sunrise",
@@ -107,6 +108,8 @@ export const projectsData = [
     outcomes: ["Secure Supabase backend", "Fast load times", "Responsive UX"],
     githubUrl: "https://github.com/Ayush-kathil/Hotel-Sunrise",
     liveUrl: "https://welcomesunrise.vercel.app",
-    image: "/projects/hotel-sunrise.png"
+    image: "/projects/hotel-sunrise.png",
+    video: "/projects/hotel-sunrise.mp4"
   },
+
 ];

@@ -93,14 +93,25 @@ export default function ProjectPage() {
         {/* PROJECT IMAGE / PREVIEW */}
         <div className="reveal relative aspect-[16/9] w-full rounded-[var(--radius-uber)] bg-black overflow-hidden mb-32 group border border-gray-100 shadow-2xl">
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
-          <img 
-            src={project.image} 
-            alt={project.title} 
-            className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" 
-            onError={(e) => {
-              (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=2000&auto=format&fit=crop";
-            }}
-          />
+          {project.video ? (
+            <video
+              src={project.video}
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-all duration-700"
+            />
+          ) : (
+            <img 
+              src={project.image} 
+              alt={project.title} 
+              className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" 
+              onError={(e) => {
+                (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=2000&auto=format&fit=crop";
+              }}
+            />
+          )}
           <div className="absolute bottom-12 left-12 z-20">
              <p className="text-white/60 text-xs uppercase tracking-widest mb-2 font-semibold">Project Phase</p>
              <h3 className="text-white text-3xl font-semibold">Production Ready</h3>

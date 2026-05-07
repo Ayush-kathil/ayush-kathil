@@ -56,8 +56,48 @@ export default function FeaturedProjects() {
               key={project.slug}
               className="project-card group relative flex flex-col justify-between bg-[var(--bg-secondary)] border border-[var(--border-color)] rounded-[var(--radius-uber)] p-8 hover:bg-white hover:shadow-[0_20px_50px_rgba(0,0,0,0.05)] transition-all duration-500"
             >
+              <div className="relative aspect-[16/10] rounded-2xl overflow-hidden bg-black/5 mb-8 border border-[var(--border-color)]">
+                {project.video ? (
+                  <video
+                    src={project.video}
+                    muted
+                    loop
+                    playsInline
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    onMouseOver={(e) => e.currentTarget.play()}
+                    onMouseOut={(e) => e.currentTarget.pause()}
+                    ref={(el) => {
+                      if (!el) return;
+                      const observer = new IntersectionObserver(
+                        (entries) => {
+                          entries.forEach((entry) => {
+                            if (entry.isIntersecting) {
+                              el.play().catch(() => {});
+                            } else {
+                              el.pause();
+                            }
+                          });
+                        },
+                        { threshold: 0.5 }
+                      );
+                      observer.observe(el);
+                    }}
+                  />
+                ) : project.image ? (
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center text-[10px] uppercase tracking-widest text-black/20">
+                    Preview N/A
+                  </div>
+                )}
+              </div>
+
               <div>
-                <div className="flex items-center justify-between mb-8">
+                <div className="flex items-center justify-between mb-6">
                   <span className="px-3 py-1 rounded-full border border-[var(--border-color)] text-[10px] uppercase tracking-widest font-semibold text-[var(--text-secondary)] bg-white">
                     {project.role}
                   </span>
