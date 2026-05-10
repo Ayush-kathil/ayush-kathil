@@ -7,8 +7,22 @@ import Link from "next/link";
 
 export default function Navbar() {
   const [activeSection, setActiveSection] = useState("hero");
+  const [isHidden, setIsHidden] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
+
+  useEffect(() => {
+    // Hide navbar when preloader is active
+    const checkLoading = () => {
+      setIsHidden(document.documentElement.classList.contains("is-loading"));
+    };
+
+    checkLoading();
+    const observer = new MutationObserver(checkLoading);
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
+
+    return () => observer.disconnect();
+  }, []);
 
   const handleNavClick = (id: string) => {
     if (pathname !== "/") {
@@ -48,7 +62,9 @@ export default function Navbar() {
     });
 
     return () => observer.disconnect();
-  }, []);
+  }, [pathname]);
+
+  if (isHidden) return null;
 
   const navItems = [
     { name: "Summary", id: "about", icon: User },

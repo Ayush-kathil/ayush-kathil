@@ -115,45 +115,7 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
 
       </div>
 
-      {/* Wavy Arrow Line - Full Screen Swimming Pool Layers */}
-      <div className="absolute bottom-24 left-0 w-screen h-24 pointer-events-none overflow-hidden z-20">
-          <svg viewBox="0 0 1440 120" className="w-full h-full preserve-3d" preserveAspectRatio="none">
-              <defs>
-                  <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
-                      <polygon points="0 0, 10 3.5, 0 7" fill="black" />
-                  </marker>
-              </defs>
-              {/* Layer 1 - Deep */}
-              <path 
-                  d="M0,80 C150,130 350,30 500,80 C650,130 850,30 1000,80 C1150,130 1350,30 1440,80" 
-                  fill="none" 
-                  stroke="black" 
-                  strokeWidth="0.5"
-                  opacity="0.1"
-                  className="wave-line-anim"
-                  style={{ animationDelay: '-1s' }}
-              />
-              {/* Layer 2 - Mid */}
-              <path 
-                  d="M0,70 C150,120 350,20 500,70 C650,120 850,20 1000,70 C1150,120 1350,20 1440,70" 
-                  fill="none" 
-                  stroke="black" 
-                  strokeWidth="0.8"
-                  opacity="0.2"
-                  className="wave-line-anim"
-                  style={{ animationDelay: '-0.5s' }}
-              />
-              {/* Layer 3 - Surface (Main) */}
-              <path 
-                  d="M0,60 C150,110 350,10 500,60 C650,110 850,10 1000,60 C1150,110 1350,10 1440,60" 
-                  fill="none" 
-                  stroke="black" 
-                  strokeWidth="1.2"
-                  markerEnd="url(#arrowhead)"
-                  className="wave-line-anim"
-              />
-          </svg>
-      </div>
+
 
     </div>
   );
