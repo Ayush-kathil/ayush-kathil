@@ -38,26 +38,28 @@ export default function Home() {
   }, []);
 
   return (
-    <main id="main-content" className="w-full bg-[var(--bg-primary)] text-[var(--text-primary)] min-h-screen relative">
+    <>
       {!preloaderComplete && (
         <Preloader onComplete={handlePreloaderComplete} />
       )}
 
-      <div className="relative z-10 w-full">
-        <section aria-label="Hero section" className="w-full">
-          <Hero preloaderComplete={preloaderComplete} />
-        </section>
+      <main id="main-content" className="w-full bg-[var(--bg-primary)] text-[var(--text-primary)] min-h-screen relative">
+        <div className="relative z-10 w-full">
+          <section aria-label="Hero section" className="w-full">
+            <Hero preloaderComplete={preloaderComplete} />
+          </section>
 
-        <section aria-label="Portfolio sections" className="w-full">
-          <About />
-          <Experience />
-          <Achievements />
-          <Responsibility />
-          <FeaturedProjects />
-          <Contact />
-          <Footer />
-        </section>
-      </div>
-    </main>
+          <section aria-label="Portfolio sections" className="w-full">
+            <About />
+            <Experience />
+            <Achievements />
+            <Responsibility />
+            <FeaturedProjects />
+            <Contact />
+            <Footer />
+          </section>
+        </div>
+      </main>
+    </>
   );
 }

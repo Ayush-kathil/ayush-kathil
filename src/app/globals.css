@@ -160,3 +160,18 @@ html.lenis, html.lenis body {
 .lenis.lenis-scrolling iframe {
   pointer-events: none;
 }
+
+/* Hide Navbar during Preloader */
+html.is-loading nav {
+  display: none !important;
+}
+
+/* Preloader Wave Animations */
+.wave-line-anim {
+  animation: waveMove 8s linear infinite;
+}
+
+@keyframes waveMove {
+  0% { transform: translateX(-400px); }
+  100% { transform: translateX(0); }
+}
