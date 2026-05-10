@@ -10,20 +10,20 @@
 @layer base {
   :root {
     --bg-primary: #FFFFFF;
-    --bg-secondary: #F9FAFB;
+    --bg-secondary: #FAFAFA;
     --text-primary: #000000;
-    --text-secondary: #4B5563;
-    --border-color: #F3F4F6;
+    --text-secondary: #555555;
+    --border-color: #EEEEEE;
     --accent: #000000;
     --radius-uber: 32px;
   }
 
   .dark {
     --bg-primary: #000000;
-    --bg-secondary: #111111;
+    --bg-secondary: #0A0A0A;
     --text-primary: #FFFFFF;
-    --text-secondary: #FFFFFF; /* Pure B&W requested */
-    --border-color: #333333;
+    --text-secondary: #AAAAAA;
+    --border-color: #222222;
     --accent: #FFFFFF;
   }
 }
@@ -134,10 +134,31 @@ html.reduced-motion-lite .backdrop-blur-md {
 h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.05em;
   line-height: 1.05;
+  text-wrap: balance;
 }
+
+h1 { font-size: clamp(2.5rem, 10vw, 6rem); }
+h2 { font-size: clamp(2rem, 8vw, 4rem); }
+h3 { font-size: clamp(1.5rem, 6vw, 2.5rem); }
 
 p {
   letter-spacing: 0.01em;
+  text-wrap: pretty;
+}
+
+.mobile-px {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  :root {
+    --radius-uber: 24px;
+  }
+  
+  .mobile-hide {
+    display: none !important;
+  }
 }
 
 /* Lenis Smooth Scroll Recommended CSS */

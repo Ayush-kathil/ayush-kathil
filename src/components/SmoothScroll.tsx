@@ -15,9 +15,11 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
     }
 
     return {
-      lerp: 0.08,
-      duration: 1,
+      lerp: 0.05,
+      duration: 1.2,
       smoothWheel: true,
+      wheelMultiplier: 1,
+      touchMultiplier: 2,
       smoothTouch: true,
     };
   }, []);

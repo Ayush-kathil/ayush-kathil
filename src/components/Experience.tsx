@@ -57,23 +57,23 @@ export default function Experience() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 gap-4">
+        <div className="grid grid-cols-1 gap-6">
           {experiences.map((exp, i) => (
             <div 
               key={i} 
-              className="exp-item group relative overflow-hidden rounded-[var(--radius-uber)] bg-[var(--bg-primary)] p-8 md:p-12 border border-[var(--border-color)] hover:border-black/10 transition-colors duration-500"
+              className="exp-item group relative overflow-hidden rounded-[var(--radius-uber)] bg-[var(--bg-primary)] p-6 sm:p-12 border border-[var(--border-color)] hover:border-black/5 dark:hover:border-white/5 transition-colors duration-500"
             >
-              <div className="flex flex-col md:flex-row md:items-center justify-between gap-8">
+              <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 sm:gap-8">
                 <div className="md:w-1/3">
-                  <p className="text-[10px] font-semibold uppercase tracking-widest text-[var(--text-secondary)] mb-2">
+                  <p className="text-[9px] sm:text-[10px] font-semibold uppercase tracking-widest text-[var(--text-secondary)] mb-2">
                     {exp.organization}
                   </p>
-                  <h3 className="text-2xl md:text-4xl font-semibold tracking-tight group-hover:translate-x-2 transition-transform duration-500">
+                  <h3 className="text-xl sm:text-2xl md:text-4xl font-semibold tracking-tight group-hover:translate-x-1 sm:group-hover:translate-x-2 transition-transform duration-500">
                     {exp.title}
                   </h3>
                 </div>
-                <div className="md:w-2/3 md:pl-16 border-l border-[var(--border-color)] group-hover:border-black/10 transition-colors duration-500">
-                  <p className="text-lg md:text-xl font-light leading-relaxed text-[var(--text-secondary)] group-hover:text-black transition-colors duration-500">
+                <div className="md:w-2/3 md:pl-16 border-t md:border-t-0 md:border-l border-[var(--border-color)] pt-6 md:pt-0 group-hover:border-black/5 dark:group-hover:border-white/5 transition-colors duration-500">
+                  <p className="text-base sm:text-lg md:text-xl font-light leading-relaxed text-[var(--text-secondary)] group-hover:text-black dark:group-hover:text-white transition-colors duration-500">
                     {exp.description}
                   </p>
                 </div>

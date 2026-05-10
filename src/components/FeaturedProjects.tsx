@@ -54,9 +54,9 @@ export default function FeaturedProjects() {
           {projectsData.map((project, i) => (
             <div 
               key={project.slug}
-              className="project-card group relative flex flex-col justify-between bg-[var(--bg-secondary)] border border-[var(--border-color)] rounded-[var(--radius-uber)] p-8 hover:bg-white hover:shadow-[0_20px_50px_rgba(0,0,0,0.05)] transition-all duration-500"
+              className="project-card group relative flex flex-col justify-between bg-[var(--bg-secondary)] border border-[var(--border-color)] rounded-[var(--radius-uber)] p-6 sm:p-8 hover:bg-white dark:hover:bg-[#0a0a0a] hover:shadow-[0_20px_50px_rgba(0,0,0,0.05)] transition-all duration-500"
             >
-              <div className="relative aspect-[16/10] rounded-2xl overflow-hidden bg-black/5 mb-8 border border-[var(--border-color)]">
+              <div className="relative aspect-[16/10] rounded-2xl overflow-hidden bg-black/5 mb-6 sm:mb-8 border border-[var(--border-color)]">
                 {project.video ? (
                   <video
                     src={project.video}
@@ -97,34 +97,34 @@ export default function FeaturedProjects() {
               </div>
 
               <div>
-                <div className="flex items-center justify-between mb-6">
-                  <span className="px-3 py-1 rounded-full border border-[var(--border-color)] text-[10px] uppercase tracking-widest font-semibold text-[var(--text-secondary)] bg-white">
+                <div className="flex items-center justify-between mb-4 sm:mb-6">
+                  <span className="px-3 py-1 rounded-full border border-[var(--border-color)] text-[10px] uppercase tracking-widest font-semibold text-[var(--text-secondary)] bg-white dark:bg-black">
                     {project.role}
                   </span>
                   <div className="flex gap-3">
                     {project.githubUrl && (
-                      <a href={project.githubUrl} target="_blank" rel="noreferrer" className="text-[var(--text-secondary)] hover:text-black transition-colors">
+                      <a href={project.githubUrl} target="_blank" rel="noreferrer" className="text-[var(--text-secondary)] hover:text-black dark:hover:text-white transition-colors">
                         <Github className="w-5 h-5" />
                       </a>
                     )}
                     {project.liveUrl !== "#" && (
-                      <a href={project.liveUrl} target="_blank" rel="noreferrer" className="text-[var(--text-secondary)] hover:text-black transition-colors">
+                      <a href={project.liveUrl} target="_blank" rel="noreferrer" className="text-[var(--text-secondary)] hover:text-black dark:hover:text-white transition-colors">
                         <ExternalLink className="w-5 h-5" />
                       </a>
                     )}
                   </div>
                 </div>
 
-                <h3 className="text-2xl font-semibold mb-3 group-hover:text-black transition-colors">
+                <h3 className="text-xl sm:text-2xl font-semibold mb-3 group-hover:text-black dark:group-hover:text-white transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-[var(--text-secondary)] font-light leading-relaxed mb-8 line-clamp-3">
+                <p className="text-[var(--text-secondary)] font-light leading-relaxed mb-6 sm:mb-8 line-clamp-3 text-sm sm:text-base">
                   {project.desc}
                 </p>
 
-                <div className="flex flex-wrap gap-2 mb-8">
+                <div className="flex flex-wrap gap-2 mb-6 sm:mb-8">
                   {project.tags.slice(0, 3).map((tag) => (
-                    <span key={tag} className="text-[10px] font-medium uppercase tracking-wider text-black/40 dark:text-white/60">
+                    <span key={tag} className="text-[9px] sm:text-[10px] font-medium uppercase tracking-wider text-black/40 dark:text-white/60">
                       {tag}
                     </span>
                   ))}
@@ -134,7 +134,7 @@ export default function FeaturedProjects() {
               <div className="pt-6 border-t border-[var(--border-color)] flex flex-col gap-4">
                 <div className="flex flex-col gap-1">
                   {project.outcomes.slice(0, 2).map((outcome, idx) => (
-                    <div key={idx} className="flex items-center gap-2 text-[11px] font-semibold text-black/60 dark:text-white/80">
+                    <div key={idx} className="flex items-center gap-2 text-[10px] sm:text-[11px] font-semibold text-black/60 dark:text-white/80">
                       <div className="w-1 h-1 rounded-full bg-black/20 dark:bg-white/20" />
                       {outcome}
                     </div>
@@ -143,7 +143,7 @@ export default function FeaturedProjects() {
                 
                 <Link 
                   href={`/projects/${project.slug}`}
-                  className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest hover:gap-3 transition-all"
+                  className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold uppercase tracking-widest hover:gap-3 transition-all"
                 >
                   Case Study <ArrowUpRight className="w-4 h-4" />
                 </Link>

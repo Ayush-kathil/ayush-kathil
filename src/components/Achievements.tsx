@@ -76,20 +76,20 @@ export default function Achievements() {
             return (
               <div 
                 key={i} 
-                className="ach-card bg-[var(--bg-secondary)] border border-[var(--border-color)] p-8 md:p-10 rounded-[var(--radius-uber)] hover:bg-white hover:border-black/10 group transition-all duration-500"
+                className="ach-card bg-[var(--bg-secondary)] border border-[var(--border-color)] p-6 sm:p-10 rounded-[var(--radius-uber)] hover:bg-white dark:hover:bg-[#0a0a0a] group transition-all duration-500"
               >
                 <div className="flex flex-col gap-6">
-                  <div className="w-12 h-12 rounded-xl bg-white border border-[var(--border-color)] flex items-center justify-center text-black group-hover:scale-110 transition-transform duration-500">
-                    <Icon className="w-6 h-6" />
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-white dark:bg-black border border-[var(--border-color)] flex items-center justify-center text-black dark:text-white group-hover:scale-110 transition-transform duration-500">
+                    <Icon className="w-5 h-5 sm:w-6 sm:h-6" />
                   </div>
                   <div>
-                    <h3 className="text-xl md:text-2xl font-semibold mb-2 group-hover:text-black transition-colors duration-500">
+                    <h3 className="text-xl sm:text-2xl font-semibold mb-2 group-hover:text-black dark:group-hover:text-white transition-colors duration-500">
                       {ach.title}
                     </h3>
-                    <p className="text-[10px] font-semibold text-[var(--text-secondary)] uppercase tracking-wider mb-4 group-hover:text-black/60 transition-colors duration-500">
+                    <p className="text-[10px] sm:text-xs font-semibold text-[var(--text-secondary)] uppercase tracking-wider mb-4 transition-colors duration-500">
                       {ach.organization}
                     </p>
-                    <p className="text-base md:text-lg text-[var(--text-secondary)] font-light leading-relaxed group-hover:text-black/70 transition-colors duration-500">
+                    <p className="text-sm sm:text-base md:text-lg text-[var(--text-secondary)] font-light leading-relaxed group-hover:text-black dark:group-hover:text-white transition-colors duration-500">
                       {ach.description}
                     </p>
                   </div>

@@ -74,28 +74,28 @@ export default function GitHubProjects() {
               href={repo.link}
               target="_blank"
               rel="noreferrer"
-              className="repo-card group flex flex-col justify-between p-10 rounded-[var(--radius-uber)] border border-[var(--border-color)] bg-[var(--bg-secondary)] hover:bg-black transition-all duration-500 min-h-[400px]"
+              className="repo-card group flex flex-col justify-between p-8 sm:p-10 rounded-[var(--radius-uber)] border border-[var(--border-color)] bg-[var(--bg-secondary)] hover:bg-black dark:hover:bg-white transition-all duration-500 min-h-[320px] sm:min-h-[400px]"
             >
               <div>
                 <div className="flex items-center justify-between mb-8">
-                  <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center text-black">
-                    <Github className="w-6 h-6" />
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-white dark:bg-black border border-[var(--border-color)] flex items-center justify-center text-black dark:text-white">
+                    <Github className="w-5 h-5 sm:w-6 sm:h-6" />
                   </div>
-                  <ArrowUpRight className="w-6 h-6 text-[var(--text-secondary)] group-hover:text-white transition-colors" />
+                  <ArrowUpRight className="w-5 h-5 sm:w-6 sm:h-6 text-[var(--text-secondary)] group-hover:text-white dark:group-hover:text-black transition-colors" />
                 </div>
-                <h3 className="text-2xl font-semibold mb-4 group-hover:text-white transition-colors">
+                <h3 className="text-xl sm:text-2xl font-semibold mb-4 group-hover:text-white dark:group-hover:text-black transition-colors">
                   {repo.name}
                 </h3>
-                <p className="text-lg text-[var(--text-secondary)] font-light leading-relaxed group-hover:text-white/70 transition-colors">
+                <p className="text-base sm:text-lg text-[var(--text-secondary)] font-light leading-relaxed group-hover:text-white/70 dark:group-hover:text-black/70 transition-colors">
                   {repo.desc}
                 </p>
               </div>
               
-              <div className="pt-8 border-t border-[var(--border-color)] group-hover:border-white/10 flex items-center justify-between">
-                <span className="text-xs font-semibold uppercase tracking-widest text-[var(--text-secondary)] group-hover:text-white/60">
+              <div className="pt-8 border-t border-[var(--border-color)] group-hover:border-white/10 dark:group-hover:border-black/10 flex items-center justify-between">
+                <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-[var(--text-secondary)] group-hover:text-white/60 dark:group-hover:text-black/60">
                   {repo.tech}
                 </span>
-                <div className="flex items-center gap-2 text-xs font-semibold text-[var(--text-secondary)] group-hover:text-white/60">
+                <div className="flex items-center gap-2 text-[10px] sm:text-xs font-semibold text-[var(--text-secondary)] group-hover:text-white/60 dark:group-hover:text-black/60">
                   <Code className="w-4 h-4" />
                   {repo.stars}
                 </div>
