@@ -111,5 +111,48 @@ export const projectsData = [
     image: "/projects/hotel-sunrise.png",
     video: "/projects/hotel-sunrise.mp4"
   },
-
+  {
+    slug: "yoga-pose-detection",
+    title: "Yoga Pose Detection Engine",
+    desc: "Real-time human pose classification using computer vision and lightweight keypoint detection.",
+    summary: "Implemented computer vision-based keypoint detection models to classify human poses in real-time, greatly improving posture accuracy detection.",
+    role: "Computer Vision Developer",
+    tags: ["Python", "OpenCV", "MediaPipe", "NumPy"],
+    about: "Mapped dynamic body joint angles to predefined pose templates to deliver automated, instant feedback for user posture correction.",
+    problemStatement: "Users struggle to verify if their yoga postures are correct without a professional instructor, leading to ineffective workouts and potential injury.",
+    architecture: "Optimized video frame processing loop integrating MediaPipe's lightweight keypoint detection models for efficient inference.",
+    challenges: "Achieving real-time inference speed while maintaining high accuracy in dynamic and variable lighting environments.",
+    impact: "Delivered automated, instant feedback for user posture correction ensuring a smooth user experience.",
+    caseStudy: {
+      problem: "Practitioners lack instant feedback on their posture, which is critical for preventing injuries during workouts.",
+      solution: "I integrated MediaPipe's keypoint detection models with OpenCV to calculate joint angles and compare them against predefined templates.",
+      impact: "Achieved real-time efficient inference, providing instant posture correction feedback and ensuring a smooth user experience.",
+    },
+    outcomes: ["Real-time Detection", "Automated Feedback", "Smooth User Experience"],
+    githubUrl: "https://github.com/Ayush-kathil",
+    liveUrl: "#",
+    image: "/projects/ai-surveillance.png"
+  },
+  {
+    slug: "ai-resume-builder",
+    title: "ResumeAI - Enterprise-Grade AI Resume Builder",
+    desc: "An advanced, AI-powered resume builder designed to craft professional, ATS-friendly resumes in minutes.",
+    summary: "A full-stack application built with Next.js leveraging generative AI to automate resume generation, formatting, and optimization with enterprise-grade security.",
+    role: "Full-Stack Developer",
+    tags: ["Next.js", "Tailwind CSS", "Zustand", "MongoDB", "Gemini AI"],
+    about: "ResumeAI provides an intuitive visual builder interface with real-time preview, intelligent AI suggestions for summaries, and high-fidelity exports.",
+    problemStatement: "Job seekers struggle to create ATS-optimized, professionally formatted resumes while articulating their experiences impactfully.",
+    architecture: "Next.js frontend with Zustand state management. Backend integrates MongoDB, NextAuth.js, and generative AI APIs for smart parsing and rewriting.",
+    challenges: "Implementing a zero-lag real-time preview engine alongside conversational AI for prompt-based resume editing.",
+    impact: "Enabled users to generate pixel-perfect resumes quickly while providing admin analytics and prompt engineering capabilities.",
+    caseStudy: {
+      problem: "Manual resume creation is time-consuming and often lacks industry-specific keywords and impactful phrasing.",
+      solution: "Integrated Google Generative AI to automatically generate summaries, rewrite bullet points, and offer smart skill suggestions based on the target role.",
+      impact: "Streamlined the resume-building process with high-quality PDF exports, reducing creation time from hours to minutes.",
+    },
+    outcomes: ["Real-time Preview Engine", "AI-Powered Rewriting", "Enterprise Security"],
+    githubUrl: "https://github.com/Ayush-kathil/resume-builder",
+    liveUrl: "#",
+    image: "/projects/ai-surveillance.png"
+  }
 ];

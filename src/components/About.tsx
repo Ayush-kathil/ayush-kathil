@@ -99,11 +99,10 @@ export default function About() {
           </div>
         </div>
 
-        {/* TECHNICAL STACK MARQUEE */}
         <div className="mt-24 pt-12 border-t border-[var(--border-color)] overflow-hidden">
           <p className="text-[10px] uppercase tracking-[0.2em] text-[var(--text-secondary)] mb-8 font-semibold text-center">Engineered With</p>
           <div className="flex flex-wrap justify-center gap-x-12 gap-y-6 opacity-40 hover:opacity-100 transition-opacity duration-500">
-            {["LangChain", "Kubernetes", "PyTorch", "gRPC", "Go", "Next.js", "TypeScript", "FAISS", "Pinecone", "Docker", "Redis"].map((skill) => (
+            {["LangChain", "Kubernetes", "PyTorch", "gRPC", "Go", "Next.js", "TypeScript", "FAISS", "Pinecone", "Docker", "Redis", "Python", "C++", "SQL", "Java", "JavaScript", "Node.js", "React", "HuggingFace", "Pandas", "OpenCV"].map((skill) => (
               <span key={skill} className="text-xl md:text-2xl font-semibold tracking-tighter grayscale hover:grayscale-0 transition-all cursor-default">
                 {skill}
               </span>
