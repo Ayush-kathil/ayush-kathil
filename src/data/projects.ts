@@ -1,25 +1,25 @@
 export const projectsData = [
   {
-    slug: "ai-surveillance",
-    title: "AI Surveillance System",
-    desc: "Real-time missing person identification system utilizing temporal facial recognition and predictive trajectory modeling.",
-    summary: "Architected a high-throughput surveillance pipeline that processes multi-source video feeds to identify and report missing persons with 99.2% accuracy.",
-    role: "Computer Vision Lead",
-    tags: ["PyTorch", "OpenCV", "TensorRT", "gRPC"],
-    about: "This system was designed to solve the critical latency challenges in real-time facial recognition across distributed camera networks.",
-    problemStatement: "Missing person identification often fails due to low-resolution feeds and the high computational cost of real-time search.",
-    architecture: "Edge-to-cloud architecture using TensorRT for optimized inference and gRPC for low-latency alert distribution.",
-    challenges: "Handling occlusion and varying lighting conditions in unconstrained public environments.",
-    impact: "Reduced identification time from hours to sub-seconds, providing actionable intelligence for safety teams.",
+    slug: "ai-resume-builder",
+    title: "ResumeAI - Enterprise-Grade AI Resume Builder",
+    desc: "An advanced, AI-powered resume builder designed to craft professional, ATS-friendly resumes in minutes.",
+    summary: "A full-stack application built with Next.js leveraging generative AI to automate resume generation, formatting, and optimization with enterprise-grade security.",
+    role: "Full-Stack Developer",
+    tags: ["Next.js", "Tailwind CSS", "Zustand", "MongoDB", "Gemini AI"],
+    about: "ResumeAI provides an intuitive visual builder interface with real-time preview, intelligent AI suggestions for summaries, and high-fidelity exports.",
+    problemStatement: "Job seekers struggle to create ATS-optimized, professionally formatted resumes while articulating their experiences impactfully.",
+    architecture: "Next.js frontend with Zustand state management. Backend integrates MongoDB, NextAuth.js, and generative AI APIs for smart parsing and rewriting.",
+    challenges: "Implementing a zero-lag real-time preview engine alongside conversational AI for prompt-based resume editing.",
+    impact: "Enabled users to generate pixel-perfect resumes quickly while providing admin analytics and prompt engineering capabilities.",
     caseStudy: {
-      problem: "Traditional surveillance requires manual monitoring, which is slow and prone to human error.",
-      solution: "I implemented an automated detection and notification engine using multi-stage feature extraction.",
-      impact: "Successfully tested on high-concurrency feeds with 99.2% verification precision.",
+      problem: "Manual resume creation is time-consuming and often lacks industry-specific keywords and impactful phrasing.",
+      solution: "Integrated Google Generative AI to automatically generate summaries, rewrite bullet points, and offer smart skill suggestions based on the target role.",
+      impact: "Streamlined the resume-building process with high-quality PDF exports, reducing creation time from hours to minutes.",
     },
-    outcomes: ["99.2% Accuracy", "Real-time Multi-feed Support", "Sub-second Alert Latency"],
-    githubUrl: "https://github.com/Ayush-kathil/ai-surveillance-system",
+    outcomes: ["Real-time Preview Engine", "AI-Powered Rewriting", "Enterprise Security"],
+    githubUrl: "https://github.com/Ayush-kathil/resume-builder",
     liveUrl: "#",
-    image: "/projects/ai-surveillance.png"
+    image: "/projects/resume-builder.png"
   },
   {
     slug: "herway-navigation",
@@ -131,28 +131,6 @@ export const projectsData = [
     outcomes: ["Real-time Detection", "Automated Feedback", "Smooth User Experience"],
     githubUrl: "https://github.com/Ayush-kathil",
     liveUrl: "#",
-    image: "/projects/ai-surveillance.png"
-  },
-  {
-    slug: "ai-resume-builder",
-    title: "ResumeAI - Enterprise-Grade AI Resume Builder",
-    desc: "An advanced, AI-powered resume builder designed to craft professional, ATS-friendly resumes in minutes.",
-    summary: "A full-stack application built with Next.js leveraging generative AI to automate resume generation, formatting, and optimization with enterprise-grade security.",
-    role: "Full-Stack Developer",
-    tags: ["Next.js", "Tailwind CSS", "Zustand", "MongoDB", "Gemini AI"],
-    about: "ResumeAI provides an intuitive visual builder interface with real-time preview, intelligent AI suggestions for summaries, and high-fidelity exports.",
-    problemStatement: "Job seekers struggle to create ATS-optimized, professionally formatted resumes while articulating their experiences impactfully.",
-    architecture: "Next.js frontend with Zustand state management. Backend integrates MongoDB, NextAuth.js, and generative AI APIs for smart parsing and rewriting.",
-    challenges: "Implementing a zero-lag real-time preview engine alongside conversational AI for prompt-based resume editing.",
-    impact: "Enabled users to generate pixel-perfect resumes quickly while providing admin analytics and prompt engineering capabilities.",
-    caseStudy: {
-      problem: "Manual resume creation is time-consuming and often lacks industry-specific keywords and impactful phrasing.",
-      solution: "Integrated Google Generative AI to automatically generate summaries, rewrite bullet points, and offer smart skill suggestions based on the target role.",
-      impact: "Streamlined the resume-building process with high-quality PDF exports, reducing creation time from hours to minutes.",
-    },
-    outcomes: ["Real-time Preview Engine", "AI-Powered Rewriting", "Enterprise Security"],
-    githubUrl: "https://github.com/Ayush-kathil/resume-builder",
-    liveUrl: "#",
-    image: "/projects/ai-surveillance.png"
+    image: "/projects/yoga-pose.png"
   }
 ];

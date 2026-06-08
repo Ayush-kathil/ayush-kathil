@@ -16,7 +16,7 @@ const experiences = [
   },
   {
     title: "Contributor",
-    organization: "DSC Winter of Code",
+    organization: "GSSOC",
     description:
       "Contributed to various open-source repositories, focusing on bug fixes, code maintainability, and passing automated CI/CD checks during technical reviews.",
   },

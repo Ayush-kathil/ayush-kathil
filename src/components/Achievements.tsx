@@ -16,8 +16,8 @@ const achievements = [
     description: "Successfully merged core architecture and bug-fix pull requests into Kubeflow (Katib and Docs-Agent), impacting a global ML infrastructure platform.",
   },
   {
-    title: "DSC Winter of Code 2026",
-    organization: "Google Developer Student Clubs",
+    title: "GSSOC 2026",
+    organization: "GirlScript Summer of Code",
     icon: Trophy,
     description: "Selected from a highly competitive applicant pool to maintain and scale community-driven open-source repositories.",
   },
