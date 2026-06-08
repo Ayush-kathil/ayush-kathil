@@ -18,7 +18,7 @@ export const projectsData = [
     },
     outcomes: ["Real-time Preview Engine", "AI-Powered Rewriting", "Enterprise Security"],
     githubUrl: "https://github.com/Ayush-kathil/resume-builder",
-    liveUrl: "#",
+    liveUrl: "https://faangresume.vercel.app/",
     image: "/projects/resume-builder.png"
   },
   {
@@ -129,7 +129,7 @@ export const projectsData = [
       impact: "Achieved real-time efficient inference, providing instant posture correction feedback and ensuring a smooth user experience.",
     },
     outcomes: ["Real-time Detection", "Automated Feedback", "Smooth User Experience"],
-    githubUrl: "https://github.com/Ayush-kathil",
+    githubUrl: "https://github.com/Ayush-kathil/YPDS-Yoga-Pose-Detection-System",
     liveUrl: "#",
     image: "/projects/yoga-pose.png"
   }

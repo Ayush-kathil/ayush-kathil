@@ -110,7 +110,7 @@ export default function ProfessionalSnapshot() {
           </p>
           <a
             href="#contact"
-            className="inline-flex items-center justify-center rounded-full border border-[var(--border-color)] px-4 py-2 text-sm font-medium hover:bg-[var(--text-primary)] hover:text-[var(--bg-primary)] transition-colors"
+            className="inline-flex items-center justify-center rounded-full border border-[var(--border-color)] px-4 py-2 text-sm font-medium hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors"
           >
             Open contact
           </a>
