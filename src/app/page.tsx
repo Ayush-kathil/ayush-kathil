@@ -6,6 +6,7 @@ import Hero from "@/components/Hero";
 import Preloader from "@/components/Preloader";
 
 const About = dynamic(() => import("@/components/About"));
+const TechStack = dynamic(() => import("@/components/TechStack"));
 const Experience = dynamic(() => import("@/components/Experience"));
 const Achievements = dynamic(() => import("@/components/Achievements"));
 const Responsibility = dynamic(() => import("@/components/Responsibility"));
@@ -51,6 +52,7 @@ export default function Home() {
 
           <section aria-label="Portfolio sections" className="w-full">
             <About />
+            <TechStack />
             <Experience />
             <Achievements />
             <Responsibility />

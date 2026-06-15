@@ -9,22 +9,23 @@
 
 @layer base {
   :root {
-    --bg-primary: #FFFFFF;
-    --bg-secondary: #FAFAFA;
-    --text-primary: #000000;
-    --text-secondary: #555555;
-    --border-color: #EEEEEE;
-    --accent: #000000;
+    --bg-primary: #F8F9FA;
+    --bg-secondary: #FFFFFF;
+    --text-primary: #1F2937;
+    --text-secondary: #4B5563;
+    --border-color: #E5E7EB;
+    --accent: #2563EB;
     --radius-uber: 32px;
   }
 
+  /* No dark mode needed */
   .dark {
-    --bg-primary: #000000;
-    --bg-secondary: #0A0A0A;
-    --text-primary: #FFFFFF;
-    --text-secondary: #AAAAAA;
-    --border-color: #222222;
-    --accent: #FFFFFF;
+    --bg-primary: #F8F9FA;
+    --bg-secondary: #FFFFFF;
+    --text-primary: #1F2937;
+    --text-secondary: #4B5563;
+    --border-color: #E5E7EB;
+    --accent: #2563EB;
   }
 }
 
@@ -68,8 +69,8 @@ body {
 body {
   background-color: var(--bg-primary);
   background-image:
-    radial-gradient(circle at top, rgba(120, 120, 120, 0.05), transparent 28%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 22%);
+    radial-gradient(circle at top, rgba(37, 99, 235, 0.03), transparent 30%),
+    linear-gradient(180deg, #F8F9FA, #F8F9FA);
   color: var(--text-primary);
   font-family: var(--font-sans), sans-serif;
   overflow-x: hidden;
@@ -195,4 +196,19 @@ html.is-loading nav {
 @keyframes waveMove {
   0% { transform: translateX(-400px); }
   100% { transform: translateX(0); }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+}
+.animate-marquee-slow {
+  animation: marquee 35s linear infinite;
+}
+.animate-marquee-reverse {
+  animation: marquee 30s linear infinite reverse;
 }

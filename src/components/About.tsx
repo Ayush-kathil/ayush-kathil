@@ -4,27 +4,11 @@ import { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import TextReveal from "@/components/TextReveal";
+import TextScrub from "@/components/TextScrub";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const strengths = [
-  {
-    title: "Gen AI & RAG",
-    body: "Architecting Retrieval-Augmented Generation systems with vector embeddings, semantic search, and prompt engineering.",
-  },
-  {
-    title: "ML Infrastructure",
-    body: "Optimizing training pipelines and serving infrastructure for large-scale models using Kubernetes and Kubeflow.",
-  },
-  {
-    title: "Backend Systems",
-    body: "Designing distributed architectures with a focus on high throughput, low latency, and efficient data processing.",
-  },
-  {
-    title: "Computer Vision",
-    body: "Implementing real-time spatial and temporal analysis systems using deep learning for surveillance and safety.",
-  },
-];
+
 
 export default function About() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -61,19 +45,20 @@ export default function About() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
-          <div className="about-card rounded-[var(--radius-uber)] bg-black p-8 sm:p-14 text-white flex flex-col justify-between">
+        <div className="flex flex-col gap-6 items-stretch">
+          <div className="about-card rounded-[var(--radius-uber)] bg-black p-8 sm:p-14 text-white flex flex-col justify-between w-full max-w-4xl mx-auto">
             <div>
               <p className="text-white/40 uppercase tracking-widest text-[9px] sm:text-[10px] mb-8 sm:mb-12 font-semibold">Executive Summary</p>
-              <p className="text-[clamp(1.5rem,5vw,2.5rem)] font-light leading-[1.2] mb-8 sm:mb-10">
-                I am Ayush Gupta, a Software Engineer specialized in building production-ready <span className="text-white font-medium">Gen AI systems</span> and high-concurrency backend infrastructure.
-              </p>
-              <p className="text-base sm:text-lg text-white/50 font-light leading-relaxed mb-10 sm:mb-12">
+              <TextScrub 
+                text="I am Ayush Gupta, a Software Engineer specialized in building production-ready Gen AI systems and high-concurrency backend infrastructure." 
+                className="text-[clamp(1.5rem,5vw,2.5rem)] font-light leading-[1.2] mb-8 sm:mb-10"
+              />
+              <p className="text-base sm:text-lg text-white/50 font-light leading-relaxed mb-10 sm:mb-12 max-w-2xl">
                 Currently engineering distributed RAG systems and contributing to Kubeflow core. I solve complex scaling challenges at the intersection of systems engineering and large language models.
               </p>
             </div>
             
-            <div className="grid grid-cols-2 gap-6 sm:gap-8 pt-8 border-t border-white/10">
+            <div className="grid grid-cols-2 gap-6 sm:gap-8 pt-8 border-t border-white/10 mt-12">
               <div>
                 <p className="text-white/30 text-[9px] sm:text-[10px] uppercase tracking-widest mb-2 font-semibold">B.Tech Graduation</p>
                 <p className="text-lg sm:text-xl font-light">2028 @ VIT Bhopal</p>
@@ -84,31 +69,9 @@ export default function About() {
               </div>
             </div>
           </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {strengths.map((item) => (
-              <div key={item.title} className="about-card rounded-[var(--radius-uber)] border border-[var(--border-color)] bg-[var(--bg-secondary)] p-6 sm:p-8 flex flex-col justify-between hover:bg-white dark:hover:bg-[#0a0a0a] transition-all duration-500">
-                <span className="w-fit rounded-full border border-[var(--border-color)] px-3 py-1 text-[9px] uppercase tracking-widest text-[var(--text-secondary)] font-semibold mb-6 sm:mb-8">
-                  {item.title}
-                </span>
-                <p className="text-base sm:text-lg md:text-xl font-light leading-snug text-[var(--text-primary)]">
-                  {item.body}
-                </p>
-              </div>
-            ))}
-          </div>
         </div>
 
-        <div className="mt-24 pt-12 border-t border-[var(--border-color)] overflow-hidden">
-          <p className="text-[10px] uppercase tracking-[0.2em] text-[var(--text-secondary)] mb-8 font-semibold text-center">Engineered With</p>
-          <div className="flex flex-wrap justify-center gap-x-12 gap-y-6 opacity-40 hover:opacity-100 transition-opacity duration-500">
-            {["LangChain", "Kubernetes", "PyTorch", "gRPC", "Go", "Next.js", "TypeScript", "FAISS", "Pinecone", "Docker", "Redis", "Python", "C++", "SQL", "Java", "JavaScript", "Node.js", "React", "HuggingFace", "Pandas", "OpenCV"].map((skill) => (
-              <span key={skill} className="text-xl md:text-2xl font-semibold tracking-tighter grayscale hover:grayscale-0 transition-all cursor-default">
-                {skill}
-              </span>
-            ))}
-          </div>
-        </div>
+
       </div>
     </section>
   );

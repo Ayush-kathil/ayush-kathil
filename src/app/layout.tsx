@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
-import ThemeToggle from "@/components/ThemeToggle";
 import Navbar from "@/components/Navbar";
 
 const interFont = Inter({
@@ -80,20 +79,12 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <meta name="color-scheme" content="light dark" />
-        <meta name="theme-color" content="#0B0B0C" />
-        <meta name="theme-color" media="(prefers-color-scheme: light)" content="#FAFAF8" />
+        <meta name="theme-color" content="#F8F9FA" />
         <script
           dangerouslySetInnerHTML={{
             __html: `
               try {
-                var savedTheme = localStorage.getItem('portfolio-theme');
-                if (savedTheme === 'dark') {
-                  document.documentElement.classList.add('dark');
-                } else {
-                  document.documentElement.classList.remove('dark');
-                }
-
+                document.documentElement.classList.remove('dark');
                 var ua = navigator.userAgent || '';
                 var isAndroid = /Android/i.test(ua);
                 var cores = navigator.hardwareConcurrency || 8;
@@ -123,7 +114,6 @@ export default function RootLayout({
           <Navbar />
           {children}
         </SmoothScroll>
-        <ThemeToggle />
       </body>
     </html>
   );

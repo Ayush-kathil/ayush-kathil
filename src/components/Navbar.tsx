@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { Home, User, Briefcase, Trophy, FolderKanban, MessageSquare } from "lucide-react";
 import Link from "next/link";
+import Magnetic from "@/components/Magnetic";
 
 export default function Navbar() {
   const [activeSection, setActiveSection] = useState("hero");
@@ -111,7 +112,9 @@ export default function Navbar() {
                     : "text-[var(--text-secondary)] hover:text-black dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5"
                 }`}
               >
-                <Icon className={`w-4 h-4 sm:w-4 sm:h-4 transition-transform duration-300 ${isActive ? "scale-110" : ""}`} />
+                <Magnetic>
+                  <Icon className={`w-4 h-4 sm:w-4 sm:h-4 transition-transform duration-300 ${isActive ? "scale-110" : ""}`} />
+                </Magnetic>
                 <span className="block">{item.name}</span>
                 {isActive && (
                   <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-black dark:bg-white sm:hidden" />

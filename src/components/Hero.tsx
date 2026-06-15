@@ -3,11 +3,13 @@
 import Link from "next/link";
 import { ArrowRight, Download } from "lucide-react";
 import { useEffect, useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import gsap from "gsap";
 
 export default function Hero({ preloaderComplete = true }: { preloaderComplete?: boolean }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
+  const { scrollY } = useScroll();
 
   useEffect(() => {
     if (!preloaderComplete) return;
@@ -65,9 +67,16 @@ export default function Hero({ preloaderComplete = true }: { preloaderComplete?:
             </p>
           </div>
           
-          <h1 className="text-white text-[clamp(3rem,12vw,6.5rem)] font-semibold tracking-[-0.04em] leading-[0.9] mb-6 sm:mb-8 break-words">
+          <motion.h1 
+            style={{ 
+              scale: useTransform(scrollY, [0, 500], [1, 3.5]),
+              y: useTransform(scrollY, [0, 500], [0, 150]),
+              opacity: useTransform(scrollY, [0, 300, 500], [1, 0.8, 0])
+            }}
+            className="text-white text-[clamp(3rem,12vw,6.5rem)] font-semibold tracking-[-0.04em] leading-[0.9] mb-6 sm:mb-8 break-words origin-center z-50"
+          >
             Ayush Gupta
-          </h1>
+          </motion.h1>
 
           <p className="mx-auto max-w-4xl text-white/60 text-[clamp(1rem,4vw,1.4rem)] font-light leading-relaxed mb-10 sm:mb-12">
             Software Engineer specializing in <span className="text-white font-medium">Scaling Intelligence with Distributed RAG Systems</span> and production-grade AI infrastructure.
@@ -81,8 +90,8 @@ export default function Hero({ preloaderComplete = true }: { preloaderComplete?:
               View Projects <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Link>
             <a
-              href="/resume.pdf"
-              download
+              href="/Ayush_Gupta_Resume.pdf"
+              download="Ayush_Gupta_Resume.pdf"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md px-8 py-4 text-white text-base sm:text-lg font-semibold transition-all hover:bg-white/10"
             >
               Download CV <Download className="h-5 w-5" />
