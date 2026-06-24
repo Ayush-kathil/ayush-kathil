@@ -1,87 +1,209 @@
 <div align="center">
-  
-  # Hi there, I'm Ayush Gupta 👋
-  
-  ### Software Engineer | Backend Architecture | Distributed Systems
-  
-  [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/ayushkathil/)
-  [![Portfolio](https://img.shields.io/badge/Website-Visit_My_Portfolio-000000?style=for-the-badge&logo=About.me)](https://ayushgupta3.vercel.app/)
-  [![LeetCode](https://img.shields.io/badge/LeetCode-View_Profile-FFA116?style=for-the-badge&logo=leetcode)](https://leetcode.com/u/AyushKathil/)
-  [![Email](https://img.shields.io/badge/Email-Contact_Me-EA4335?style=for-the-badge&logo=gmail)](mailto:kathilshiva@gmail.com)
+
+# Ayush Gupta
+
+### Software Engineering • Open Source • Machine Learning
+
+<p>
+  <a href="https://ayushgupta3.vercel.app">Portfolio</a> •
+  <a href="https://linkedin.com/in/ayushkathil">LinkedIn</a> •
+  <a href="mailto:kathilshiva@gmail.com">Email</a> •
+  <a href="https://leetcode.com/u/AyushKathil/">LeetCode</a>
+</p>
+
+<img src="https://readme-typing-svg.demolab.com?font=Inter&weight=500&size=18&pause=1200&center=true&vCenter=true&width=700&lines=Open+Source+Contributor+at+Kubeflow;Building+AI+Products+and+Developer+Tools;Exploring+Distributed+Systems+and+System+Design" />
 
 </div>
 
 ---
 
-## 👨‍💻 About Me
+## About
 
-I am a Software Engineer focused on building robust backend architecture, scalable data infrastructure, and efficient distributed systems. I actively contribute to major open-source ecosystems (like Kubeflow) and thrive on optimizing system latency, engineering full-stack applications, and writing production-ready, heavily tested code. 
+I'm a Computer Science student who enjoys building software that solves practical problems.
 
-- 🔭 **Currently working on:** Core architectural improvements and bug fixes for **Kubeflow** (Katib and Docs-Agent).
-- 🌱 **Focusing on:** Advanced system architecture, scalable data pipelines, and low-latency processing.
-- 🤝 **Community:** Core Technical Member at MATRIX & TechnoMech Clubs, mentoring students and deploying campus-wide tools for 5,000+ users.
+Most of my time is currently spent contributing to open source, improving my understanding of large-scale systems, and building products that combine engineering with machine learning.
 
 ---
 
-## 🛠️ Tech Stack
+## Current Work
 
-**Languages:**  
-![Python](https://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![C++](https://img.shields.io/badge/-C++-00599C?style=flat-square&logo=c%2B%2B&logoColor=white)
-![Java](https://img.shields.io/badge/-Java-007396?style=flat-square&logo=java&logoColor=white)
-![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
-![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
-![SQL](https://img.shields.io/badge/-SQL-4479A1?style=flat-square&logo=mysql&logoColor=white)
+<table>
+<tr>
+<td>
 
-**Frameworks & Libraries:**  
-![Next.js](https://img.shields.io/badge/-Next.js-000000?style=flat-square&logo=next.js&logoColor=white)
-![React](https://img.shields.io/badge/-React-61DAFB?style=flat-square&logo=react&logoColor=black)
-![Node.js](https://img.shields.io/badge/-Node.js-339933?style=flat-square&logo=node.js&logoColor=white)
-![OpenCV](https://img.shields.io/badge/-OpenCV-5C3EE8?style=flat-square&logo=opencv&logoColor=white)
-![Pandas](https://img.shields.io/badge/-Pandas-150458?style=flat-square&logo=pandas&logoColor=white)
+### Open Source
 
-**Tools & Infrastructure:**  
-![Kubeflow](https://img.shields.io/badge/-Kubeflow-0088CC?style=flat-square&logo=kubeflow&logoColor=white)
-![GitHub Actions](https://img.shields.io/badge/-GitHub_Actions-2088FF?style=flat-square&logo=github-actions&logoColor=white)
-![Pytest](https://img.shields.io/badge/-Pytest-0A9EDC?style=flat-square&logo=pytest&logoColor=white)
+* Kubeflow Pipelines
+* Kubeflow Katib
+* Kubeflow Docs-Agent
+* DevPath (GSSoC 2026)
 
----
+</td>
 
-## 🚀 Featured Projects
+<td>
 
-### 🛡️ Advanced Surveillance System
-*Python, Spatial/Temporal Frameworks, OpenCV*
-- Engineered a complex data pipeline combining spatial and temporal video analysis to achieve real-time anomaly detection in CCTV streams.
-- Designed a parallel streaming and inference pipeline using Python multiprocessing, ensuring low-latency video processing for continuous surveillance.
-- Implemented automated image processing algorithms for activity recognition, significantly reducing the manual effort required for threat identification.
+### Building
 
-### 🧭 HerWay - Predictive Safe Route Navigation System
-*Next.js, Predictive Data Analytics, Geospatial APIs*
-- Built a data-driven safety navigation system that identifies safer travel routes by analyzing real-time factors like location data, crime rates, and proximity to emergency services using predictive data models.
-- Developed real-time tracking and emergency response features, enabling SOS alerts and live location sharing to improve user safety during travel scenarios.
-- Designed and integrated a scalable mobile architecture (Android + backend services) with location-based APIs and data pipelines to support continuous route evaluation.
+* Cura
+* AI Resume Builder
+* Personal Developer Tools
+* Experimental AI Applications
 
-### 🏨 Sunrise Hotel Website
-*Next.js, TypeScript, Tailwind CSS, Supabase*
-- Built a production-ready, full-stack hotel booking platform optimizing for fast load times and responsive UX.
-- Architected a secure backend using Supabase, implementing SMTP-based email authentication to improve user management and reliability.
-- Deployed the application via Vercel with modern CI/CD workflows, ensuring high availability, consistent uptime, and seamless updates.
-
-### 🧘‍♂️ Yoga Pose Detection Engine
-*Python, OpenCV, MediaPipe, NumPy*
-- Implemented image-based keypoint detection algorithms to classify human poses in real-time, greatly improving posture accuracy detection.
-- Mapped dynamic body joint angles to predefined pose templates to deliver automated, instant feedback for user posture correction.
-- Optimized the video frame processing loop and integrated lightweight structural models to guarantee efficient processing and a smooth user experience.
+</td>
+</tr>
+</table>
 
 ---
 
-## 🏆 Open Source & Achievements
+## Tech Stack
 
-- **Open Source Architect (Kubeflow):** Successfully merged core architecture and bug-fix pull requests into Katib (Automated Tuning) and Docs-Agent. Fixed trainer startup crashes by implementing a robust JSON parser for training parameters with comprehensive pytest coverage (PR #2656, PR #186).
-- **DSC Winter of Code 2026:** Selected from a highly competitive applicant pool as an open-source contributor to maintain and scale community-driven repositories, focusing on bug fixes and automated CI/CD checks.
-- **#T20DSAChallenge Competitor:** Completed an intensive data structures and algorithms challenge, demonstrating advanced proficiency in Stacks, Queues, and complex algorithmic problem-solving.
+### Languages
 
-<br/>
+<p>
+<img src="https://skillicons.dev/icons?i=cpp,java,python,js,ts,sql" />
+</p>
+
+### Backend
+
+<p>
+<img src="https://skillicons.dev/icons?i=nodejs,express,fastapi" />
+</p>
+
+### Frontend
+
+<p>
+<img src="https://skillicons.dev/icons?i=react,nextjs,tailwind,vite" />
+</p>
+
+### Databases
+
+<p>
+<img src="https://skillicons.dev/icons?i=postgres,mongodb,redis,supabase" />
+</p>
+
+### Cloud & Infrastructure
+
+<p>
+<img src="https://skillicons.dev/icons?i=docker,kubernetes,aws,vercel" />
+</p>
+
+### AI / ML
+
+<p>
+<img src="https://skillicons.dev/icons?i=tensorflow,pytorch" />
+</p>
+
+### Developer Tools
+
+<p>
+<img src="https://skillicons.dev/icons?i=git,github,githubactions,linux,vscode" />
+</p>
+
+---
+
+## Featured Projects
+
+<table>
+<tr>
+<td width="50%">
+
+### 🏥 Cura
+
+Healthcare-focused assistant built around retrieval, search, and conversational workflows.
+
+**Focus**
+
+* Knowledge Retrieval
+* Conversational Interfaces
+* Search Systems
+
+</td>
+
+<td width="50%">
+
+### 📄 AI Resume Builder
+
+Resume generation platform designed to help users create polished, ATS-friendly resumes.
+
+**Focus**
+
+* AI-Assisted Editing
+* Resume Generation
+* User Experience
+
+</td>
+</tr>
+
+<tr>
+<td width="50%">
+
+### 🧭 HerWay
+
+Navigation platform focused on route awareness and safety-first travel experiences.
+
+**Focus**
+
+* Location Intelligence
+* Emergency Workflows
+* Route Analysis
+
+</td>
+
+<td width="50%">
+
+### 🧘 Yoga Pose Detection
+
+Computer vision project for posture analysis and movement feedback.
+
+**Focus**
+
+* Pose Estimation
+* Computer Vision
+* Real-Time Analysis
+
+</td>
+</tr>
+</table>
+
+---
+
+## Open Source
+
+| Project             | Area                    |
+| ------------------- | ----------------------- |
+| Kubeflow Pipelines  | Workflow Infrastructure |
+| Kubeflow Katib      | Hyperparameter Tuning   |
+| Kubeflow Docs-Agent | Documentation Tooling   |
+| DevPath             | Community Open Source   |
+
+---
+
+## Highlights
+
+* Software Engineering Intern — HackerRank
+* Contributor — Kubeflow
+* Contributor — GSSoC 2026
+* Patent Application Filed through VIT Bhopal University
+* Applied Machine Learning in Python — University of Michigan
+* Google Cloud Generative AI Certification
+
+---
+
+## GitHub Activity
+
+<p align="center">
+<img width="49%" src="https://github-readme-stats.vercel.app/api?username=Ayush-kathil&show_icons=true&hide_border=true&theme=transparent" />
+<img width="49%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Ayush-kathil&layout=compact&hide_border=true&theme=transparent" />
+</p>
+
+<p align="center">
+<img src="https://streak-stats.demolab.com?user=Ayush-kathil&hide_border=true&theme=transparent" />
+</p>
+
+---
+
 <div align="center">
-  <i>"Writing production-ready, heavily tested code."</i>
+
+*"The best way to learn systems is to build them."*
+
 </div>
