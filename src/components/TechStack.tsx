@@ -41,12 +41,12 @@ const bottomRow: TechItem[] = [
 ];
 
 const Pill = ({ item }: { item: TechItem }) => (
-  <div className="flex items-center gap-3 px-6 py-3.5 bg-white rounded-full shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-gray-100/50 flex-shrink-0 hover:scale-105 transition-transform duration-300 cursor-default">
+  <div className="flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2.5 sm:py-3.5 bg-white rounded-full shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-gray-100/50 flex-shrink-0 hover:scale-105 transition-transform duration-300 cursor-default">
     <div 
-      className="w-3.5 h-3.5 rounded-full shadow-inner"
+      className="w-3 h-3 sm:w-3.5 sm:h-3.5 rounded-full shadow-inner"
       style={{ backgroundColor: item.color }}
     />
-    <span className="font-semibold text-[var(--text-primary)] text-sm tracking-wide">
+    <span className="font-semibold text-[var(--text-primary)] text-xs sm:text-sm tracking-wide">
       {item.name}
     </span>
   </div>

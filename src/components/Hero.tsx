@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { ArrowRight, Download } from "lucide-react";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import gsap from "gsap";
 
@@ -10,6 +10,16 @@ export default function Hero({ preloaderComplete = true }: { preloaderComplete?:
   const containerRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
   const { scrollY } = useScroll();
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    const { clientX, clientY } = e;
+    const { innerWidth, innerHeight } = window;
+    setMousePos({
+      x: (clientX / innerWidth - 0.5) * 15,
+      y: (clientY / innerHeight - 0.5) * -15,
+    });
+  };
 
   useEffect(() => {
     if (!preloaderComplete) return;
@@ -45,16 +55,18 @@ export default function Hero({ preloaderComplete = true }: { preloaderComplete?:
   return (
     <section
       aria-busy={!preloaderComplete}
+      onMouseMove={handleMouseMove}
       className="relative w-full min-h-[100svh] bg-[var(--bg-primary)] flex items-center justify-center overflow-hidden px-4 sm:px-6 py-6 md:py-8"
     >
       <div 
         ref={containerRef}
         className="hero-container relative w-full max-w-[1600px] min-h-[calc(100svh-4rem)] py-12 md:py-0 rounded-[var(--radius-uber)] overflow-hidden bg-black flex items-center justify-center"
+        style={{ perspective: "1000px" }}
       >
-        {/* SUBTLE ARCHITECTURAL BACKGROUND */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.1)_0%,transparent_50%)]" />
-        </div>
+        {/* HIGH CONTRAST BLACK BACKGROUND */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_50%)]"></div>
+        <div className="absolute top-0 w-full h-[500px] bg-gradient-to-b from-white/5 to-transparent blur-3xl opacity-50 pointer-events-none" />
+        <div className="absolute bottom-0 w-full h-full bg-gradient-to-t from-black via-transparent to-transparent z-10" />
 
         <div className="hero-content relative z-20 w-full max-w-6xl text-center px-4 sm:px-6">
           <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-6 sm:mb-8">
@@ -71,9 +83,11 @@ export default function Hero({ preloaderComplete = true }: { preloaderComplete?:
             style={{ 
               scale: useTransform(scrollY, [0, 500], [1, 3.5]),
               y: useTransform(scrollY, [0, 500], [0, 150]),
-              opacity: useTransform(scrollY, [0, 300, 500], [1, 0.8, 0])
+              opacity: useTransform(scrollY, [0, 300, 500], [1, 0.8, 0]),
             }}
-            className="text-white text-[clamp(3rem,12vw,6.5rem)] font-semibold tracking-[-0.04em] leading-[0.9] mb-6 sm:mb-8 break-words origin-center z-50"
+            animate={{ rotateX: mousePos.y, rotateY: mousePos.x }}
+            transition={{ type: "spring", stiffness: 100, damping: 30 }}
+            className="text-white text-[clamp(2.2rem,10vw,6.5rem)] font-semibold tracking-[-0.04em] leading-[0.9] mb-6 sm:mb-8 break-words origin-center z-50 transform-gpu"
           >
             Ayush Gupta
           </motion.h1>

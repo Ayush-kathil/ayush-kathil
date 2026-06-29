@@ -1,11 +1,64 @@
 "use client";
 
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
 import TextReveal from "@/components/TextReveal";
 
 gsap.registerPlugin(ScrollTrigger);
+
+function ExperienceCard({ exp, index }: { exp: any, index: number }) {
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  const [isTouch, setIsTouch] = useState(false);
+
+  useEffect(() => {
+    setIsTouch(window.matchMedia("(hover: none) and (pointer: coarse)").matches);
+  }, []);
+
+  function handleMouseMove({ currentTarget, clientX, clientY }: React.MouseEvent) {
+    if (isTouch) return;
+    const { left, top } = currentTarget.getBoundingClientRect();
+    mouseX.set(clientX - left);
+    mouseY.set(clientY - top);
+  }
+
+  return (
+    <div 
+      className="exp-item group relative rounded-[var(--radius-uber)] bg-[#050505] p-6 sm:p-12 border border-white/10 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-blue-500/10"
+      onMouseMove={handleMouseMove}
+    >
+      <motion.div
+        className="pointer-events-none absolute -inset-px rounded-[var(--radius-uber)] opacity-0 transition duration-300 group-hover:opacity-100 hidden md:block"
+        style={{
+          background: useMotionTemplate`
+            radial-gradient(
+              600px circle at ${mouseX}px ${mouseY}px,
+              rgba(59, 130, 246, 0.15),
+              transparent 80%
+            )
+          `,
+        }}
+      />
+      <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6 sm:gap-8">
+        <div className="md:w-1/3">
+          <p className="text-[9px] sm:text-[10px] font-semibold uppercase tracking-widest text-blue-400 mb-2">
+            {exp.organization}
+          </p>
+          <h3 className="text-xl sm:text-2xl md:text-4xl font-semibold tracking-tight text-white group-hover:text-blue-50 transition-colors duration-500">
+            {exp.title}
+          </h3>
+        </div>
+        <div className="md:w-2/3 md:pl-16 border-t md:border-t-0 md:border-l border-white/10 pt-6 md:pt-0 group-hover:border-blue-500/30 transition-colors duration-500">
+          <p className="text-base sm:text-lg md:text-xl font-light leading-relaxed text-white/60 group-hover:text-white/90 transition-colors duration-500">
+            {exp.description}
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 const experiences = [
   {
@@ -59,26 +112,7 @@ export default function Experience() {
 
         <div className="grid grid-cols-1 gap-6">
           {experiences.map((exp, i) => (
-            <div 
-              key={i} 
-              className="exp-item group relative overflow-hidden rounded-[var(--radius-uber)] bg-[var(--bg-primary)] p-6 sm:p-12 border border-[var(--border-color)] hover:border-black/5 dark:hover:border-white/5 transition-colors duration-500"
-            >
-              <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 sm:gap-8">
-                <div className="md:w-1/3">
-                  <p className="text-[9px] sm:text-[10px] font-semibold uppercase tracking-widest text-[var(--text-secondary)] mb-2">
-                    {exp.organization}
-                  </p>
-                  <h3 className="text-xl sm:text-2xl md:text-4xl font-semibold tracking-tight group-hover:translate-x-1 sm:group-hover:translate-x-2 transition-transform duration-500">
-                    {exp.title}
-                  </h3>
-                </div>
-                <div className="md:w-2/3 md:pl-16 border-t md:border-t-0 md:border-l border-[var(--border-color)] pt-6 md:pt-0 group-hover:border-black/5 dark:group-hover:border-white/5 transition-colors duration-500">
-                  <p className="text-base sm:text-lg md:text-xl font-light leading-relaxed text-[var(--text-secondary)] group-hover:text-black dark:group-hover:text-white transition-colors duration-500">
-                    {exp.description}
-                  </p>
-                </div>
-              </div>
-            </div>
+            <ExperienceCard key={i} exp={exp} index={i} />
           ))}
         </div>
       </div>

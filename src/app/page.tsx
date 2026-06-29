@@ -5,13 +5,13 @@ import dynamic from "next/dynamic";
 import Hero from "@/components/Hero";
 import Preloader from "@/components/Preloader";
 
-const About = dynamic(() => import("@/components/About"));
-const TechStack = dynamic(() => import("@/components/TechStack"));
-const Experience = dynamic(() => import("@/components/Experience"));
+const About = dynamic(() => import("@/components/About"), { loading: () => <div className="h-screen flex items-center justify-center">Loading...</div> });
+const TechStack = dynamic(() => import("@/components/TechStack"), { loading: () => <div className="h-screen flex items-center justify-center">Loading...</div> });
+const Experience = dynamic(() => import("@/components/Experience"), { loading: () => <div className="h-screen flex items-center justify-center">Loading...</div> });
 const Achievements = dynamic(() => import("@/components/Achievements"));
 const Responsibility = dynamic(() => import("@/components/Responsibility"));
-const FeaturedProjects = dynamic(() => import("@/components/FeaturedProjects"));
-const Contact = dynamic(() => import("@/components/Contact"));
+const FeaturedProjects = dynamic(() => import("@/components/FeaturedProjects"), { loading: () => <div className="h-screen flex items-center justify-center">Loading...</div> });
+const Contact = dynamic(() => import("@/components/Contact"), { loading: () => <div className="h-screen flex items-center justify-center">Loading...</div> });
 const Footer = dynamic(() => import("@/components/Footer"));
 
 const subscribeToPreloaderStore = () => () => {};
@@ -44,22 +44,20 @@ export default function Home() {
         <Preloader onComplete={handlePreloaderComplete} />
       )}
 
-      <main id="main-content" className="w-full bg-[var(--bg-primary)] text-[var(--text-primary)] min-h-screen relative">
+      <main id="main-content" className="w-full bg-[var(--bg-primary)] text-[var(--text-primary)] min-h-[100dvh] relative">
         <div className="relative z-10 w-full">
           <section aria-label="Hero section" className="w-full">
             <Hero preloaderComplete={preloaderComplete} />
           </section>
 
-          <section aria-label="Portfolio sections" className="w-full">
-            <About />
-            <TechStack />
-            <Experience />
-            <Achievements />
-            <Responsibility />
-            <FeaturedProjects />
-            <Contact />
-            <Footer />
-          </section>
+          <About />
+          <TechStack />
+          <Experience />
+          <Achievements />
+          <Responsibility />
+          <FeaturedProjects />
+          <Contact />
+          <Footer />
         </div>
       </main>
     </>

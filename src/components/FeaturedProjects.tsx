@@ -1,14 +1,66 @@
 "use client";
 
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import Link from "next/link";
 import { ArrowUpRight, Github, ExternalLink } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import TextReveal from "@/components/TextReveal";
 import { projectsData } from "@/data/projects";
 
 gsap.registerPlugin(ScrollTrigger);
+
+function TiltCard({ project, children }: { project: any, children: React.ReactNode }) {
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  const [isTouch, setIsTouch] = useState(false);
+
+  useEffect(() => {
+    setIsTouch(window.matchMedia("(hover: none) and (pointer: coarse)").matches);
+  }, []);
+
+  const mouseXSpring = useSpring(x, { stiffness: 300, damping: 30 });
+  const mouseYSpring = useSpring(y, { stiffness: 300, damping: 30 });
+
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["10deg", "-10deg"]);
+  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-10deg", "10deg"]);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (isTouch) return;
+    const rect = e.currentTarget.getBoundingClientRect();
+    const width = rect.width;
+    const height = rect.height;
+    const mouseX = e.clientX - rect.left;
+    const mouseY = e.clientY - rect.top;
+    const xPct = mouseX / width - 0.5;
+    const yPct = mouseY / height - 0.5;
+    x.set(xPct);
+    y.set(yPct);
+  };
+
+  const handleMouseLeave = () => {
+    x.set(0);
+    y.set(0);
+  };
+
+  return (
+    <motion.div
+      className="project-card group relative flex flex-col justify-between bg-[var(--bg-secondary)] border border-[var(--border-color)] rounded-[var(--radius-uber)] p-6 sm:p-8 hover:bg-white dark:hover:bg-[#0a0a0a] hover:shadow-[0_20px_50px_rgba(0,0,0,0.05)] transition-colors duration-500"
+      style={{
+        rotateX: isTouch ? 0 : rotateX,
+        rotateY: isTouch ? 0 : rotateY,
+        transformStyle: "preserve-3d",
+      }}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+    >
+      <div style={{ transform: isTouch ? "translateZ(0px)" : "translateZ(30px)", transformStyle: "preserve-3d" }}>
+        {children}
+      </div>
+    </motion.div>
+  );
+}
 
 export default function FeaturedProjects() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -52,11 +104,8 @@ export default function FeaturedProjects() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projectsData.map((project, i) => (
-            <div 
-              key={project.slug}
-              className="project-card group relative flex flex-col justify-between bg-[var(--bg-secondary)] border border-[var(--border-color)] rounded-[var(--radius-uber)] p-6 sm:p-8 hover:bg-white dark:hover:bg-[#0a0a0a] hover:shadow-[0_20px_50px_rgba(0,0,0,0.05)] transition-all duration-500"
-            >
-              <div className="relative aspect-[16/10] rounded-2xl overflow-hidden bg-black/5 mb-6 sm:mb-8 border border-[var(--border-color)]">
+            <TiltCard key={project.slug} project={project}>
+              <div className="relative aspect-[16/10] rounded-2xl overflow-hidden bg-black/5 mb-6 sm:mb-8 border border-[var(--border-color)] shadow-xl" style={{ transform: "translateZ(50px)" }}>
                 {project.video ? (
                   <video
                     src={project.video}
@@ -148,7 +197,7 @@ export default function FeaturedProjects() {
                   Case Study <ArrowUpRight className="w-4 h-4" />
                 </Link>
               </div>
-            </div>
+            </TiltCard>
           ))}
         </div>
       </div>

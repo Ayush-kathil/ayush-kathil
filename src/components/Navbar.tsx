@@ -17,10 +17,8 @@ export default function Navbar() {
     if (typeof window === "undefined") return;
 
     const handleScroll = () => {
-      const isMobile = window.innerWidth < 768;
       const scrollY = window.scrollY;
-      
-      if (isMobile && pathname === "/") {
+      if (pathname === "/") {
         setIsHomeSection(scrollY < 100);
       } else {
         setIsHomeSection(false);
@@ -62,27 +60,35 @@ export default function Navbar() {
     if (pathname !== "/") return;
 
     const sectionIds = ["about", "experience", "achievements", "projects", "contact"];
-    const observerOptions = {
-      root: null,
-      rootMargin: "-20% 0px -60% 0px",
-      threshold: 0,
-    };
+    
+    const handleScrollTracking = () => {
+      const windowHeight = window.innerHeight;
+      let newSection = "";
 
-    const observerCallback = (entries: IntersectionObserverEntry[]) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setActiveSection(entry.target.id);
+      for (const id of sectionIds) {
+        const element = document.getElementById(id);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          // Find the section that has scrolled past the top third of the viewport.
+          // Because sections are in order, the last one to satisfy this is the active one.
+          if (rect.top <= windowHeight / 3) {
+            newSection = id;
+          }
         }
-      });
+      }
+
+      if (newSection) {
+        setActiveSection((prev) => (prev !== newSection ? newSection : prev));
+      }
     };
 
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
-    sectionIds.forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
-    });
+    window.addEventListener("scroll", handleScrollTracking);
+    // Initial check
+    handleScrollTracking();
 
-    return () => observer.disconnect();
+    return () => {
+      window.removeEventListener("scroll", handleScrollTracking);
+    };
   }, [pathname]);
 
   if (isHidden) return null;

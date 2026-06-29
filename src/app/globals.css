@@ -8,6 +8,10 @@
 }
 
 @layer base {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+  
   :root {
     --bg-primary: #F8F9FA;
     --bg-secondary: #FFFFFF;
@@ -16,6 +20,10 @@
     --border-color: #E5E7EB;
     --accent: #2563EB;
     --radius-uber: 32px;
+    --z-base: 10;
+    --z-nav: 50;
+    --z-modal: 100;
+    --z-preloader: 9999;
   }
 
   /* No dark mode needed */
@@ -32,6 +40,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 6rem;
+  scrollbar-gutter: stable;
 }
 
 body {
