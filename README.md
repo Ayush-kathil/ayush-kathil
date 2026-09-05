@@ -34,15 +34,25 @@
 <!--======== CONTRIBUTION SNAKE ========-->
 <div align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Ayush-kathil/Ayush-kathil/output/github-snake-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Ayush-kathil/Ayush-kathil/output/github-snake.svg" />
-    <img alt="github-snake" src="https://raw.githubusercontent.com/Ayush-kathil/Ayush-kathil/output/github-snake-dark.svg" width="100%" />
+    <source
+      media="(prefers-color-scheme: dark)"
+      srcset="https://raw.githubusercontent.com/Ayush-kathil/Ayush-kathil/output/github-snake-dark.svg"
+    />
+    <source
+      media="(prefers-color-scheme: light)"
+      srcset="https://raw.githubusercontent.com/Ayush-kathil/Ayush-kathil/output/github-snake.svg"
+    />
+    <img
+      alt="GitHub contribution snake"
+      src="https://raw.githubusercontent.com/Ayush-kathil/Ayush-kathil/output/github-snake.svg"
+      width="100%"
+    />
   </picture>
 </div>
 
 <br>
 
-<!--======== GITHUB STATS DASHBOARD ========-->
+<!--======== GITHUB STATS ========-->
 <div id="user-content-toc">
   <ul align="center">
     <summary><h2 style="display: inline-block; font-family: Inter, sans-serif"><samp>GITHUB ANALYTICS</samp></h2></summary>
@@ -52,28 +62,14 @@
 <br>
 
 <p align="center">
-  <img width="49%" src="https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api?username=Ayush-kathil&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&count_private=true&include_all_commits=true" alt="GitHub Stats" />
-  <img width="49%" src="https://streak-stats.demolab.com?user=Ayush-kathil&theme=tokyonight&hide_border=true&background=0D1117&stroke=58A6FF&ring=58A6FF&fire=FF6E40&currStreakLabel=58A6FF&sideLabels=C9D1D9&dates=8B949E" alt="GitHub Streak" />
+  <img width="49%" src="https://github-readme-stats-sigma-five.vercel.app/api?username=Ayush-kathil&show_icons=true&theme=transparent&hide_border=true&include_all_commits=true" alt="GitHub Stats" />
+  <img width="49%" src="https://streak-stats.demolab.com?user=Ayush-kathil&theme=transparent&hide_border=true" alt="GitHub Streak" />
 </p>
 
 <br>
 
 <p align="center">
-  <img width="42%" src="https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api/top-langs/?username=Ayush-kathil&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&langs_count=10" alt="Top Languages" />
-</p>
-
-<br>
-
-<!--======== TROPHIES ========-->
-<p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=Ayush-kathil&theme=tokyonight&no-frame=true&no-bg=true&row=1&column=7&margin-w=10" alt="GitHub Trophies" width="90%" />
-</p>
-
-<br>
-
-<!--======== 3D CONTRIBUTION GRAPH ========-->
-<p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Ayush-kathil&bg_color=0D1117&color=58A6FF&line=58A6FF&point=FF6E40&area_color=1a1b27&area=true&hide_border=true&custom_title=Contribution%20Activity" width="95%" alt="Activity Graph" />
+  <img width="42%" src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=Ayush-kathil&layout=compact&theme=transparent&hide_border=true&langs_count=8" alt="Top Languages" />
 </p>
 
 <br>
@@ -191,19 +187,19 @@
 <!--======== PINNED REPOS ========-->
 <p align="center">
   <a href="https://github.com/Ayush-kathil/cura-assistant-RAG">
-    <img src="https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api/pin/?username=Ayush-kathil&repo=cura-assistant-RAG&theme=tokyonight&hide_border=true&bg_color=0D1117" alt="CURA" />
+    <img src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=Ayush-kathil&repo=cura-assistant-RAG&theme=transparent&hide_border=true" alt="CURA" />
   </a>
   <a href="https://github.com/Ayush-kathil/SFORA-Smart-File-Organizer">
-    <img src="https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api/pin/?username=Ayush-kathil&repo=SFORA-Smart-File-Organizer&theme=tokyonight&hide_border=true&bg_color=0D1117" alt="SFORA" />
+    <img src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=Ayush-kathil&repo=SFORA-Smart-File-Organizer&theme=transparent&hide_border=true" alt="SFORA" />
   </a>
 </p>
 
 <p align="center">
   <a href="https://github.com/Ayush-kathil/Cyberia---Detecting-Fake-Banking-APKs">
-    <img src="https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api/pin/?username=Ayush-kathil&repo=Cyberia---Detecting-Fake-Banking-APKs&theme=tokyonight&hide_border=true&bg_color=0D1117" alt="Cyberia" />
+    <img src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=Ayush-kathil&repo=Cyberia---Detecting-Fake-Banking-APKs&theme=transparent&hide_border=true" alt="Cyberia" />
   </a>
   <a href="https://github.com/Ayush-kathil/resume-builder">
-    <img src="https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api/pin/?username=Ayush-kathil&repo=resume-builder&theme=tokyonight&hide_border=true&bg_color=0D1117" alt="Resume Builder" />
+    <img src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=Ayush-kathil&repo=resume-builder&theme=transparent&hide_border=true" alt="Resume Builder" />
   </a>
 </p>
 
