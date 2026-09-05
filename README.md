@@ -1,150 +1,351 @@
-﻿<a name="top"></a>
+<a name="top"></a>
 
+<!--======== HERO BANNER ========-->
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./public/hero-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="./public/hero-light.svg">
   <img alt="System Architecture Visualization" src="./public/hero-dark.svg" width="100%">
 </picture>
 
-<br>
-<br>
+<!--======== GRADIENT DIVIDER ========-->
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
-<h1><samp>AYUSH GUPTA</samp></h1>
-<p>
-  <b>Systems & Software Engineer</b><br>
-  <i>Distributed Systems · Open Source Infrastructure · Applied Machine Learning</i>
-</p>
-
-<blockquote>
-  "Engineering is the art of constraint management. I build backend systems and data pipelines that prioritize deterministic performance, strict memory safety, and fault tolerance beneath the application layer."
-</blockquote>
-
-<br>
-
-<details open>
-<summary><b><samp>DIRECTORY</samp></b></summary>
-<br>
-<ul>
-  <li><a href="#architecture"><code>01. Systems & Architecture Stack</code></a></li>
-  <li><a href="#upstream"><code>02. Upstream Contributions (Kubeflow)</code></a></li>
-  <li><a href="#projects"><code>03. High-Performance Implementations</code></a></li>
-  <li><a href="#telemetry"><code>04. Telemetry, Logs & Contact</code></a></li>
-</ul>
-</details>
-
-<img src="https://raw.githubusercontent.com/Ayush-kathil/ayush-kathil/main/public/divider.svg" width="100%" height="2" style="opacity:0.5" alt="divider">
-
-<a name="architecture"></a>
-<h2><samp>01 / SYSTEMS & ARCHITECTURE STACK</samp></h2>
-<p><i>Technologies selected for production deployments, categorized by infrastructure layer.</i></p>
-
-<p><b>Application & Edge:</b></p>
-<p>
-  <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=go,py,ts,java,nextjs,fastapi&theme=dark" alt="Application Stack" />
+<!--======== ANIMATED TYPING HEADER ========-->
+<div align="center">
+  <a href="https://git.io/typing-svg">
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=28&duration=4000&pause=1000&color=58A6FF&center=true&vCenter=true&multiline=true&repeat=true&width=800&height=100&lines=Systems+%26+Software+Engineer;Distributed+Systems+%C2%B7+Open+Source+%C2%B7+ML+Infrastructure" alt="Typing SVG" />
   </a>
-</p>
-
-<p><b>Data Persistence & State:</b></p>
-<p>
-  <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=postgres,mongodb,redis&theme=dark" alt="Data Stack" />
-  </a>
-</p>
-
-<p><b>Infrastructure & Telemetry:</b></p>
-<p>
-  <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=kubernetes,docker,github,linux,aws&theme=dark" alt="Infrastructure Stack" />
-  </a>
-</p>
+</div>
 
 <br>
 
-<a name="upstream"></a>
-<h2><samp>02 / UPSTREAM CONTRIBUTIONS</samp></h2>
+<div align="center">
+  <b>I engineer backend systems and data pipelines, focusing on deterministic performance,<br>memory safety, and fault tolerance within large-scale distributed architectures.</b>
+</div>
 
-<h3><samp>KUBEFLOW PIPELINES</samp></h3>
-<p><i>Enterprise-grade Machine Learning Workflow Orchestration</i></p>
+<br>
+
+<!--======== VISITOR COUNTER ========-->
+<div align="center">
+  <img src="https://komarev.com/ghpvc/?username=Ayush-kathil&label=Profile+Views&color=0e75b6&style=flat" alt="Profile Views" />
+  <img src="https://img.shields.io/github/followers/Ayush-kathil?label=Followers&style=social" alt="GitHub Followers" />
+  <img src="https://img.shields.io/github/stars/Ayush-kathil?label=Stars&style=social&affiliations=OWNER" alt="GitHub Stars" />
+</div>
+
+<br>
+
+<!--======== GRADIENT DIVIDER ========-->
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
+
+<!--======== CONTRIBUTION SNAKE ========-->
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Ayush-kathil/Ayush-kathil/output/github-snake-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Ayush-kathil/Ayush-kathil/output/github-snake.svg" />
+    <img alt="github-snake" src="https://raw.githubusercontent.com/Ayush-kathil/Ayush-kathil/output/github-snake-dark.svg" width="100%" />
+  </picture>
+</div>
+
+<br>
+
+<!--======== GITHUB STATS DASHBOARD ========-->
+<div id="user-content-toc">
+  <ul align="center">
+    <summary><h2 style="display: inline-block"><samp>GITHUB ANALYTICS</samp></h2></summary>
+  </ul>
+</div>
+
+<br>
+
+<div align="center">
+  <img width="49%" src="https://github-readme-stats.vercel.app/api?username=Ayush-kathil&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=58A6FF&icon_color=58A6FF&text_color=C9D1D9&count_private=true&include_all_commits=true&rank_icon=github" alt="GitHub Stats" />
+  <img width="49%" src="https://github-readme-streak-stats.herokuapp.com/?user=Ayush-kathil&theme=tokyonight&hide_border=true&background=0D1117&stroke=58A6FF&ring=58A6FF&fire=FF6E40&currStreakLabel=58A6FF&sideLabels=C9D1D9&dates=8B949E" alt="GitHub Streak" />
+</div>
+
+<br>
+
+<div align="center">
+  <img width="40%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Ayush-kathil&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=58A6FF&text_color=C9D1D9&langs_count=10" alt="Top Languages" />
+</div>
+
+<br>
+
+<!--======== TROPHIES ========-->
+<div align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=Ayush-kathil&theme=algolia&no-frame=true&no-bg=true&row=1&column=7&margin-w=10" alt="GitHub Trophies" width="90%" />
+</div>
+
+<br>
+
+<!--======== ACTIVITY GRAPH ========-->
+<div align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Ayush-kathil&bg_color=0D1117&color=58A6FF&line=58A6FF&point=FF6E40&area_color=58A6FF&area=true&hide_border=true&custom_title=Contribution%20Activity%20Graph" width="95%" alt="Activity Graph" />
+</div>
+
+<br>
+
+<!--======== GRADIENT DIVIDER ========-->
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
+
+<!--======== TECH STACK ========-->
+<div id="user-content-toc">
+  <ul align="center">
+    <summary><h2 style="display: inline-block"><samp>SYSTEMS & ARCHITECTURE STACK</samp></h2></summary>
+  </ul>
+</div>
+
+<br>
+
+<div align="center">
+
+<h4><samp>Languages & Runtimes</samp></h4>
+<a href="https://skillicons.dev">
+  <img src="https://skillicons.dev/icons?i=go,python,typescript,java,cpp,bash&theme=dark" alt="Languages" />
+</a>
+
+<br><br>
+
+<h4><samp>Frameworks & Application Layer</samp></h4>
+<a href="https://skillicons.dev">
+  <img src="https://skillicons.dev/icons?i=nextjs,react,nodejs,fastapi,flask,tailwind&theme=dark" alt="Frameworks" />
+</a>
+
+<br><br>
+
+<h4><samp>Data Persistence & Messaging</samp></h4>
+<a href="https://skillicons.dev">
+  <img src="https://skillicons.dev/icons?i=postgres,mongodb,redis,supabase,firebase,kafka&theme=dark" alt="Databases" />
+</a>
+
+<br><br>
+
+<h4><samp>Infrastructure & DevOps</samp></h4>
+<a href="https://skillicons.dev">
+  <img src="https://skillicons.dev/icons?i=kubernetes,docker,aws,linux,git,githubactions&theme=dark" alt="Infrastructure" />
+</a>
+
+<br><br>
+
+<h4><samp>ML & Data Science</samp></h4>
+<a href="https://skillicons.dev">
+  <img src="https://skillicons.dev/icons?i=pytorch,tensorflow,opencv,anaconda&theme=dark" alt="ML Stack" />
+</a>
+
+<br><br>
+
+<h4><samp>Development Environment</samp></h4>
+<a href="https://skillicons.dev">
+  <img src="https://skillicons.dev/icons?i=vscode,idea,postman,figma,vercel,netlify&theme=dark" alt="Dev Tools" />
+</a>
+
+</div>
+
+<br>
+
+<!--======== GRADIENT DIVIDER ========-->
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
+
+<!--======== UPSTREAM CONTRIBUTIONS ========-->
+<div id="user-content-toc">
+  <ul align="center">
+    <summary><h2 style="display: inline-block"><samp>UPSTREAM OPEN SOURCE CONTRIBUTIONS</samp></h2></summary>
+  </ul>
+</div>
+
+<br>
+
+<h3><samp>KUBEFLOW PIPELINES</samp> &nbsp; <img src="https://skillicons.dev/icons?i=go&theme=dark" height="20" alt="Go"> <img src="https://skillicons.dev/icons?i=kubernetes&theme=dark" height="20" alt="Kubernetes"> <img src="https://skillicons.dev/icons?i=python&theme=dark" height="20" alt="Python"></h3>
+<p><i>Enterprise-grade Machine Learning Workflow Orchestration &mdash; CNCF Graduated Project</i></p>
 
 <ul>
   <li><b>Memory Management & OOM Mitigation:</b> Engineered backend database payload defenses within the Go API server. Optimized <code>ListRuns</code> deserialization by dynamically stripping multi-megabyte pipeline execution manifests, drastically reducing database over-fetching and preventing node-level memory exhaustion (OOM panics) under high concurrency.</li>
   <li><b>Security Vulnerability Patching (CVE Prevention):</b> Architected mitigations for critical denial-of-service (DoS) attack vectors within the metrics parsing infrastructure, explicitly patching tarball traversal exploits and zip bomb vulnerabilities during artifact ingestion.</li>
+  <li><b>Unit Test Engineering:</b> Rewrote and verified test assertions in <code>run_store_test.go</code> to ensure strict payload contract compliance after the OOM defense refactor.</li>
 </ul>
 
 <details>
 <summary><b>View Architecture Trade-offs & Post-Mortem</b></summary>
 <br>
 <blockquote>
-  <b>Post-Mortem Note:</b> The OOM mitigation required tracing nil pointer panics across the <code>api_converter.go</code> layer and overriding the Squirrel SQL query builder to inject mocked payload schemas. This safely bypassed expensive multi-megabyte JSON allocations while maintaining strict REST API contract compatibility with downstream orchestrators. <i>Trade-off: Increased code complexity in the data access layer to guarantee stable heap memory limits.</i>
+  <b>Post-Mortem Note:</b> The OOM mitigation required tracing nil pointer panics across the <code>api_converter.go</code> layer and overriding the Squirrel SQL query builder to inject mocked payload schemas. This safely bypassed expensive multi-megabyte JSON allocations while maintaining strict REST API contract compatibility with downstream orchestrators. <i>Trade-off: Increased code complexity in the data access layer to guarantee stable heap memory limits under production scale.</i>
 </blockquote>
 </details>
 
 <br>
 
-<a name="projects"></a>
-<h2><samp>03 / HIGH-PERFORMANCE IMPLEMENTATIONS</samp></h2>
+<h3><samp>KUBEFLOW KATIB</samp> &nbsp; <img src="https://skillicons.dev/icons?i=kubernetes&theme=dark" height="20" alt="Kubernetes"></h3>
+<p><i>Automated Machine Learning Infrastructure &mdash; Hyperparameter Tuning</i></p>
 
-<h3><samp>CURA : Stateful RAG Architecture</samp></h3>
-<p>
-  Designed a self-correcting generation pipeline utilizing LangGraph to handle hallucination detection, forcing cyclic query rewrites until context validation passes. Implemented a hybrid search engine combining exact keyword BM25 matching with HNSW (Hierarchical Navigable Small World) semantic vector search via <code>pgvector</code>, minimizing nearest-neighbor lookup latency.
-</p>
 <ul>
-  <li><b>Complexity Metric:</b> Sub-millisecond vector retrieval across high-dimensional embeddings.</li>
-  <li><b>Source:</b> <a href="https://github.com/Ayush-kathil/cura-assistant-RAG"><code>Ayush-kathil/cura-assistant-RAG</code></a></li>
-</ul>
-
-<h3><samp>SFORA : Deterministic File Automation</samp></h3>
-<p>
-  Engineered an (1)$ stream buffering deduplication engine utilizing native <code>java.nio</code>. Implemented SHA-256 cryptographic hashing on localized byte chunks to guarantee memory safety regardless of target file size. Built a transactional, state-aware undo mechanism that logs localized operations for atomic rollbacks.
-</p>
-<ul>
-  <li><b>Complexity Metric:</b> Guaranteed (1)$ heap space complexity during large-file I/O streams.</li>
-  <li><b>Source:</b> <a href="https://github.com/Ayush-kathil/SFORA-Smart-File-Organizer"><code>Ayush-kathil/SFORA-Smart-File-Organizer</code></a></li>
-</ul>
-
-<h3><samp>CYBERIA : Applied ML Threat Analysis</samp></h3>
-<p>
-  Built a multi-modal ingestion engine capable of parsing Android Application Packages (APK) in real-time alongside visual steganography analysis. Implemented OpenCV-based pixel anomaly detection for UI forgery identification on banking surfaces.
-</p>
-<ul>
-  <li><b>Source:</b> <a href="https://github.com/Ayush-kathil/Cyberia---Detecting-Fake-Banking-APKs"><code>Ayush-kathil/Cyberia</code></a></li>
+  <li>Contributed to infrastructure stability by resolving validation pipeline bugs and enhancing test coverage for hyperparameter tuning controllers.</li>
 </ul>
 
 <br>
 
-<a name="telemetry"></a>
-<h2><samp>04 / TELEMETRY & CONTACT</samp></h2>
+<!--======== GRADIENT DIVIDER ========-->
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
-<p><i>Operating out of rigorous testing environments, learning from upstream dependencies, and building fault-tolerant systems.</i></p>
+<!--======== HIGH-PERFORMANCE PROJECTS ========-->
+<div id="user-content-toc">
+  <ul align="center">
+    <summary><h2 style="display: inline-block"><samp>HIGH-PERFORMANCE IMPLEMENTATIONS</samp></h2></summary>
+  </ul>
+</div>
 
+<br>
+
+<!--======== PINNED REPOS ========-->
+<div align="center">
+  <a href="https://github.com/Ayush-kathil/cura-assistant-RAG">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Ayush-kathil&repo=cura-assistant-RAG&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=58A6FF&icon_color=58A6FF&text_color=C9D1D9" alt="CURA" />
+  </a>
+  <a href="https://github.com/Ayush-kathil/SFORA-Smart-File-Organizer">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Ayush-kathil&repo=SFORA-Smart-File-Organizer&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=58A6FF&icon_color=58A6FF&text_color=C9D1D9" alt="SFORA" />
+  </a>
+</div>
+
+<div align="center">
+  <a href="https://github.com/Ayush-kathil/Cyberia---Detecting-Fake-Banking-APKs">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Ayush-kathil&repo=Cyberia---Detecting-Fake-Banking-APKs&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=58A6FF&icon_color=58A6FF&text_color=C9D1D9" alt="Cyberia" />
+  </a>
+  <a href="https://github.com/Ayush-kathil/resume-builder">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Ayush-kathil&repo=resume-builder&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=58A6FF&icon_color=58A6FF&text_color=C9D1D9" alt="Resume Builder" />
+  </a>
+</div>
+
+<br>
+
+<!--======== PROJECT DEEP DIVES ========-->
+
+<h3><samp>01 / CURA</samp> &nbsp; <img src="https://skillicons.dev/icons?i=nextjs&theme=dark" height="20" alt="Next.js"> <img src="https://skillicons.dev/icons?i=python&theme=dark" height="20" alt="Python"> <img src="https://skillicons.dev/icons?i=postgres&theme=dark" height="20" alt="PostgreSQL"> <img src="https://skillicons.dev/icons?i=supabase&theme=dark" height="20" alt="Supabase"></h3>
+<p><i>Stateful RAG Architecture with Self-Correcting Generation Pipelines</i></p>
+
+<ul>
+  <li><b>State Machine Architecture:</b> Designed a self-correcting generation pipeline utilizing LangGraph to handle hallucination detection, forcing cyclic query rewrites until context validation passes.</li>
+  <li><b>Database Indexing Strategy:</b> Implemented a hybrid search engine combining exact keyword BM25 matching with HNSW (Hierarchical Navigable Small World) semantic vector search via <code>pgvector</code>, minimizing nearest-neighbor lookup latency.</li>
+  <li><b>Memory Management:</b> Integrated context compression algorithms to strictly manage token limits and optimize language model throughput before re-ranking payloads.</li>
+</ul>
+
+<details>
+<summary><b>Architecture Trade-offs</b></summary>
+<br>
+<blockquote>
+  Chose complex cyclic state machines over linear chains to guarantee deterministic output accuracy, intentionally trading a slight increase in P99 latency for strict zero-hallucination verification on every query cycle.
+</blockquote>
+</details>
+
+<br>
+
+<h3><samp>02 / SFORA</samp> &nbsp; <img src="https://skillicons.dev/icons?i=java&theme=dark" height="20" alt="Java"></h3>
+<p><i>High-Performance File Automation with O(1) Memory Guarantees</i></p>
+
+<ul>
+  <li><b>Complexity:</b> Engineered an O(1) stream buffering deduplication engine utilizing native <code>java.nio</code>. Implemented SHA-256 cryptographic hashing on localized byte chunks to guarantee memory safety regardless of target file size.</li>
+  <li><b>Concurrency & State:</b> Built a transactional, state-aware undo mechanism that logs localized file operations, allowing atomic rollbacks of large-scale directory mutations.</li>
+  <li><b>Zero Dependencies:</b> Architected strictly using standard library Java 17 to bypass JVM bloat and external build dependencies.</li>
+</ul>
+
+<br>
+
+<h3><samp>03 / CYBERIA</samp> &nbsp; <img src="https://skillicons.dev/icons?i=python&theme=dark" height="20" alt="Python"> <img src="https://skillicons.dev/icons?i=opencv&theme=dark" height="20" alt="OpenCV"> <img src="https://skillicons.dev/icons?i=tensorflow&theme=dark" height="20" alt="TensorFlow"></h3>
+<p><i>Applied ML Threat Analysis & Banking APK Forgery Detection</i></p>
+
+<ul>
+  <li><b>Multi-modal Pipeline:</b> Built an ingestion engine capable of parsing Android Application Packages (APK) in real-time alongside visual steganography analysis.</li>
+  <li><b>Computer Vision:</b> Implemented OpenCV-based pixel anomaly detection for UI forgery identification on banking application surfaces.</li>
+</ul>
+
+<br>
+
+<h3><samp>04 / RESUME-AI</samp> &nbsp; <img src="https://skillicons.dev/icons?i=nextjs&theme=dark" height="20" alt="Next.js"> <img src="https://skillicons.dev/icons?i=mongodb&theme=dark" height="20" alt="MongoDB"> <img src="https://skillicons.dev/icons?i=tailwind&theme=dark" height="20" alt="Tailwind"></h3>
+<p><i>Full-Stack AI Resume Builder with Real-Time Preview Engine</i></p>
+
+<ul>
+  <li><b>State Management:</b> Built with Zustand for zero-lag real-time preview rendering alongside generative AI for content rewriting.</li>
+  <li><b>Auth & Security:</b> Integrated NextAuth.js with MongoDB backend and role-based access control for admin analytics.</li>
+</ul>
+
+<br>
+
+<!--======== GRADIENT DIVIDER ========-->
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
+
+<!--======== ACHIEVEMENTS ========-->
+<div id="user-content-toc">
+  <ul align="center">
+    <summary><h2 style="display: inline-block"><samp>VERIFIED ACHIEVEMENTS</samp></h2></summary>
+  </ul>
+</div>
+
+<br>
+
+<ul>
+  <li><code>[2026]</code> &nbsp; <b>Software Engineering Intern</b> &mdash; HackerRank &nbsp; <img src="https://img.shields.io/badge/HackerRank-00EA64?style=flat&logo=hackerrank&logoColor=white" alt="HackerRank" height="18"></li>
+  <li><code>[2026]</code> &nbsp; <b>Open Source Contributor</b> &mdash; GSSoC (DevPath) &nbsp; <img src="https://img.shields.io/badge/Open_Source-F05032?style=flat&logo=git&logoColor=white" alt="OSS" height="18"></li>
+  <li><code>[2026]</code> &nbsp; <b>Published Indian Patent Application</b> &mdash; VIT Bhopal University</li>
+  <li><code>[2025]</code> &nbsp; <b>Google Cloud Generative AI Certification</b> &nbsp; <img src="https://img.shields.io/badge/Google_Cloud-4285F4?style=flat&logo=googlecloud&logoColor=white" alt="GCP" height="18"></li>
+  <li><code>[2025]</code> &nbsp; <b>Applied Machine Learning in Python</b> &mdash; University of Michigan &nbsp; <img src="https://img.shields.io/badge/Coursera-0056D2?style=flat&logo=coursera&logoColor=white" alt="Coursera" height="18"></li>
+</ul>
+
+<br>
+
+<!--======== ENGINEERING LOGS ========-->
 <details>
 <summary><b><samp>ENGINEERING LOGS & RFCs</samp></b></summary>
 <br>
 <ul>
-  <li><code>[2026-09]</code> <b>Architecture Review:</b> Mitigating API Server OOM Panics in Go</li>
-  <li><code>[2026-08]</code> <b>System Design:</b> Cyclic State Machines for Hallucination Detection</li>
-  <li><code>[2026-07]</code> <b>Security Patch:</b> Preventing Tarball Traversal in CI/CD Artifacts</li>
-</ul>
-</details>
-
-<details>
-<summary><b><samp>SYSTEM METRICS</samp></b></summary>
-<br>
-<ul>
-  <li><b>Deployment Status:</b> Native CI/CD checks passing. Vercel builds verified.</li>
-  <li><b>Telemetry:</b> Legacy Hit Counters and Shields.io gamification badges have been intentionally deprecated in favor of raw architectural output.</li>
+  <li><code>[2026-09]</code> &nbsp; <b>Architecture Review:</b> Mitigating API Server OOM Panics in Go (<a href="https://github.com/kubeflow/pipelines">kubeflow/pipelines</a>)</li>
+  <li><code>[2026-08]</code> &nbsp; <b>System Design:</b> Cyclic State Machines for Hallucination Detection in RAG Pipelines</li>
+  <li><code>[2026-07]</code> &nbsp; <b>Security Patch:</b> Preventing Tarball Traversal & Zip Bomb Attacks in CI/CD Artifacts</li>
+  <li><code>[2026-06]</code> &nbsp; <b>Performance:</b> O(1) Memory-Safe Stream Deduplication with SHA-256 Hashing</li>
 </ul>
 </details>
 
 <br>
 
-<p>
-  <a href="https://linkedin.com/in/ayushkathil"><img src="https://skillicons.dev/icons?i=linkedin&theme=dark" height="40" alt="LinkedIn"></a> &nbsp;
-  <a href="https://github.com/Ayush-kathil"><img src="https://skillicons.dev/icons?i=github&theme=dark" height="40" alt="GitHub"></a> &nbsp;
-  <a href="mailto:kathilshiva@gmail.com"><img src="https://skillicons.dev/icons?i=gmail&theme=dark" height="40" alt="Email"></a> &nbsp;
-  <a href="https://ayushgupta3.vercel.app"><img src="https://skillicons.dev/icons?i=vercel&theme=dark" height="40" alt="Portfolio"></a>
-</p>
+<!--======== GRADIENT DIVIDER ========-->
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
+
+<!--======== CONNECT ========-->
+<div id="user-content-toc">
+  <ul align="center">
+    <summary><h2 style="display: inline-block"><samp>CONNECT</samp></h2></summary>
+  </ul>
+</div>
 
 <br>
-<p><a href="#top"><code>[ Return to Index ]</code></a></p>
+
+<div align="center">
+  <a href="https://linkedin.com/in/ayushkathil">
+    <img src="https://skillicons.dev/icons?i=linkedin&theme=dark" height="45" alt="LinkedIn" />
+  </a> &nbsp;&nbsp;
+  <a href="https://github.com/Ayush-kathil">
+    <img src="https://skillicons.dev/icons?i=github&theme=dark" height="45" alt="GitHub" />
+  </a> &nbsp;&nbsp;
+  <a href="mailto:kathilshiva@gmail.com">
+    <img src="https://skillicons.dev/icons?i=gmail&theme=dark" height="45" alt="Email" />
+  </a> &nbsp;&nbsp;
+  <a href="https://ayushgupta3.vercel.app">
+    <img src="https://skillicons.dev/icons?i=vercel&theme=dark" height="45" alt="Portfolio" />
+  </a> &nbsp;&nbsp;
+  <a href="https://twitter.com/ayushkathil">
+    <img src="https://skillicons.dev/icons?i=twitter&theme=dark" height="45" alt="Twitter" />
+  </a> &nbsp;&nbsp;
+  <a href="https://discord.com">
+    <img src="https://skillicons.dev/icons?i=discord&theme=dark" height="45" alt="Discord" />
+  </a>
+</div>
+
+<br>
+<br>
+
+<!--======== GRADIENT DIVIDER ========-->
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
+
+<br>
+
+<div align="center">
+  <a href="#top"><code>[ Return to Top ]</code></a>
+</div>
+
+<br>
