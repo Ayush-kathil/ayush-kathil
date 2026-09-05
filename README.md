@@ -6,7 +6,8 @@
   <img alt="System Architecture Visualization" src="./public/hero-dark.svg" width="100%">
 </picture>
 
-<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" height="20" width="100%" alt="spacer">
+<br>
+<br>
 
 <h1><samp>AYUSH GUPTA</samp></h1>
 <p>
@@ -18,7 +19,7 @@
   "Engineering is the art of constraint management. I build backend systems and data pipelines that prioritize deterministic performance, strict memory safety, and fault tolerance beneath the application layer."
 </blockquote>
 
-<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" height="10" width="100%" alt="spacer">
+<br>
 
 <details open>
 <summary><b><samp>DIRECTORY</samp></b></summary>
@@ -37,31 +38,28 @@
 <h2><samp>01 / SYSTEMS & ARCHITECTURE STACK</samp></h2>
 <p><i>Technologies selected for production deployments, categorized by infrastructure layer.</i></p>
 
+<p><b>Application & Edge:</b></p>
 <p>
-  <b>Application & Edge:</b><br>
-  <img src="https://cdn.simpleicons.org/go/000000" height="14" alt="Go"> Go &nbsp;
-  <img src="https://cdn.simpleicons.org/python/000000" height="14" alt="Python"> Python &nbsp;
-  <img src="https://cdn.simpleicons.org/typescript/000000" height="14" alt="TypeScript"> TypeScript &nbsp;
-  <img src="https://cdn.simpleicons.org/java/000000" height="14" alt="Java"> Java (NIO) &nbsp;
-  <img src="https://cdn.simpleicons.org/nextdotjs/8B949E" height="14" alt="Next.js"> Next.js &nbsp;
-  <img src="https://cdn.simpleicons.org/fastapi/000000" height="14" alt="FastAPI"> FastAPI
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=go,py,ts,java,nextjs,fastapi&theme=dark" alt="Application Stack" />
+  </a>
 </p>
 
+<p><b>Data Persistence & State:</b></p>
 <p>
-  <b>Data Persistence & State:</b><br>
-  <img src="https://cdn.simpleicons.org/postgresql/000000" height="14" alt="PostgreSQL"> PostgreSQL (pgvector) &nbsp;
-  <img src="https://cdn.simpleicons.org/mongodb/000000" height="14" alt="MongoDB"> MongoDB &nbsp;
-  <img src="https://cdn.simpleicons.org/redis/000000" height="14" alt="Redis"> Redis &nbsp;
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=postgres,mongodb,redis&theme=dark" alt="Data Stack" />
+  </a>
 </p>
 
+<p><b>Infrastructure & Telemetry:</b></p>
 <p>
-  <b>Infrastructure & Telemetry:</b><br>
-  <img src="https://cdn.simpleicons.org/kubernetes/000000" height="14" alt="Kubernetes"> Kubernetes &nbsp;
-  <img src="https://cdn.simpleicons.org/docker/000000" height="14" alt="Docker"> Docker &nbsp;
-  <img src="https://cdn.simpleicons.org/githubactions/000000" height="14" alt="GitHub Actions"> CI/CD Pipelines
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=kubernetes,docker,github,linux,aws&theme=dark" alt="Infrastructure Stack" />
+  </a>
 </p>
 
-<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" height="20" width="100%" alt="spacer">
+<br>
 
 <a name="upstream"></a>
 <h2><samp>02 / UPSTREAM CONTRIBUTIONS</samp></h2>
@@ -82,7 +80,7 @@
 </blockquote>
 </details>
 
-<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" height="20" width="100%" alt="spacer">
+<br>
 
 <a name="projects"></a>
 <h2><samp>03 / HIGH-PERFORMANCE IMPLEMENTATIONS</samp></h2>
@@ -113,7 +111,7 @@
   <li><b>Source:</b> <a href="https://github.com/Ayush-kathil/Cyberia---Detecting-Fake-Banking-APKs"><code>Ayush-kathil/Cyberia</code></a></li>
 </ul>
 
-<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" height="20" width="100%" alt="spacer">
+<br>
 
 <a name="telemetry"></a>
 <h2><samp>04 / TELEMETRY & CONTACT</samp></h2>
@@ -142,11 +140,11 @@
 <br>
 
 <p>
-  <kbd><a href="mailto:kathilshiva@gmail.com" style="text-decoration:none;color:inherit;">Email</a></kbd> &nbsp;
-  <kbd><a href="https://linkedin.com/in/ayushkathil" style="text-decoration:none;color:inherit;">LinkedIn</a></kbd> &nbsp;
-  <kbd><a href="https://github.com/Ayush-kathil" style="text-decoration:none;color:inherit;">GitHub</a></kbd> &nbsp;
-  <kbd><a href="https://ayushgupta3.vercel.app" style="text-decoration:none;color:inherit;">Engineering Portfolio</a></kbd>
+  <a href="https://linkedin.com/in/ayushkathil"><img src="https://skillicons.dev/icons?i=linkedin&theme=dark" height="40" alt="LinkedIn"></a> &nbsp;
+  <a href="https://github.com/Ayush-kathil"><img src="https://skillicons.dev/icons?i=github&theme=dark" height="40" alt="GitHub"></a> &nbsp;
+  <a href="mailto:kathilshiva@gmail.com"><img src="https://skillicons.dev/icons?i=gmail&theme=dark" height="40" alt="Email"></a> &nbsp;
+  <a href="https://ayushgupta3.vercel.app"><img src="https://skillicons.dev/icons?i=vercel&theme=dark" height="40" alt="Portfolio"></a>
 </p>
 
-<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" height="30" width="100%" alt="spacer">
+<br>
 <p><a href="#top"><code>[ Return to Index ]</code></a></p>
