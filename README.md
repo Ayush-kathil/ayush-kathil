@@ -36,15 +36,15 @@
   <picture>
     <source
       media="(prefers-color-scheme: dark)"
-      srcset="https://raw.githubusercontent.com/Ayush-kathil/Ayush-kathil/output/github-snake-dark.svg"
+      srcset="https://raw.githubusercontent.com/Ayush-kathil/Ayush-kathil/output/github-snake-dark.svg?v=3"
     />
     <source
       media="(prefers-color-scheme: light)"
-      srcset="https://raw.githubusercontent.com/Ayush-kathil/Ayush-kathil/output/github-snake.svg"
+      srcset="https://raw.githubusercontent.com/Ayush-kathil/Ayush-kathil/output/github-snake.svg?v=3"
     />
     <img
       alt="GitHub contribution snake"
-      src="https://raw.githubusercontent.com/Ayush-kathil/Ayush-kathil/output/github-snake.svg"
+      src="https://raw.githubusercontent.com/Ayush-kathil/Ayush-kathil/output/github-snake.svg?v=3"
       width="100%"
     />
   </picture>
@@ -62,14 +62,14 @@
 <br>
 
 <p align="center">
-  <img width="49%" src="https://github-readme-stats.vercel.app/api?username=Ayush-kathil&show_icons=true&theme=transparent&hide_border=true&include_all_commits=true" alt="GitHub Stats" />
+  <img width="49%" src="https://github-readme-stats-sigma-five.vercel.app/api?username=Ayush-kathil&show_icons=true&theme=transparent&hide_border=true&include_all_commits=true" alt="GitHub Stats" />
   <img width="49%" src="https://streak-stats.demolab.com?user=Ayush-kathil&theme=transparent&hide_border=true" alt="GitHub Streak" />
 </p>
 
 <br>
 
 <p align="center">
-  <img width="42%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Ayush-kathil&layout=compact&theme=transparent&hide_border=true&langs_count=8" alt="Top Languages" />
+  <img width="42%" src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=Ayush-kathil&layout=compact&theme=transparent&hide_border=true&langs_count=8" alt="Top Languages" />
 </p>
 
 <br>
@@ -187,19 +187,19 @@
 <!--======== PINNED REPOS ========-->
 <p align="center">
   <a href="https://github.com/Ayush-kathil/cura-assistant-RAG">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Ayush-kathil&repo=cura-assistant-RAG&theme=transparent&hide_border=true" alt="CURA" />
+    <img src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=Ayush-kathil&repo=cura-assistant-RAG&theme=transparent&hide_border=true" alt="CURA" />
   </a>
   <a href="https://github.com/Ayush-kathil/SFORA-Smart-File-Organizer">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Ayush-kathil&repo=SFORA-Smart-File-Organizer&theme=transparent&hide_border=true" alt="SFORA" />
+    <img src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=Ayush-kathil&repo=SFORA-Smart-File-Organizer&theme=transparent&hide_border=true" alt="SFORA" />
   </a>
 </p>
 
 <p align="center">
   <a href="https://github.com/Ayush-kathil/Cyberia---Detecting-Fake-Banking-APKs">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Ayush-kathil&repo=Cyberia---Detecting-Fake-Banking-APKs&theme=transparent&hide_border=true" alt="Cyberia" />
+    <img src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=Ayush-kathil&repo=Cyberia---Detecting-Fake-Banking-APKs&theme=transparent&hide_border=true" alt="Cyberia" />
   </a>
   <a href="https://github.com/Ayush-kathil/resume-builder">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Ayush-kathil&repo=resume-builder&theme=transparent&hide_border=true" alt="Resume Builder" />
+    <img src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=Ayush-kathil&repo=resume-builder&theme=transparent&hide_border=true" alt="Resume Builder" />
   </a>
 </p>
 
