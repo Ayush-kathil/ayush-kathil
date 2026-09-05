@@ -1,102 +1,137 @@
-﻿<div align="center">
+﻿<a name="top"></a>
 
-# Ayush Gupta
-### Software Engineer · Open Source Contributor · Backend & ML Systems
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="public/hero-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="public/hero-light.svg">
+  <img alt="System Architecture Visualization" src="public/hero-dark.svg" width="100%">
+</picture>
 
-<p align="center">
-  <a href="https://ayushgupta3.vercel.app">Portfolio</a>
-  ·
-  <a href="https://linkedin.com/in/ayushkathil">LinkedIn</a>
-  ·
-  <a href="mailto:kathilshiva@gmail.com">Email</a>
-  ·
-  <a href="https://leetcode.com/u/AyushKathil/">LeetCode</a>
+<img src="https://raw.githubusercontent.com/Ayush-kathil/ayush-kathil/main/public/divider.svg" width="100%" height="2" style="opacity:0">
+
+<h1><samp>AYUSH GUPTA</samp></h1>
+<p>
+  <b>Software Engineer</b><br>
+  Systems Architecture · Open Source Infrastructure · Applied Machine Learning
 </p>
-</div>
 
-<br/>
+<blockquote>
+  I engineer backend systems and data pipelines, focusing on deterministic performance, memory safety, and fault tolerance within large-scale distributed architectures.
+</blockquote>
 
-### Engineering Profile
+<br>
+<img src="public/divider.svg" width="100%">
+<br>
 
-I am a software engineer and computer science student focused on backend architecture, machine learning systems, and open-source infrastructure. I spend most of my time moving between distributed systems (Kubernetes/Kubeflow), applied ML engineering, and full-stack development. I enjoy building systems where the interesting parts happen underneath the UI—focusing on reliability, security, and deterministic performance.
+<h2><samp>CORE ENGINEERING TOOLKIT</samp></h2>
 
-### Open Source Contributions
+<p>
+  <img src="https://cdn.simpleicons.org/go/000000" height="14"> <b>Languages:</b> Go, Python, TypeScript, Java, C++, SQL<br>
+  <img src="https://cdn.simpleicons.org/kubernetes/000000" height="14"> <b>Infrastructure:</b> Kubernetes, Docker, GitHub Actions, Linux Environments<br>
+  <img src="https://cdn.simpleicons.org/postgresql/000000" height="14"> <b>Databases:</b> PostgreSQL, MongoDB, Redis, Supabase<br>
+  <img src="https://cdn.simpleicons.org/pytorch/000000" height="14"> <b>ML & Systems:</b> PyTorch, TensorFlow, LangGraph, OpenCV, FastAPI, Next.js
+</p>
 
-I actively contribute to the **Kubeflow** ecosystem, focusing on pipeline orchestration, security, and system stability within large Go and Python codebases.
+<br>
+<img src="public/divider.svg" width="100%">
+<br>
 
-- **[Kubeflow Pipelines](https://github.com/kubeflow/pipelines)**: Engineered backend defenses in Go, mitigating a critical API server memory exhaustion (OOM) vulnerability by optimizing massive payload deserializations in ListRuns. Patched multiple Denial of Service (DoS) attack vectors (zip bombs, tarball traversals) within the metrics parsing infrastructure.
-- **[Kubeflow Katib](https://github.com/kubeflow/katib)**: Contributed to validation workflows, testing, and resolving infrastructure bugs for automated machine learning.
-- **[Kubeflow Docs-Agent](https://github.com/kubeflow/docs-agent)**: Enhanced documentation tooling and automation pipelines.
+<a name="open-source"></a>
+<h2><samp>UPSTREAM CONTRIBUTIONS</samp></h2>
 
-### Selected Work
+<br>
 
-<table>
-<tr>
-<td width="50%" valign="top">
-  
-**[Cura](https://github.com/Ayush-kathil/cura-assistant-RAG)** <br/>
-*A document-oriented assistant built around retrieval, search, and conversational workflows.*
-- Designed a self-correcting Retrieval-Augmented Generation (RAG) pipeline using LangGraph state machines.
-- Implemented hybrid search combining exact keyword matching with semantic vector search via pgvector.
-- Integrated context compression to optimize language model token limits before Gemini re-ranking.
-<br/>
-<b>Stack:</b> Next.js, LangGraph, Supabase, pgvector, OpenAI
+<h3><samp>01 / KUBEFLOW PIPELINES</samp></h3>
+<p><b>Domain:</b> Distributed Workflow Orchestration | <b>Stack:</b> Go, Python, Kubernetes</p>
 
-</td>
-<td width="50%" valign="top">
+<p>
+• <b>Memory Management & OOM Mitigation:</b> Engineered backend database payload defenses within the Go API server. Optimized <code>ListRuns</code> deserialization by dynamically stripping multi-megabyte pipeline execution manifests, drastically reducing database over-fetching and preventing node-level memory exhaustion under high concurrency.<br>
+• <b>Security Vulnerability Patching:</b> Architected mitigations for critical denial-of-service (DoS) attack vectors within the metrics parsing infrastructure, explicitly patching tarball traversal exploits and zip bomb vulnerabilities during artifact ingestion.
+</p>
 
-**[Cyberia](https://github.com/Ayush-kathil/Cyberia---Detecting-Fake-Banking-APKs)** <br/>
-*Banking fraud detection system combining APK analysis with steganography detection.*
-- Built a multi-modal machine learning pipeline to analyze Android application packages in real-time.
-- Implemented computer vision components for UI forgery detection and steganography analysis.
-- Designed blockchain-based verification for threat assessment records.
-<br/>
-<b>Stack:</b> Python, Computer Vision, Multi-modal ML, Blockchain
+<details>
+<summary><b>View Implementation Notes</b></summary>
+<br>
+<p><i>The OOM mitigation required tracing nil pointer panics across the <code>api_converter.go</code> layer and overriding the Squirrel SQL query builder to inject mocked payload schemas. This safely bypassed expensive multi-megabyte JSON allocations while maintaining strict REST API contract compatibility with downstream orchestrators.</i></p>
+</details>
 
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
+<br>
+<br>
 
-**[SFORA](https://github.com/Ayush-kathil/SFORA-Smart-File-Organizer)** <br/>
-*Smart file organizer with deterministic rule-based automation and cryptographic deduplication.*
-- Engineered a zero-dependency Java application using native java.nio for high-performance file operations.
-- Implemented an (1)$ stream buffering deduplication engine utilizing SHA-256 hashing to prevent memory overflow on large files.
-- Built a transactional undo mechanism that logs file operations for safe rollbacks.
-<br/>
-<b>Stack:</b> Java 17, Java NIO, Swing
+<h3><samp>02 / KUBEFLOW KATIB</samp></h3>
+<p><b>Domain:</b> Automated Machine Learning Infrastructure</p>
+<p>
+• Contributed to infrastructure stability by resolving validation pipeline bugs and enhancing test coverage for hyperparameter tuning controllers.
+</p>
 
-</td>
-<td width="50%" valign="top">
+<br>
+<img src="public/divider.svg" width="100%">
+<br>
 
-**[Resume Builder](https://github.com/Ayush-kathil/resume-builder)** <br/>
-*ATS-friendly resume generation platform focused on usability and formatting reliability.*
-- Built a minimal, highly responsive single-page application focused on data extraction and visual consistency.
-- Integrated AI-assisted content generation while maintaining strict structural constraints for PDF parsing.
-<br/>
-<b>Stack:</b> Next.js 16, TypeScript, Tailwind CSS
+<a name="architecture"></a>
+<h2><samp>SYSTEMS & ARCHITECTURE</samp></h2>
 
-</td>
-</tr>
-</table>
+<br>
 
-### Technical Stack
+<h3><samp>01 / CURA</samp></h3>
+<p><b>Domain:</b> Stateful Conversational RAG Pipelines</p>
 
-**Languages:** Go, Python, TypeScript, Java, C++, SQL  
-**Backend & Systems:** Node.js, Express, FastAPI, REST, GraphQL  
-**Infrastructure:** Kubernetes, Docker, GitHub Actions, Linux  
-**Databases:** PostgreSQL, Supabase, MongoDB, Redis  
-**Machine Learning:** PyTorch, TensorFlow, LangGraph, Vector Search  
+<p>
+• <b>State Machine Architecture:</b> Designed a self-correcting generation pipeline utilizing LangGraph to handle hallucination detection, forcing cyclic query rewrites until context validation passes.<br>
+• <b>Database Indexing Strategy:</b> Implemented a hybrid search engine combining exact keyword matching with HNSW (Hierarchical Navigable Small World) semantic vector search via <code>pgvector</code>, minimizing nearest-neighbor lookup latency.<br>
+• <b>Memory Management:</b> Integrated context compression algorithms to strictly manage token limits and optimize language model throughput before re-ranking payloads.
+</p>
 
-### Verified Achievements
+<details>
+<summary><b>View Tech Stack & Trade-offs</b></summary>
+<br>
+<p><b>Stack:</b> Next.js, LangGraph, Supabase, pgvector, OpenAI.<br>
+<i>Trade-off: Chose complex cyclic state machines over linear chains to guarantee deterministic output accuracy, intentionally trading a slight increase in P99 latency for strict zero-hallucination verification.</i></p>
+</details>
 
-- **Software Engineering Intern** at HackerRank
-- **GSSoC 2026 Contributor** (DevPath)
-- **Applied Machine Learning in Python** (University of Michigan)
-- **Google Cloud Generative AI Certified**
-- **Patent Application Filed** (Through VIT Bhopal University)
+<br>
+<br>
 
----
-<div align="center">
-  <i>Building software, contributing to open source, and learning from large codebases.</i>
-</div>
+<h3><samp>02 / SFORA</samp></h3>
+<p><b>Domain:</b> High-Performance File Automation</p>
+
+<p>
+• <b>Time & Space Complexity:</b> Engineered an O(1) stream buffering deduplication engine utilizing native <code>java.nio</code>. Implemented SHA-256 cryptographic hashing on localized byte chunks to guarantee memory safety regardless of target file size.<br>
+• <b>Concurrency & State:</b> Built a transactional, state-aware undo mechanism that logs localized file operations, allowing atomic rollbacks of large-scale directory mutations.<br>
+• <b>Dependency Elimination:</b> Architected strictly using standard library Java 17 to bypass JVM bloat and external build dependencies.
+</p>
+
+<br>
+<br>
+
+<h3><samp>03 / CYBERIA</samp></h3>
+<p><b>Domain:</b> Applied ML & Threat Analysis</p>
+
+<p>
+• <b>Multi-modal Pipeline:</b> Built an ingestion engine capable of parsing Android Application Packages (APK) in real-time alongside visual steganography analysis.<br>
+• <b>Computer Vision:</b> Implemented OpenCV-based pixel anomaly detection for UI forgery identification on banking surfaces.
+</p>
+
+<br>
+<img src="public/divider.svg" width="100%">
+<br>
+
+<h2><samp>VERIFIED ACHIEVEMENTS</samp></h2>
+
+<p>
+<b>2026</b> / Software Engineering Intern — HackerRank<br>
+<b>2026</b> / Open Source Contributor — GSSoC (DevPath)<br>
+<b>2026</b> / Published Indian Patent Application — VIT Bhopal University<br>
+<b>2025</b> / Google Cloud Generative AI Certification<br>
+<b>2025</b> / Applied Machine Learning in Python — University of Michigan
+</p>
+
+<br>
+<br>
+<br>
+
+<p>
+  <a href="#top"><code>[ Return to Top ]</code></a> &nbsp;·&nbsp;
+  <a href="https://github.com/Ayush-kathil"><code>[ GitHub ]</code></a> &nbsp;·&nbsp;
+  <a href="https://linkedin.com/in/ayushkathil"><code>[ LinkedIn ]</code></a> &nbsp;·&nbsp;
+  <a href="https://ayushgupta3.vercel.app"><code>[ Portfolio ]</code></a>
+</p>
