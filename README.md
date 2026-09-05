@@ -13,23 +13,17 @@
 <!--======== ANIMATED TYPING HEADER ========-->
 <div align="center">
   <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=28&duration=4000&pause=1000&color=58A6FF&center=true&vCenter=true&multiline=true&repeat=true&width=800&height=100&lines=Systems+%26+Software+Engineer;Distributed+Systems+%C2%B7+Open+Source+%C2%B7+ML+Infrastructure" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.demolab.com?font=Inter&weight=600&size=30&duration=4000&pause=1000&color=58A6FF&center=true&vCenter=true&multiline=true&repeat=true&width=800&height=100&lines=Systems+%26+Software+Engineer;Distributed+Systems+%C2%B7+Open+Source+%C2%B7+ML+Infrastructure" alt="Typing SVG" />
   </a>
 </div>
 
 <br>
 
 <div align="center">
-  <b>I engineer backend systems and data pipelines, focusing on deterministic performance,<br>memory safety, and fault tolerance within large-scale distributed architectures.</b>
-</div>
-
-<br>
-
-<!--======== VISITOR COUNTER ========-->
-<div align="center">
-  <img src="https://komarev.com/ghpvc/?username=Ayush-kathil&label=Profile+Views&color=0e75b6&style=flat" alt="Profile Views" />
-  <img src="https://img.shields.io/github/followers/Ayush-kathil?label=Followers&style=social" alt="GitHub Followers" />
-  <img src="https://img.shields.io/github/stars/Ayush-kathil?label=Stars&style=social&affiliations=OWNER" alt="GitHub Stars" />
+  <samp>
+    I engineer backend systems and data pipelines, focusing on deterministic performance,<br>
+    memory safety, and fault tolerance within large-scale distributed architectures.
+  </samp>
 </div>
 
 <br>
@@ -51,36 +45,36 @@
 <!--======== GITHUB STATS DASHBOARD ========-->
 <div id="user-content-toc">
   <ul align="center">
-    <summary><h2 style="display: inline-block"><samp>GITHUB ANALYTICS</samp></h2></summary>
+    <summary><h2 style="display: inline-block; font-family: Inter, sans-serif"><samp>GITHUB ANALYTICS</samp></h2></summary>
   </ul>
 </div>
 
 <br>
 
-<div align="center">
-  <img width="49%" src="https://github-readme-stats.vercel.app/api?username=Ayush-kathil&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=58A6FF&icon_color=58A6FF&text_color=C9D1D9&count_private=true&include_all_commits=true&rank_icon=github" alt="GitHub Stats" />
-  <img width="49%" src="https://github-readme-streak-stats.herokuapp.com/?user=Ayush-kathil&theme=tokyonight&hide_border=true&background=0D1117&stroke=58A6FF&ring=58A6FF&fire=FF6E40&currStreakLabel=58A6FF&sideLabels=C9D1D9&dates=8B949E" alt="GitHub Streak" />
-</div>
+<p align="center">
+  <img width="49%" src="https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api?username=Ayush-kathil&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&count_private=true&include_all_commits=true" alt="GitHub Stats" />
+  <img width="49%" src="https://streak-stats.demolab.com?user=Ayush-kathil&theme=tokyonight&hide_border=true&background=0D1117&stroke=58A6FF&ring=58A6FF&fire=FF6E40&currStreakLabel=58A6FF&sideLabels=C9D1D9&dates=8B949E" alt="GitHub Streak" />
+</p>
 
 <br>
 
-<div align="center">
-  <img width="40%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Ayush-kathil&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=58A6FF&text_color=C9D1D9&langs_count=10" alt="Top Languages" />
-</div>
+<p align="center">
+  <img width="42%" src="https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api/top-langs/?username=Ayush-kathil&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&langs_count=10" alt="Top Languages" />
+</p>
 
 <br>
 
 <!--======== TROPHIES ========-->
-<div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=Ayush-kathil&theme=algolia&no-frame=true&no-bg=true&row=1&column=7&margin-w=10" alt="GitHub Trophies" width="90%" />
-</div>
+<p align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=Ayush-kathil&theme=tokyonight&no-frame=true&no-bg=true&row=1&column=7&margin-w=10" alt="GitHub Trophies" width="90%" />
+</p>
 
 <br>
 
-<!--======== ACTIVITY GRAPH ========-->
-<div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Ayush-kathil&bg_color=0D1117&color=58A6FF&line=58A6FF&point=FF6E40&area_color=58A6FF&area=true&hide_border=true&custom_title=Contribution%20Activity%20Graph" width="95%" alt="Activity Graph" />
-</div>
+<!--======== 3D CONTRIBUTION GRAPH ========-->
+<p align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Ayush-kathil&bg_color=0D1117&color=58A6FF&line=58A6FF&point=FF6E40&area_color=1a1b27&area=true&hide_border=true&custom_title=Contribution%20Activity" width="95%" alt="Activity Graph" />
+</p>
 
 <br>
 
@@ -90,7 +84,7 @@
 <!--======== TECH STACK ========-->
 <div id="user-content-toc">
   <ul align="center">
-    <summary><h2 style="display: inline-block"><samp>SYSTEMS & ARCHITECTURE STACK</samp></h2></summary>
+    <summary><h2 style="display: inline-block; font-family: Inter, sans-serif"><samp>SYSTEMS & ARCHITECTURE STACK</samp></h2></summary>
   </ul>
 </div>
 
@@ -148,13 +142,13 @@
 <!--======== UPSTREAM CONTRIBUTIONS ========-->
 <div id="user-content-toc">
   <ul align="center">
-    <summary><h2 style="display: inline-block"><samp>UPSTREAM OPEN SOURCE CONTRIBUTIONS</samp></h2></summary>
+    <summary><h2 style="display: inline-block; font-family: Inter, sans-serif"><samp>UPSTREAM OPEN SOURCE CONTRIBUTIONS</samp></h2></summary>
   </ul>
 </div>
 
 <br>
 
-<h3><samp>KUBEFLOW PIPELINES</samp> &nbsp; <img src="https://skillicons.dev/icons?i=go&theme=dark" height="20" alt="Go"> <img src="https://skillicons.dev/icons?i=kubernetes&theme=dark" height="20" alt="Kubernetes"> <img src="https://skillicons.dev/icons?i=python&theme=dark" height="20" alt="Python"></h3>
+<h3><samp>KUBEFLOW PIPELINES</samp> &nbsp; <img src="https://skillicons.dev/icons?i=go&theme=dark" height="22" alt="Go"> <img src="https://skillicons.dev/icons?i=kubernetes&theme=dark" height="22" alt="Kubernetes"> <img src="https://skillicons.dev/icons?i=python&theme=dark" height="22" alt="Python"></h3>
 <p><i>Enterprise-grade Machine Learning Workflow Orchestration &mdash; CNCF Graduated Project</i></p>
 
 <ul>
@@ -173,7 +167,7 @@
 
 <br>
 
-<h3><samp>KUBEFLOW KATIB</samp> &nbsp; <img src="https://skillicons.dev/icons?i=kubernetes&theme=dark" height="20" alt="Kubernetes"></h3>
+<h3><samp>KUBEFLOW KATIB</samp> &nbsp; <img src="https://skillicons.dev/icons?i=kubernetes&theme=dark" height="22" alt="Kubernetes"></h3>
 <p><i>Automated Machine Learning Infrastructure &mdash; Hyperparameter Tuning</i></p>
 
 <ul>
@@ -188,41 +182,41 @@
 <!--======== HIGH-PERFORMANCE PROJECTS ========-->
 <div id="user-content-toc">
   <ul align="center">
-    <summary><h2 style="display: inline-block"><samp>HIGH-PERFORMANCE IMPLEMENTATIONS</samp></h2></summary>
+    <summary><h2 style="display: inline-block; font-family: Inter, sans-serif"><samp>HIGH-PERFORMANCE IMPLEMENTATIONS</samp></h2></summary>
   </ul>
 </div>
 
 <br>
 
 <!--======== PINNED REPOS ========-->
-<div align="center">
+<p align="center">
   <a href="https://github.com/Ayush-kathil/cura-assistant-RAG">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Ayush-kathil&repo=cura-assistant-RAG&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=58A6FF&icon_color=58A6FF&text_color=C9D1D9" alt="CURA" />
+    <img src="https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api/pin/?username=Ayush-kathil&repo=cura-assistant-RAG&theme=tokyonight&hide_border=true&bg_color=0D1117" alt="CURA" />
   </a>
   <a href="https://github.com/Ayush-kathil/SFORA-Smart-File-Organizer">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Ayush-kathil&repo=SFORA-Smart-File-Organizer&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=58A6FF&icon_color=58A6FF&text_color=C9D1D9" alt="SFORA" />
+    <img src="https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api/pin/?username=Ayush-kathil&repo=SFORA-Smart-File-Organizer&theme=tokyonight&hide_border=true&bg_color=0D1117" alt="SFORA" />
   </a>
-</div>
+</p>
 
-<div align="center">
+<p align="center">
   <a href="https://github.com/Ayush-kathil/Cyberia---Detecting-Fake-Banking-APKs">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Ayush-kathil&repo=Cyberia---Detecting-Fake-Banking-APKs&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=58A6FF&icon_color=58A6FF&text_color=C9D1D9" alt="Cyberia" />
+    <img src="https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api/pin/?username=Ayush-kathil&repo=Cyberia---Detecting-Fake-Banking-APKs&theme=tokyonight&hide_border=true&bg_color=0D1117" alt="Cyberia" />
   </a>
   <a href="https://github.com/Ayush-kathil/resume-builder">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Ayush-kathil&repo=resume-builder&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=58A6FF&icon_color=58A6FF&text_color=C9D1D9" alt="Resume Builder" />
+    <img src="https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api/pin/?username=Ayush-kathil&repo=resume-builder&theme=tokyonight&hide_border=true&bg_color=0D1117" alt="Resume Builder" />
   </a>
-</div>
+</p>
 
 <br>
 
 <!--======== PROJECT DEEP DIVES ========-->
 
-<h3><samp>01 / CURA</samp> &nbsp; <img src="https://skillicons.dev/icons?i=nextjs&theme=dark" height="20" alt="Next.js"> <img src="https://skillicons.dev/icons?i=python&theme=dark" height="20" alt="Python"> <img src="https://skillicons.dev/icons?i=postgres&theme=dark" height="20" alt="PostgreSQL"> <img src="https://skillicons.dev/icons?i=supabase&theme=dark" height="20" alt="Supabase"></h3>
+<h3><samp>01 / CURA</samp> &nbsp; <img src="https://skillicons.dev/icons?i=nextjs&theme=dark" height="22" alt="Next.js"> <img src="https://skillicons.dev/icons?i=python&theme=dark" height="22" alt="Python"> <img src="https://skillicons.dev/icons?i=postgres&theme=dark" height="22" alt="PostgreSQL"> <img src="https://skillicons.dev/icons?i=supabase&theme=dark" height="22" alt="Supabase"></h3>
 <p><i>Stateful RAG Architecture with Self-Correcting Generation Pipelines</i></p>
 
 <ul>
   <li><b>State Machine Architecture:</b> Designed a self-correcting generation pipeline utilizing LangGraph to handle hallucination detection, forcing cyclic query rewrites until context validation passes.</li>
-  <li><b>Database Indexing Strategy:</b> Implemented a hybrid search engine combining exact keyword BM25 matching with HNSW (Hierarchical Navigable Small World) semantic vector search via <code>pgvector</code>, minimizing nearest-neighbor lookup latency.</li>
+  <li><b>Database Indexing Strategy:</b> Implemented a hybrid search engine combining exact keyword BM25 matching with HNSW semantic vector search via <code>pgvector</code>, minimizing nearest-neighbor lookup latency.</li>
   <li><b>Memory Management:</b> Integrated context compression algorithms to strictly manage token limits and optimize language model throughput before re-ranking payloads.</li>
 </ul>
 
@@ -236,7 +230,7 @@
 
 <br>
 
-<h3><samp>02 / SFORA</samp> &nbsp; <img src="https://skillicons.dev/icons?i=java&theme=dark" height="20" alt="Java"></h3>
+<h3><samp>02 / SFORA</samp> &nbsp; <img src="https://skillicons.dev/icons?i=java&theme=dark" height="22" alt="Java"></h3>
 <p><i>High-Performance File Automation with O(1) Memory Guarantees</i></p>
 
 <ul>
@@ -247,7 +241,7 @@
 
 <br>
 
-<h3><samp>03 / CYBERIA</samp> &nbsp; <img src="https://skillicons.dev/icons?i=python&theme=dark" height="20" alt="Python"> <img src="https://skillicons.dev/icons?i=opencv&theme=dark" height="20" alt="OpenCV"> <img src="https://skillicons.dev/icons?i=tensorflow&theme=dark" height="20" alt="TensorFlow"></h3>
+<h3><samp>03 / CYBERIA</samp> &nbsp; <img src="https://skillicons.dev/icons?i=python&theme=dark" height="22" alt="Python"> <img src="https://skillicons.dev/icons?i=opencv&theme=dark" height="22" alt="OpenCV"> <img src="https://skillicons.dev/icons?i=tensorflow&theme=dark" height="22" alt="TensorFlow"></h3>
 <p><i>Applied ML Threat Analysis & Banking APK Forgery Detection</i></p>
 
 <ul>
@@ -257,7 +251,7 @@
 
 <br>
 
-<h3><samp>04 / RESUME-AI</samp> &nbsp; <img src="https://skillicons.dev/icons?i=nextjs&theme=dark" height="20" alt="Next.js"> <img src="https://skillicons.dev/icons?i=mongodb&theme=dark" height="20" alt="MongoDB"> <img src="https://skillicons.dev/icons?i=tailwind&theme=dark" height="20" alt="Tailwind"></h3>
+<h3><samp>04 / RESUME-AI</samp> &nbsp; <img src="https://skillicons.dev/icons?i=nextjs&theme=dark" height="22" alt="Next.js"> <img src="https://skillicons.dev/icons?i=mongodb&theme=dark" height="22" alt="MongoDB"> <img src="https://skillicons.dev/icons?i=tailwind&theme=dark" height="22" alt="Tailwind"></h3>
 <p><i>Full-Stack AI Resume Builder with Real-Time Preview Engine</i></p>
 
 <ul>
@@ -273,7 +267,7 @@
 <!--======== ACHIEVEMENTS ========-->
 <div id="user-content-toc">
   <ul align="center">
-    <summary><h2 style="display: inline-block"><samp>VERIFIED ACHIEVEMENTS</samp></h2></summary>
+    <summary><h2 style="display: inline-block; font-family: Inter, sans-serif"><samp>VERIFIED ACHIEVEMENTS</samp></h2></summary>
   </ul>
 </div>
 
@@ -309,7 +303,7 @@
 <!--======== CONNECT ========-->
 <div id="user-content-toc">
   <ul align="center">
-    <summary><h2 style="display: inline-block"><samp>CONNECT</samp></h2></summary>
+    <summary><h2 style="display: inline-block; font-family: Inter, sans-serif"><samp>CONNECT</samp></h2></summary>
   </ul>
 </div>
 
@@ -317,22 +311,22 @@
 
 <div align="center">
   <a href="https://linkedin.com/in/ayushkathil">
-    <img src="https://skillicons.dev/icons?i=linkedin&theme=dark" height="45" alt="LinkedIn" />
+    <img src="https://skillicons.dev/icons?i=linkedin&theme=dark" height="50" alt="LinkedIn" />
   </a> &nbsp;&nbsp;
   <a href="https://github.com/Ayush-kathil">
-    <img src="https://skillicons.dev/icons?i=github&theme=dark" height="45" alt="GitHub" />
+    <img src="https://skillicons.dev/icons?i=github&theme=dark" height="50" alt="GitHub" />
   </a> &nbsp;&nbsp;
   <a href="mailto:kathilshiva@gmail.com">
-    <img src="https://skillicons.dev/icons?i=gmail&theme=dark" height="45" alt="Email" />
+    <img src="https://skillicons.dev/icons?i=gmail&theme=dark" height="50" alt="Email" />
   </a> &nbsp;&nbsp;
   <a href="https://ayushgupta3.vercel.app">
-    <img src="https://skillicons.dev/icons?i=vercel&theme=dark" height="45" alt="Portfolio" />
+    <img src="https://skillicons.dev/icons?i=vercel&theme=dark" height="50" alt="Portfolio" />
   </a> &nbsp;&nbsp;
   <a href="https://twitter.com/ayushkathil">
-    <img src="https://skillicons.dev/icons?i=twitter&theme=dark" height="45" alt="Twitter" />
+    <img src="https://skillicons.dev/icons?i=twitter&theme=dark" height="50" alt="Twitter" />
   </a> &nbsp;&nbsp;
   <a href="https://discord.com">
-    <img src="https://skillicons.dev/icons?i=discord&theme=dark" height="45" alt="Discord" />
+    <img src="https://skillicons.dev/icons?i=discord&theme=dark" height="50" alt="Discord" />
   </a>
 </div>
 
