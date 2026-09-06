@@ -40,7 +40,7 @@
     />
     <source
       media="(prefers-color-scheme: light)"
-      srcset="https://raw.githubusercontent.com/Ayush-kathil/Ayush-kathil/output/github-snake.svg?v=3"
+      srcset="https://raw.githubusercontent.com/Ayush-kathil/ayush-kathil/output/github-snake.svg?v=3"
     />
     <img
       alt="GitHub contribution snake"
