@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import Navbar from "@/components/Navbar";
 
-const interFont = Inter({
-  variable: "--font-inter",
+
+const interFont = Plus_Jakarta_Sans({
+  variable: "--font-inter", // keeping the variable name so css doesn't break
   subsets: ["latin"],
 });
 
@@ -71,6 +72,8 @@ const structuredData = [
   },
 ];
 
+import TopCurtain from "@/components/TopCurtain";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -110,6 +113,7 @@ export default function RootLayout({
           Skip to content
         </a>
         <div className="grain-overlay" aria-hidden="true"></div>
+        <TopCurtain />
         <SmoothScroll>
           <Navbar />
           {children}

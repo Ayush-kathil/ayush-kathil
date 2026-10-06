@@ -1,13 +1,16 @@
 "use client";
-
 import { useCallback, useEffect, useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
-import { Home, User, Briefcase, Trophy, FolderKanban, MessageSquare } from "lucide-react";
+import { useLenis } from "lenis/react";
+import { CircleUserRound, TerminalSquare, Medal, Layers, Mail } from "lucide-react";
 import Link from "next/link";
 import Magnetic from "@/components/Magnetic";
+import MacDock from "@/components/MacDock";
+import { motion } from "framer-motion";
 
 export default function Navbar() {
   const [activeSection, setActiveSection] = useState("hero");
+  const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const [isHidden, setIsHidden] = useState(false);
   const [isHomeSection, setIsHomeSection] = useState(true);
   const router = useRouter();
@@ -43,16 +46,31 @@ export default function Navbar() {
     return () => observer.disconnect();
   }, []);
 
+  const lenis = useLenis();
+
   const handleNavClick = (id: string) => {
     if (pathname !== "/") {
       router.push(`/#${id}`);
       return;
     }
 
+    if (id === "contact") {
+      if (lenis) {
+        lenis.scrollTo(document.documentElement.scrollHeight, { duration: 1.5, offset: 0 });
+      } else {
+        window.scrollTo({ top: document.documentElement.scrollHeight, behavior: "smooth" });
+      }
+      return;
+    }
+
     const element = document.getElementById(id);
     if (element) {
-      const y = element.getBoundingClientRect().top + window.scrollY - 100;
-      window.scrollTo({ top: y, behavior: "smooth" });
+      if (lenis) {
+        lenis.scrollTo(element, { duration: 1.5, offset: -50 });
+      } else {
+        const y = element.getBoundingClientRect().top + window.scrollY - 50;
+        window.scrollTo({ top: y, behavior: "smooth" });
+      }
     }
   };
 
@@ -66,15 +84,19 @@ export default function Navbar() {
       let newSection = "";
 
       for (const id of sectionIds) {
+        if (id === "contact") continue; // We'll handle this exclusively
         const element = document.getElementById(id);
         if (element) {
           const rect = element.getBoundingClientRect();
-          // Find the section that has scrolled past the top third of the viewport.
-          // Because sections are in order, the last one to satisfy this is the active one.
           if (rect.top <= windowHeight / 3) {
             newSection = id;
           }
         }
+      }
+
+      // If we scroll to the absolute bottom, it's Contact.
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 100) {
+        newSection = "contact";
       }
 
       if (newSection) {
@@ -94,42 +116,20 @@ export default function Navbar() {
   if (isHidden) return null;
 
   const navItems = [
-    { name: "Summary", id: "about", icon: User },
-    { name: "Experience", id: "experience", icon: Briefcase },
-    { name: "Recognition", id: "achievements", icon: Trophy },
-    { name: "Systems", id: "projects", icon: FolderKanban },
-    { name: "Contact", id: "contact", icon: MessageSquare },
+    { name: "Summary", id: "about", icon: CircleUserRound },
+    { name: "Experience", id: "experience", icon: TerminalSquare },
+    { name: "Recognition", id: "achievements", icon: Medal },
+    { name: "Systems", id: "projects", icon: Layers },
+    { name: "Contact", id: "contact", icon: Mail },
   ];
 
   return (
-    <nav className={`fixed bottom-6 left-1/2 -translate-x-1/2 z-[9999] px-4 w-full sm:max-w-fit transition-all duration-500 ${isHomeSection ? "opacity-0 translate-y-10 pointer-events-none" : "opacity-100 translate-y-0"}`}>
-      <ul className="flex items-center justify-around sm:justify-start gap-1 sm:gap-2 p-1.5 sm:p-2 rounded-2xl sm:rounded-full border border-[var(--border-color)] bg-white/70 dark:bg-black/80 backdrop-blur-2xl shadow-[0_8px_32px_rgba(0,0,0,0.12)]">
-        {navItems.map((item) => {
-          const Icon = item.icon;
-          const isActive = activeSection === item.id;
-
-          return (
-            <li key={item.id} className="flex-1 sm:flex-none">
-              <button
-                onClick={() => handleNavClick(item.id)}
-                className={`relative w-full sm:w-auto flex flex-col sm:flex-row items-center gap-1 sm:gap-2 px-2 sm:px-4 py-2 sm:py-3 rounded-xl sm:rounded-full text-[10px] sm:text-sm font-medium transition-all duration-300 ${
-                  isActive 
-                    ? "text-black dark:text-white bg-black/5 dark:bg-white/10 sm:bg-black sm:text-white sm:dark:bg-white sm:dark:text-black" 
-                    : "text-[var(--text-secondary)] hover:text-black dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5"
-                }`}
-              >
-                <Magnetic>
-                  <Icon className={`w-4 h-4 sm:w-4 sm:h-4 transition-transform duration-300 ${isActive ? "scale-110" : ""}`} />
-                </Magnetic>
-                <span className="block">{item.name}</span>
-                {isActive && (
-                  <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-black dark:bg-white sm:hidden" />
-                )}
-              </button>
-            </li>
-          );
-        })}
-      </ul>
-    </nav>
+    <MacDock 
+      navItems={navItems}
+      activeSection={activeSection}
+      handleNavClick={handleNavClick}
+      isHidden={isHidden}
+      isHomeSection={isHomeSection}
+    />
   );
 }

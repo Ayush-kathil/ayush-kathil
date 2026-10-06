@@ -1,12 +1,10 @@
 "use client";
+import { easeApple, easeSmooth, springSoft, springMagnetic, springSnappy, durationFast, durationMedium, durationSlow, staggerFast, staggerMedium, staggerSlow, viewportOneShot, fadeUp, fadeDown, fadeLeft, fadeRight, scaleReveal, staggerContainer } from "@/lib/motion";
 
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRef } from "react";
+import { motion } from "framer-motion";
 import { ShieldCheck, Sparkles, TrendingUp, Users } from "lucide-react";
 import TextReveal from "@/components/TextReveal";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const snapshotItems = [
   {
@@ -34,27 +32,23 @@ const snapshotItems = [
 export default function ProfessionalSnapshot() {
   const sectionRef = useRef<HTMLElement>(null);
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        gsap.utils.toArray(".snapshot-card"),
-        { y: 24, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.65,
-          stagger: 0.08,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 85%",
-          },
-        }
-      );
-    }, sectionRef);
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: staggerFast,
+      },
+    },
+  };
 
-    return () => ctx.revert();
-  }, []);
+  const itemVariants = {
+    hidden: { y: 24, opacity: 0 },
+    visible: { 
+      y: 0, 
+      opacity: 1, 
+      transition: { duration: 0.65, ease: easeApple } 
+    },
+  };
 
   return (
     <section
@@ -77,12 +71,19 @@ export default function ProfessionalSnapshot() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 md:gap-5">
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={containerVariants}
+          className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 md:gap-5"
+        >
           {snapshotItems.map((item) => {
             const Icon = item.icon;
 
             return (
-              <article
+              <motion.article
+                variants={itemVariants}
                 key={item.title}
                 className="snapshot-card rounded-3xl border border-[var(--border-color)] bg-[var(--bg-primary)] p-5 sm:p-6 md:p-8 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
               >
@@ -99,10 +100,10 @@ export default function ProfessionalSnapshot() {
                     </p>
                   </div>
                 </div>
-              </article>
+              </motion.article>
             );
           })}
-        </div>
+        </motion.div>
 
         <div className="mt-4 sm:mt-5 md:mt-6 rounded-3xl border border-[var(--border-color)] bg-[var(--bg-primary)] px-5 sm:px-6 md:px-8 py-4 sm:py-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
           <p className="text-sm sm:text-base text-[var(--text-secondary)]">

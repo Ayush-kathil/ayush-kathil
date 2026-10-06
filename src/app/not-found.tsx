@@ -1,33 +1,43 @@
 "use client";
+import { easeApple, easeSmooth, springSoft, springMagnetic, springSnappy, durationFast, durationMedium, durationSlow, staggerFast, staggerMedium, staggerSlow, viewportOneShot, fadeUp, fadeDown, fadeLeft, fadeRight, scaleReveal, staggerContainer } from "@/lib/motion";
 
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
+import { motion } from "framer-motion";
 
 export default function NotFound() {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: staggerMedium,
+      },
+    },
+  };
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        ".reveal",
-        { y: 30, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1, stagger: 0.1, ease: "expo.out" }
-      );
-    }, containerRef);
-    return () => ctx.revert();
-  }, []);
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: { 
+      y: 0, 
+      opacity: 1, 
+      transition: { duration: 0.8, ease: easeApple } 
+    },
+  };
 
   return (
-    <main ref={containerRef} className="min-h-screen bg-white flex flex-col items-center justify-center p-8 text-center">
-      <div className="reveal mb-8">
+    <motion.main 
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
+      className="min-h-screen bg-white flex flex-col items-center justify-center p-8 text-center"
+    >
+      <motion.div variants={itemVariants} className="mb-8">
         <h1 className="text-[12rem] md:text-[20rem] font-bold tracking-tighter leading-none text-black selection:bg-black selection:text-white">
           404
         </h1>
-      </div>
+      </motion.div>
       
-      <div className="reveal max-w-lg">
+      <motion.div variants={itemVariants} className="max-w-lg">
         <p className="text-2xl md:text-3xl font-light text-gray-500 mb-12">
           Whoops! This node is offline. <br />
           <span className="text-black font-medium italic">"pls visit again we are working on this currently"</span>
@@ -39,13 +49,13 @@ export default function NotFound() {
         >
           <ArrowLeft size={20} /> Return to Base
         </Link>
-      </div>
+      </motion.div>
 
-      <div className="reveal mt-24 flex gap-4 opacity-20">
+      <motion.div variants={itemVariants} className="mt-24 flex gap-4 opacity-20">
          <div className="w-2 h-2 rounded-full bg-black animate-ping" />
          <div className="w-2 h-2 rounded-full bg-black animate-ping [animation-delay:0.2s]" />
          <div className="w-2 h-2 rounded-full bg-black animate-ping [animation-delay:0.4s]" />
-      </div>
-    </main>
+      </motion.div>
+    </motion.main>
   );
 }

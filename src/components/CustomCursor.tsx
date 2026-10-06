@@ -1,56 +1,67 @@
 "use client";
+import { easeApple, easeSmooth, springSoft, springMagnetic, springSnappy, durationFast, durationMedium, durationSlow, staggerFast, staggerMedium, staggerSlow, viewportOneShot, fadeUp, fadeDown, fadeLeft, fadeRight, scaleReveal, staggerContainer } from "@/lib/motion";
 
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, useSpring, useMotionValue } from "framer-motion";
 
 export default function CustomCursor() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [isHovering, setIsHovering] = useState(false);
-  const [isMobile, setIsMobile] = useState(true);
+  const [isHovered, setIsHovered] = useState(false);
+  const cursorX = useMotionValue(-100);
+  const cursorY = useMotionValue(-100);
+
+  const springConfig = springSoft;
+  const cursorXSpring = useSpring(cursorX, springConfig);
+  const cursorYSpring = useSpring(cursorY, springConfig);
+
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    setIsMobile(window.innerWidth < 768);
-    const updateMousePosition = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
+    if (window.matchMedia("(hover: none) and (pointer: coarse)").matches) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    
+    setIsVisible(true);
+
+    const moveCursor = (e: MouseEvent) => {
+      cursorX.set(e.clientX);
+      cursorY.set(e.clientY);
     };
 
     const handleMouseOver = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
       if (
-        target.tagName.toLowerCase() === "a" ||
         target.tagName.toLowerCase() === "button" ||
+        target.tagName.toLowerCase() === "a" ||
+        target.closest("button") ||
         target.closest("a") ||
-        target.closest("button")
+        target.classList.contains("magnetic")
       ) {
-        setIsHovering(true);
+        setIsHovered(true);
       } else {
-        setIsHovering(false);
+        setIsHovered(false);
       }
     };
 
-    window.addEventListener("mousemove", updateMousePosition);
+    window.addEventListener("mousemove", moveCursor);
     window.addEventListener("mouseover", handleMouseOver);
 
     return () => {
-      window.removeEventListener("mousemove", updateMousePosition);
+      window.removeEventListener("mousemove", moveCursor);
       window.removeEventListener("mouseover", handleMouseOver);
     };
-  }, []);
-
-  if (isMobile) return null;
+  }, [cursorX, cursorY]);
 
   return (
-    <motion.div
-      className="fixed top-0 left-0 w-6 h-6 rounded-full pointer-events-none z-[1000000] mix-blend-difference hidden md:block"
-      style={{
-        backgroundColor: "white",
-      }}
-      animate={{
-        x: mousePosition.x - 12,
-        y: mousePosition.y - 12,
-        scale: isHovering ? 2.5 : 1,
-      }}
-      transition={{ type: "spring", stiffness: 500, damping: 28, mass: 0.5 }}
-    />
+    <>
+      <motion.div
+        className="fixed top-0 left-0 w-4 h-4 bg-[var(--text-primary)] rounded-full mix-blend-difference pointer-events-none z-[9999] -translate-x-1/2 -translate-y-1/2"
+        style={{
+          x: cursorXSpring,
+          y: cursorYSpring,
+          scale: isHovered ? 2.5 : 1,
+          opacity: 1
+        }}
+        transition={{ scale: springSnappy }}
+      />
+    </>
   );
 }

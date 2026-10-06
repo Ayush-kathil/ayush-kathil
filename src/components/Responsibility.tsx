@@ -1,12 +1,11 @@
 "use client";
+import { easeApple, easeSmooth, springSoft, springMagnetic, springSnappy, durationFast, durationMedium, durationSlow, staggerFast, staggerMedium, staggerSlow, viewportOneShot, fadeUp, fadeDown, fadeLeft, fadeRight, scaleReveal, staggerContainer } from "@/lib/motion";
 
 import { useRef, useEffect } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Users, Settings } from "lucide-react";
+import { motion } from "framer-motion";
 import TextReveal from "@/components/TextReveal";
 
-gsap.registerPlugin(ScrollTrigger);
 
 const responsibilities = [
   {
@@ -26,27 +25,23 @@ const responsibilities = [
 export default function Responsibility() {
   const containerRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        ".resp-item",
-        { x: -40, opacity: 0 },
-        {
-          x: 0,
-          opacity: 1,
-          duration: 1,
-          stagger: 0.2,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: "top 80%",
-          },
-        }
-      );
-    }, containerRef);
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: staggerSlow,
+      },
+    },
+  };
 
-    return () => ctx.revert();
-  }, []);
+  const itemVariants = {
+    hidden: { x: -40, opacity: 0 },
+    visible: { 
+      x: 0, 
+      opacity: 1, 
+      transition: { duration: 1, ease: easeApple } 
+    },
+  };
 
   return (
     <section id="responsibility" ref={containerRef} className="w-full bg-[var(--bg-primary)] px-4 sm:px-6 md:px-12 py-24 rounded-[var(--radius-uber)] -mt-12 relative z-40">
@@ -58,11 +53,18 @@ export default function Responsibility() {
           </h2>
         </div>
 
-        <div className="flex flex-col gap-6">
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={containerVariants}
+          className="flex flex-col gap-6"
+        >
           {responsibilities.map((resp, i) => {
             const Icon = resp.icon;
             return (
-              <div 
+              <motion.div 
+                variants={itemVariants}
                 key={i} 
                 className="resp-item group flex flex-col md:flex-row gap-6 md:gap-8 md:items-center bg-[var(--bg-secondary)] border border-[var(--border-color)] p-6 sm:p-12 rounded-[var(--radius-uber)] hover:bg-white dark:hover:bg-[#0a0a0a] transition-all duration-500"
               >
@@ -80,11 +82,12 @@ export default function Responsibility() {
                     {resp.description}
                   </p>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
 }
+

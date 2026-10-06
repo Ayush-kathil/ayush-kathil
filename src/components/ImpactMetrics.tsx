@@ -1,10 +1,8 @@
 "use client";
+import { easeApple, easeSmooth, springSoft, springMagnetic, springSnappy, durationFast, durationMedium, durationSlow, staggerFast, staggerMedium, staggerSlow, viewportOneShot, fadeUp, fadeDown, fadeLeft, fadeRight, scaleReveal, staggerContainer } from "@/lib/motion";
 
 import { useEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
+import { useInView, animate } from "framer-motion";
 
 const metrics = [
   { label: "INFERENCE FPS ON CPU", value: 30, suffix: "+" },
@@ -15,32 +13,24 @@ const metrics = [
 
 export default function ImpactMetrics() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(containerRef, { once: true, margin: "-100px" });
   const numberRefs = useRef<(HTMLSpanElement | null)[]>([]);
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
+    if (isInView) {
       numberRefs.current.forEach((el, index) => {
         if (!el) return;
         const targetValue = metrics[index].value;
-        
-        gsap.to(el, {
-          innerText: targetValue,
+        animate(0, targetValue, {
           duration: 2,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: el,
-            start: "top 85%",
-          },
-          snap: { innerText: 1 },
-          onUpdate: function () {
-            el.innerHTML = Math.ceil(Number(this.targets()[0].innerText)).toLocaleString();
-          },
+          ease: easeSmooth,
+          onUpdate: (latest) => {
+            el.innerHTML = Math.ceil(latest).toLocaleString();
+          }
         });
       });
-    }, containerRef);
-
-    return () => ctx.revert();
-  }, []);
+    }
+  }, [isInView]);
 
   return (
     <section ref={containerRef} className="w-full bg-[var(--bg-primary)] text-[var(--text-primary)] px-6 md:px-12 pb-32 pt-24">
@@ -73,3 +63,4 @@ export default function ImpactMetrics() {
     </section>
   );
 }
+

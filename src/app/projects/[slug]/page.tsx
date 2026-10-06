@@ -1,11 +1,12 @@
 "use client";
+import { easeApple, easeSmooth, springSoft, springMagnetic, springSnappy, durationFast, durationMedium, durationSlow, staggerFast, staggerMedium, staggerSlow, viewportOneShot, fadeUp, fadeDown, fadeLeft, fadeRight, scaleReveal, staggerContainer } from "@/lib/motion";
 
 import { useParams, useRouter } from "next/navigation";
 import { projectsData } from "@/data/projects";
 import { ArrowLeft, Github, ExternalLink, ShieldCheck, Zap, Layers } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useRef } from "react";
-import gsap from "gsap";
+import { motion } from "framer-motion";
 
 export default function ProjectPage() {
   const params = useParams();
@@ -17,15 +18,7 @@ export default function ProjectPage() {
   useEffect(() => {
     if (!project) return;
     
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        ".reveal",
-        { y: 40, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1, stagger: 0.1, ease: "expo.out" }
-      );
-    }, containerRef);
-
-    return () => ctx.revert();
+    
   }, [project]);
 
   if (!project) {
@@ -42,8 +35,31 @@ export default function ProjectPage() {
     );
   }
 
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: staggerMedium,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: 40, opacity: 0 },
+    visible: { 
+      y: 0, 
+      opacity: 1, 
+      transition: { duration: 0.8, ease: easeApple } 
+    },
+  };
+
   return (
-    <main ref={containerRef} className="min-h-screen bg-[var(--bg-primary)] text-[var(--text-primary)] selection:bg-[var(--text-primary)] selection:text-[var(--bg-primary)] pb-32">
+    <motion.main 
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
+      className="min-h-screen bg-[var(--bg-primary)] text-[var(--text-primary)] selection:bg-[var(--text-primary)] selection:text-[var(--bg-primary)] pb-32"
+    >
       {/* HEADER NAVIGATION */}
       <nav className="fixed top-0 left-0 w-full z-[100] px-6 py-8 flex justify-between items-center pointer-events-none pr-24 sm:pr-28">
         <Link href="/#projects" className="pointer-events-auto flex items-center gap-2 group p-4 rounded-full bg-[var(--bg-secondary)] backdrop-blur-md border border-[var(--border-color)] shadow-sm hover:bg-[var(--text-primary)] hover:text-[var(--bg-primary)] transition-all">
@@ -66,7 +82,7 @@ export default function ProjectPage() {
 
       {/* HERO SECTION */}
       <section className="pt-40 px-6 sm:px-12 md:px-24 max-w-[1600px] mx-auto">
-        <div className="reveal mb-12">
+        <motion.div variants={itemVariants} className="mb-12">
           <span className="inline-block px-4 py-2 rounded-full bg-[var(--bg-secondary)] border border-[var(--border-color)] text-[10px] uppercase tracking-[0.2em] font-semibold text-[var(--text-secondary)] mb-6">
             {project.role}
           </span>
@@ -76,10 +92,10 @@ export default function ProjectPage() {
           <p className="text-2xl md:text-3xl font-light text-[var(--text-secondary)] max-w-4xl leading-snug">
             {project.desc}
           </p>
-        </div>
+        </motion.div>
 
         {/* METRICS GRID */}
-        <div className="reveal grid grid-cols-1 md:grid-cols-3 gap-6 mb-32 pt-12 border-t border-[var(--border-color)]">
+        <motion.div variants={itemVariants} className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-32 pt-12 border-t border-[var(--border-color)]">
           {project.outcomes.map((outcome, i) => (
             <div key={i} className="flex flex-col gap-6 p-10 rounded-[var(--radius-uber)] bg-[var(--bg-secondary)] border border-[var(--border-color)] hover:bg-[var(--bg-primary)] hover:shadow-2xl transition-all duration-500 group">
               <div className="w-12 h-12 rounded-2xl bg-[var(--bg-primary)] border border-[var(--border-color)] flex items-center justify-center group-hover:scale-110 transition-transform duration-500 shadow-sm text-[var(--text-primary)]">
@@ -88,10 +104,10 @@ export default function ProjectPage() {
               <p className="text-xl font-semibold uppercase tracking-tight text-[var(--text-primary)]">{outcome}</p>
             </div>
           ))}
-        </div>
+        </motion.div>
 
         {/* PROJECT IMAGE / PREVIEW */}
-        <div className="reveal relative aspect-[16/9] w-full rounded-[var(--radius-uber)] bg-black overflow-hidden mb-32 group border border-[var(--border-color)] shadow-2xl">
+        <motion.div variants={itemVariants} className="relative aspect-[16/9] w-full rounded-[var(--radius-uber)] bg-black overflow-hidden mb-32 group border border-[var(--border-color)] shadow-2xl">
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
           {project.video ? (
             <video
@@ -116,11 +132,11 @@ export default function ProjectPage() {
              <p className="text-white/60 text-xs uppercase tracking-widest mb-2 font-semibold">Project Phase</p>
              <h3 className="text-white text-3xl font-semibold">Production Ready</h3>
           </div>
-        </div>
+        </motion.div>
 
         {/* CASE STUDY CONTENT */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 mb-40">
-          <div className="reveal space-y-20">
+          <motion.div variants={itemVariants} className="space-y-20">
             <div>
               <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[var(--text-secondary)] mb-8">System Deficit (The Problem)</p>
               <p className="text-3xl md:text-4xl font-light leading-[1.1] text-[var(--text-primary)]">{project.caseStudy.problem}</p>
@@ -129,9 +145,9 @@ export default function ProjectPage() {
               <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[var(--text-secondary)] mb-8">Technical Architecture</p>
               <p className="text-xl md:text-2xl font-light leading-relaxed text-[var(--text-secondary)]">{project.architecture}</p>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="reveal space-y-20 lg:pt-32">
+          <motion.div variants={itemVariants} className="space-y-20 lg:pt-32">
             <div>
               <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[var(--text-secondary)] mb-8">Engineering Response</p>
               <p className="text-xl md:text-2xl text-[var(--text-primary)] font-light leading-relaxed">{project.caseStudy.solution}</p>
@@ -147,12 +163,18 @@ export default function ProjectPage() {
                 ))}
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* FOOTER CALL TO ACTION */}
-      <section className="reveal mt-40 px-6 py-32 bg-[var(--bg-secondary)] border-t border-[var(--border-color)] text-center">
+      <motion.section 
+        variants={itemVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        className="mt-40 px-6 py-32 bg-[var(--bg-secondary)] border-t border-[var(--border-color)] text-center"
+      >
          <p className="text-xs font-bold uppercase tracking-[0.4em] text-[var(--text-secondary)] mb-10">Next Steps</p>
          <Link 
             href="/#contact" 
@@ -160,7 +182,7 @@ export default function ProjectPage() {
          >
            Let's build scale.
          </Link>
-      </section>
-    </main>
+      </motion.section>
+    </motion.main>
   );
 }

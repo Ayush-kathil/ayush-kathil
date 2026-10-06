@@ -1,14 +1,12 @@
 "use client";
+import { easeApple, easeSmooth, springSoft, springMagnetic, springSnappy, durationFast, durationMedium, durationSlow, staggerFast, staggerMedium, staggerSlow, viewportOneShot, fadeUp, fadeDown, fadeLeft, fadeRight, scaleReveal, staggerContainer } from "@/lib/motion";
 
 import { useRef, useEffect, useState } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
 import TextReveal from "@/components/TextReveal";
 
-gsap.registerPlugin(ScrollTrigger);
 
-function ExperienceCard({ exp, index }: { exp: any, index: number }) {
+function ExperienceCard({ exp, index, variants }: { exp: any, index: number, variants?: any }) {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
   const [isTouch, setIsTouch] = useState(false);
@@ -25,8 +23,9 @@ function ExperienceCard({ exp, index }: { exp: any, index: number }) {
   }
 
   return (
-    <div 
-      className="exp-item group relative rounded-[var(--radius-uber)] bg-[#050505] p-6 sm:p-12 border border-white/10 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-blue-500/10"
+    <motion.div 
+      variants={variants}
+      className="exp-item group relative rounded-[var(--radius-uber)] bg-[#0A0F1C] p-6 sm:p-12 border border-white/10 shadow-[0_20px_40px_rgba(10,15,28,0.2)] transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/20"
       onMouseMove={handleMouseMove}
     >
       <motion.div
@@ -35,70 +34,75 @@ function ExperienceCard({ exp, index }: { exp: any, index: number }) {
           background: useMotionTemplate`
             radial-gradient(
               600px circle at ${mouseX}px ${mouseY}px,
-              rgba(59, 130, 246, 0.15),
+              rgba(59, 130, 246, 0.2),
               transparent 80%
             )
           `,
         }}
       />
       <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6 sm:gap-8">
-        <div className="md:w-1/3">
+        <div className="md:w-[40%]">
           <p className="text-[9px] sm:text-[10px] font-semibold uppercase tracking-widest text-blue-400 mb-2">
             {exp.organization}
           </p>
-          <h3 className="text-xl sm:text-2xl md:text-4xl font-semibold tracking-tight text-white group-hover:text-blue-50 transition-colors duration-500">
+          <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold tracking-tight text-white group-hover:text-blue-50 transition-colors duration-500">
             {exp.title}
           </h3>
         </div>
-        <div className="md:w-2/3 md:pl-16 border-t md:border-t-0 md:border-l border-white/10 pt-6 md:pt-0 group-hover:border-blue-500/30 transition-colors duration-500">
-          <p className="text-base sm:text-lg md:text-xl font-light leading-relaxed text-white/60 group-hover:text-white/90 transition-colors duration-500">
-            {exp.description}
-          </p>
+        <div className="md:w-[60%] md:pl-12 border-t md:border-t-0 md:border-l border-white/10 pt-6 md:pt-0 group-hover:border-blue-500/30 transition-colors duration-500">
+          <ul className="space-y-4">
+            {exp.descriptions.map((desc: string, i: number) => (
+              <li key={i} className="text-sm sm:text-base md:text-lg font-light leading-relaxed text-white/60 group-hover:text-white/90 transition-colors duration-500 flex items-start gap-3">
+                <span className="text-blue-500/50 mt-1.5 text-xs">•</span>
+                <span>{desc}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
 const experiences = [
   {
-    title: "Open Source Contributor",
-    organization: "Kubeflow",
-    description:
-      "Contributing to Katib (AutoML) and Docs-Agent. Fixed HuggingFace trainer startup crashes, ensured backward compatibility for empty payloads, and optimized backend retrieval for the documentation agent.",
+    title: "Open-Source Contributor",
+    organization: "Kubeflow Pipelines (Google / Linux Foundation)",
+    descriptions: [
+      "Patched a critical Denial of Service (DoS) vulnerability in the Go backend by enforcing strict byte limits on artifact uploads to prevent zip bomb crashes [PR #14171].",
+      "Secured the metrics parsing engine against unbounded memory exploits by implementing precise traversal budgets, eliminating Out-of-Memory (OOM) attacks [PR #14186]."
+    ]
   },
   {
-    title: "Contributor",
-    organization: "GSSOC",
-    description:
-      "Contributed to various open-source repositories, focusing on bug fixes, code maintainability, and passing automated CI/CD checks during technical reviews.",
+    title: "Open-Source Contributor",
+    organization: "DevPath",
+    descriptions: [
+      "Fixed a major bug causing 500 Internal Server Errors by adding safe JSON data parsing, ensuring the backend doesn't crash when handling broken links [PR #765].",
+      "Improved the recommendation algorithm using partial string matching for better search accuracy, expanded the database with 15 new projects, and fixed failing CI/CD tests [PR #804]."
+    ]
   },
 ];
 
 export default function Experience() {
   const containerRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        ".exp-item",
-        { y: 40, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 1,
-          stagger: 0.2,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: "top 80%",
-          },
-        }
-      );
-    }, containerRef);
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: staggerSlow,
+      },
+    },
+  };
 
-    return () => ctx.revert();
-  }, []);
+  const itemVariants = {
+    hidden: { y: 40, opacity: 0 },
+    visible: { 
+      y: 0, 
+      opacity: 1, 
+      transition: { duration: 1, ease: easeApple } 
+    },
+  };
 
   return (
     <section id="experience" ref={containerRef} className="w-full bg-[var(--bg-secondary)] px-4 sm:px-6 md:px-12 py-24 rounded-[var(--radius-uber)] -mt-12 relative z-30 border-t border-[var(--border-color)]">
@@ -110,12 +114,19 @@ export default function Experience() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 gap-6">
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={containerVariants}
+          className="grid grid-cols-1 gap-6"
+        >
           {experiences.map((exp, i) => (
-            <ExperienceCard key={i} exp={exp} index={i} />
+            <ExperienceCard key={i} exp={exp} index={i} variants={itemVariants} />
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
 }
+

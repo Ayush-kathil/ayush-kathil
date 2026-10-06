@@ -1,5 +1,4 @@
 "use client";
-
 import { ReactLenis } from "lenis/react";
 import { useMemo } from "react";
 
@@ -15,12 +14,13 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
     }
 
     return {
-      lerp: 0.05,
-      duration: 1.2,
+      lerp: 0.05, // Smoother, heavier feel
+      duration: 1.8, // Slightly longer duration for the Apple inertia feel
+      easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Expo.easeOut
       smoothWheel: true,
-      wheelMultiplier: 1,
-      touchMultiplier: 2,
-      smoothTouch: true,
+      wheelMultiplier: 1, // Native feeling multiplier
+      touchMultiplier: 1.5,
+      smoothTouch: false,
     };
   }, []);
 

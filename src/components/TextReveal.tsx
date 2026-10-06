@@ -1,4 +1,5 @@
 "use client";
+import { easeApple, easeSmooth, springSoft, springMagnetic, springSnappy, durationFast, durationMedium, durationSlow, staggerFast, staggerMedium, staggerSlow, viewportOneShot, fadeUp, fadeDown, fadeLeft, fadeRight, scaleReveal, staggerContainer } from "@/lib/motion";
 
 import { motion } from "framer-motion";
 import { ReactNode } from "react";
@@ -19,12 +20,12 @@ export default function TextReveal({ children, delay = 0 }: TextRevealProps) {
           <span key={i} className="overflow-hidden inline-block mr-[0.25em]">
             <motion.span
               className="inline-block"
-              initial={{ y: "100%" }}
-              whileInView={{ y: 0 }}
+              initial={{ y: "100%", filter: "blur(8px)", opacity: 0 }}
+              whileInView={{ y: 0, filter: "blur(0px)", opacity: 1 }}
               viewport={{ once: true, margin: "-10%" }}
               transition={{ 
-                duration: 0.6, 
-                ease: [0.22, 1, 0.36, 1], 
+                duration: 0.8, 
+                ease: easeApple, 
                 delay: delay + (i * 0.04) 
               }}
             >
@@ -40,10 +41,10 @@ export default function TextReveal({ children, delay = 0 }: TextRevealProps) {
   return (
     <div className="overflow-hidden inline-block align-bottom w-full">
       <motion.div
-        initial={{ y: "100%" }}
-        whileInView={{ y: 0 }}
+        initial={{ y: "100%", filter: "blur(8px)", opacity: 0 }}
+        whileInView={{ y: 0, filter: "blur(0px)", opacity: 1 }}
         viewport={{ once: true, margin: "-10%" }}
-        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay }}
+        transition={{ duration: 0.8, ease: easeApple, delay }}
       >
         {children}
       </motion.div>

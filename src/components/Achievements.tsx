@@ -1,15 +1,13 @@
 "use client";
+import { easeApple, easeSmooth, springSoft, springMagnetic, springSnappy, durationFast, durationMedium, durationSlow, staggerFast, staggerMedium, staggerSlow, viewportOneShot, fadeUp, fadeDown, fadeLeft, fadeRight, scaleReveal, staggerContainer } from "@/lib/motion";
 
 import { useRef, useEffect, useState } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
 import { Trophy, Award, Code2, GraduationCap } from "lucide-react";
 import TextReveal from "@/components/TextReveal";
 
-gsap.registerPlugin(ScrollTrigger);
 
-function AchievementCard({ ach }: { ach: any }) {
+function AchievementCard({ ach, variants }: { ach: any, variants?: any }) {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
   const [isTouch, setIsTouch] = useState(false);
@@ -28,7 +26,8 @@ function AchievementCard({ ach }: { ach: any }) {
   const Icon = ach.icon;
 
   return (
-    <div 
+    <motion.div 
+      variants={variants}
       className="ach-card relative overflow-hidden bg-[#050505] border border-white/10 p-6 sm:p-10 rounded-[var(--radius-uber)] group transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-purple-500/10"
       onMouseMove={handleMouseMove}
     >
@@ -60,7 +59,7 @@ function AchievementCard({ ach }: { ach: any }) {
           </p>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
@@ -94,27 +93,23 @@ const achievements = [
 export default function Achievements() {
   const containerRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        ".ach-card",
-        { y: 40, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 1,
-          stagger: 0.15,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: "top 80%",
-          },
-        }
-      );
-    }, containerRef);
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: staggerSlow,
+      },
+    },
+  };
 
-    return () => ctx.revert();
-  }, []);
+  const itemVariants = {
+    hidden: { y: 30, opacity: 0 },
+    visible: { 
+      y: 0, 
+      opacity: 1, 
+      transition: { duration: 1, ease: easeApple } 
+    },
+  };
 
   return (
     <section id="achievements" ref={containerRef} className="w-full bg-[var(--bg-primary)] px-4 sm:px-6 md:px-12 py-24">
@@ -126,12 +121,19 @@ export default function Achievements() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={containerVariants}
+          className="grid grid-cols-1 md:grid-cols-2 gap-6"
+        >
           {achievements.map((ach, i) => (
-            <AchievementCard key={i} ach={ach} />
+            <AchievementCard key={i} ach={ach} variants={itemVariants} />
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
 }
+

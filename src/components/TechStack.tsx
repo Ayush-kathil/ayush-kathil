@@ -1,4 +1,5 @@
 "use client";
+import { easeApple, easeSmooth, springSoft, springMagnetic, springSnappy, durationFast, durationMedium, durationSlow, staggerFast, staggerMedium, staggerSlow, viewportOneShot, fadeUp, fadeDown, fadeLeft, fadeRight, scaleReveal, staggerContainer } from "@/lib/motion";
 
 import React from "react";
 
@@ -41,52 +42,106 @@ const bottomRow: TechItem[] = [
 ];
 
 const Pill = ({ item }: { item: TechItem }) => (
-  <div className="flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2.5 sm:py-3.5 bg-white rounded-full shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-gray-100/50 flex-shrink-0 hover:scale-105 transition-transform duration-300 cursor-default">
-    <div 
-      className="w-3 h-3 sm:w-3.5 sm:h-3.5 rounded-full shadow-inner"
-      style={{ backgroundColor: item.color }}
-    />
-    <span className="font-semibold text-[var(--text-primary)] text-xs sm:text-sm tracking-wide">
-      {item.name}
-    </span>
-  </div>
+  <Magnetic>
+    <div className="flex items-center gap-3 px-6 py-4 bg-white/5 backdrop-blur-2xl rounded-full border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_40px_rgba(255,255,255,0.1)] hover:-translate-y-1 hover:bg-white/10 transition-all duration-400 cursor-pointer group">
+      <div 
+        className="w-4 h-4 rounded-full shadow-[0_0_10px_rgba(255,255,255,0.2)] group-hover:scale-125 group-hover:shadow-[0_0_20px_currentColor] transition-all duration-500 ease-out"
+        style={{ backgroundColor: item.color, color: item.color }}
+      />
+      <span className="font-semibold text-white/90 text-sm sm:text-base tracking-wide group-hover:tracking-widest transition-all duration-500">
+        {item.name}
+      </span>
+    </div>
+  </Magnetic>
 );
 
-const MarqueeRow = ({ items, className = "" }: { items: TechItem[], className?: string }) => {
-  // Duplicate items for seamless loop
-  const doubledItems = [...items, ...items, ...items];
-  
-  return (
-    <div className="flex w-[200%] overflow-hidden relative group">
-      <div className={`flex gap-6 w-full ${className} group-hover:[animation-play-state:paused]`}>
-        {doubledItems.map((item, i) => (
-          <Pill key={`${item.name}-${i}`} item={item} />
-        ))}
-      </div>
-    </div>
-  );
-};
+
+
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
+import Magnetic from "./Magnetic";
 
 export default function TechStack() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  });
+
+  const { scrollYProgress: curveProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "start center"]
+  });
+
+  // Parallax scroll physics
+  const x1 = useTransform(scrollYProgress, [0, 1], [150, -400]);
+  const x2 = useTransform(scrollYProgress, [0, 1], [-400, 150]);
+  const x3 = useTransform(scrollYProgress, [0, 1], [250, -300]);
+
+  // Smooth dome curve that flattens out as you scroll down to the section
+  const borderRadius = useTransform(
+    curveProgress, 
+    [0, 1], 
+    ["50% 50% 0 0 / 200px 200px 0 0", "0% 0% 0 0 / 0px 0px 0 0"]
+  );
+
   return (
-    <section className="py-32 w-full overflow-hidden relative bg-[var(--bg-primary)]">
-      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-12 mb-20 text-center relative z-10">
-        <h2 className="text-5xl md:text-7xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
+    <motion.section 
+      ref={containerRef} 
+      className="pt-40 pb-32 w-full relative bg-[#0A0F1C] text-white -mt-10"
+      style={{ borderRadius }}
+    >
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-12 mb-24 text-center relative z-10">
+        <h2 className="text-5xl md:text-7xl font-semibold tracking-tight text-white mb-6">
           Tech Stack
         </h2>
-        <p className="text-xl md:text-2xl text-[var(--text-secondary)] font-medium">
+        <p className="text-xl md:text-2xl text-white/60 font-light">
           Tools and technologies I work with.
         </p>
       </div>
 
-      <div className="flex flex-col gap-6 relative z-10 [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
-        <MarqueeRow items={topRow} className="animate-marquee" />
-        <MarqueeRow items={middleRow} className="animate-marquee-reverse ml-[-10%]" />
-        <MarqueeRow items={bottomRow} className="animate-marquee-slow" />
+      <div className="w-full overflow-hidden">
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={{
+            visible: { transition: { staggerChildren: staggerSlow } }
+          }}
+          className="flex flex-col gap-8 relative z-10 [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)] py-10"
+        >
+          <motion.div 
+            variants={{ hidden: { opacity: 0, y: 50, filter: "blur(10px)" }, visible: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 1, ease: easeApple } } }}
+            style={{ x: x1 }} className="flex gap-6 w-[200%] ml-[-20%]"
+          >
+            {[...topRow, ...topRow].map((item, i) => (
+              <Pill key={`${item.name}-${i}`} item={item} />
+            ))}
+          </motion.div>
+          
+          <motion.div 
+            variants={{ hidden: { opacity: 0, y: 50, filter: "blur(10px)" }, visible: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 1, ease: easeApple } } }}
+            style={{ x: x2 }} className="flex gap-6 w-[200%] ml-[-30%]"
+          >
+            {[...middleRow, ...middleRow].map((item, i) => (
+              <Pill key={`${item.name}-${i}`} item={item} />
+            ))}
+          </motion.div>
+          
+          <motion.div 
+            variants={{ hidden: { opacity: 0, y: 50, filter: "blur(10px)" }, visible: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 1, ease: easeApple } } }}
+            style={{ x: x3 }} className="flex gap-6 w-[200%] ml-[-10%]"
+          >
+            {[...bottomRow, ...bottomRow].map((item, i) => (
+              <Pill key={`${item.name}-${i}`} item={item} />
+            ))}
+          </motion.div>
+        </motion.div>
       </div>
       
       {/* Subtle modern glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.03)_0%,transparent_70%)] pointer-events-none" />
-    </section>
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.04)_0%,transparent_70%)] pointer-events-none" />
+    </motion.section>
   );
 }
