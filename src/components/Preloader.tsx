@@ -1,36 +1,41 @@
 "use client";
-import { easeApple, easeSmooth, springSoft, springMagnetic, springSnappy, durationFast, durationMedium, durationSlow, staggerFast, staggerMedium, staggerSlow, viewportOneShot, fadeUp, fadeDown, fadeLeft, fadeRight, scaleReveal, staggerContainer } from "@/lib/motion";
-
+import { easeApple } from "@/lib/motion";
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { Laptop, Keyboard, Mouse, Printer, Cpu, Terminal, Database, Server, Monitor } from "lucide-react";
 
 export default function Preloader({ onComplete }: { onComplete: () => void }) {
   const [progress, setProgress] = useState(0);
   const [isExiting, setIsExiting] = useState(false);
+  const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
+    if (shouldReduceMotion) {
+      setIsExiting(true);
+      return;
+    }
+
     document.body.style.overflow = "hidden";
     document.documentElement.classList.add("is-loading");
 
-    // Progress Counter Animation
+    // Progress Counter Animation (Speed up to reduce friction)
     const interval = setInterval(() => {
       setProgress((prev) => {
         if (prev >= 100) {
           clearInterval(interval);
-          setTimeout(() => setIsExiting(true), 500); // Small delay before exit
+          setTimeout(() => setIsExiting(true), 200); // Small delay before exit
           return 100;
         }
-        return prev + 1;
+        return prev + 2;
       });
-    }, 20);
+    }, 10);
 
     return () => {
       clearInterval(interval);
       document.body.style.overflow = "";
       document.documentElement.classList.remove("is-loading");
     };
-  }, []);
+  }, [shouldReduceMotion]);
 
   return (
     <AnimatePresence onExitComplete={onComplete}>
@@ -38,12 +43,12 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
         <motion.div 
           initial={{ y: 0 }}
           exit={{ y: "-100%" }}
-          transition={{ duration: 1, ease: easeApple }}
+          transition={{ duration: 0.8, ease: easeApple }}
           className="fixed inset-0 z-[1000000] bg-white flex flex-col justify-center items-center overflow-hidden origin-top"
         >
           <motion.div 
             exit={{ y: -100, opacity: 0 }}
-            transition={{ duration: 0.8, ease: easeApple }}
+            transition={{ duration: 0.6, ease: easeApple }}
             className="relative w-full max-w-4xl flex flex-col items-center gap-12"
           >
             <div className="flex flex-col items-center">

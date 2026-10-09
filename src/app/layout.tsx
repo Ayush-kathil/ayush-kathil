@@ -1,78 +1,76 @@
-import type { Metadata } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
-import "./globals.css";
-import SmoothScroll from "@/components/SmoothScroll";
-import Navbar from "@/components/Navbar";
-
+import type { Metadata } from 'next';
+import { Plus_Jakarta_Sans } from 'next/font/google';
+import './globals.css';
+import SmoothScroll from '@/components/SmoothScroll';
+import Navbar from '@/components/Navbar';
+import TopCurtain from '@/components/TopCurtain';
 
 const interFont = Plus_Jakarta_Sans({
-  variable: "--font-inter", // keeping the variable name so css doesn't break
-  subsets: ["latin"],
+  variable: '--font-inter',
+  subsets: ['latin'],
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Ayush Gupta | Software Engineer & ML Systems",
-    template: "%s | Ayush Gupta",
+    default: 'Ayush Gupta | Software Engineer & ML Systems',
+    template: '%s | Ayush Gupta',
   },
-  description: "Portfolio of Ayush Gupta, a software engineer focused on frontend systems, client-side tooling, and ML-driven products that are fast, accessible, and production-ready.",
-  keywords: ["Ayush Gupta", "frontend engineer", "software engineer", "machine learning", "portfolio", "Next.js", "TypeScript"],
-  authors: [{ name: "Ayush Gupta" }],
-  creator: "Ayush Gupta",
-  publisher: "Ayush Gupta",
+  description: 'Portfolio of Ayush Gupta, a software engineer focused on frontend systems, client-side tooling, and ML-driven products that are fast, accessible, and production-ready.',
+  keywords: ['Ayush Gupta', 'frontend engineer', 'software engineer', 'machine learning', 'portfolio', 'Next.js', 'TypeScript'],
+  authors: [{ name: 'Ayush Gupta' }],
+  creator: 'Ayush Gupta',
+  publisher: 'Ayush Gupta',
   alternates: {
-    canonical: "/",
+    canonical: '/',
   },
   openGraph: {
-    type: "website",
-    url: "/",
-    title: "Ayush Gupta | Software Engineer & ML Systems",
-    description: "Frontend and ML portfolio focused on production-quality interfaces, client-side tooling, and measurable engineering outcomes.",
+    type: 'website',
+    url: '/',
+    title: 'Ayush Gupta | Software Engineer & ML Systems',
+    description: 'Frontend and ML portfolio focused on production-quality interfaces, client-side tooling, and measurable engineering outcomes.',
     images: [
       {
-        url: "/logo.png",
+        url: '/logo.png',
         width: 1200,
         height: 630,
-        alt: "Ayush Gupta portfolio",
+        alt: 'Ayush Gupta portfolio',
       },
     ],
   },
   twitter: {
-    card: "summary_large_image",
-    title: "Ayush Gupta | Software Engineer & ML Systems",
-    description: "Frontend and ML portfolio focused on production-quality interfaces, client-side tooling, and measurable engineering outcomes.",
-    images: ["/logo.png"],
+    card: 'summary_large_image',
+    title: 'Ayush Gupta | Software Engineer & ML Systems',
+    description: 'Frontend and ML portfolio focused on production-quality interfaces, client-side tooling, and measurable engineering outcomes.',
+    images: ['/logo.png'],
   },
   icons: {
-    icon: "/logo.png",
+    icon: '/logo.png',
   },
 };
 
 const structuredData = [
   {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    name: "Ayush Gupta",
-    jobTitle: "Software Engineer",
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Ayush Gupta',
+    jobTitle: 'Software Engineer',
     url: siteUrl,
     sameAs: [
-      "https://www.linkedin.com/in/ayushkathil",
-      "https://github.com/Ayush-kathil",
+      'https://www.linkedin.com/in/ayushkathil',
+      'https://github.com/Ayush-kathil',
     ],
   },
   {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    name: "Ayush Gupta Portfolio",
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Ayush Gupta Portfolio',
     url: siteUrl,
-    description: "Portfolio showcasing frontend engineering, client-side tooling, and ML systems work.",
+    description: 'Portfolio showcasing frontend engineering, client-side tooling, and ML systems work.',
   },
 ];
-
-import TopCurtain from "@/components/TopCurtain";
 
 export default function RootLayout({
   children,
@@ -80,9 +78,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang='en' suppressHydrationWarning>
       <head>
-        <meta name="theme-color" content="#F8F9FA" />
+        <meta name='theme-color' content='#F8F9FA' />
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -101,18 +99,24 @@ export default function RootLayout({
             `,
           }}
         />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
+        <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       </head>
-      <body
-        className={`${interFont.variable} font-sans antialiased`}
-      >
+      <body className={`${interFont.variable} font-sans antialiased`}>
+        <noscript>
+          <style>{`
+            .mac-reveal, .hero-container, .hero-content *, .project-card {
+              opacity: 1 !important;
+              transform: none !important;
+            }
+          `}</style>
+        </noscript>
         <a
-          href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100000] focus:rounded-md focus:bg-[var(--bg-primary)] focus:px-4 focus:py-2 focus:text-[var(--text-primary)] focus:shadow-lg"
+          href='#main-content'
+          className='sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100000] focus:rounded-md focus:bg-[var(--bg-primary)] focus:px-4 focus:py-2 focus:text-[var(--text-primary)] focus:shadow-lg'
         >
           Skip to content
         </a>
-        <div className="grain-overlay" aria-hidden="true"></div>
+        <div className='grain-overlay' aria-hidden='true'></div>
         <TopCurtain />
         <SmoothScroll>
           <Navbar />
