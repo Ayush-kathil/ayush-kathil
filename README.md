@@ -86,57 +86,61 @@ Selected repositories: [CURA](https://github.com/Ayush-kathil/cura-assistant-RAG
 
 ## Technical Toolkit
 
-**Languages**<br>
+<div align="center">
+
+<p><b>Languages</b></p>
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://skillicons.dev/icons?i=go%2Cpython%2Cts%2Cjava%2Ccpp%2Cbash&theme=dark">
   <source media="(prefers-color-scheme: light)" srcset="https://skillicons.dev/icons?i=go%2Cpython%2Cts%2Cjava%2Ccpp%2Cbash&theme=light">
   <img alt="Go, Python, TypeScript, Java, C++, Bash" src="https://skillicons.dev/icons?i=go%2Cpython%2Cts%2Cjava%2Ccpp%2Cbash&theme=dark" height="40">
 </picture>
 
-<br><br>
+<br>
 
-**Frontend & UI**<br>
+<p><b>Frontend & UI</b></p>
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://skillicons.dev/icons?i=nextjs%2Creact%2Ctailwind%2Chtml%2Ccss&theme=dark">
   <source media="(prefers-color-scheme: light)" srcset="https://skillicons.dev/icons?i=nextjs%2Creact%2Ctailwind%2Chtml%2Ccss&theme=light">
   <img alt="Next.js, React, Tailwind CSS, HTML, CSS" src="https://skillicons.dev/icons?i=nextjs%2Creact%2Ctailwind%2Chtml%2Ccss&theme=dark" height="40">
 </picture>
 
-<br><br>
+<br>
 
-**Backend & APIs**<br>
+<p><b>Backend & APIs</b></p>
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://skillicons.dev/icons?i=nodejs%2Cfastapi%2Cflask&theme=dark">
   <source media="(prefers-color-scheme: light)" srcset="https://skillicons.dev/icons?i=nodejs%2Cfastapi%2Cflask&theme=light">
   <img alt="Node.js, FastAPI, Flask" src="https://skillicons.dev/icons?i=nodejs%2Cfastapi%2Cflask&theme=dark" height="40">
 </picture>
 
-<br><br>
+<br>
 
-**Databases & Brokers**<br>
+<p><b>Databases & Brokers</b></p>
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://skillicons.dev/icons?i=postgres%2Cmongodb%2Credis%2Ckafka%2Csupabase&theme=dark">
   <source media="(prefers-color-scheme: light)" srcset="https://skillicons.dev/icons?i=postgres%2Cmongodb%2Credis%2Ckafka%2Csupabase&theme=light">
   <img alt="PostgreSQL, MongoDB, Redis, Kafka, Supabase" src="https://skillicons.dev/icons?i=postgres%2Cmongodb%2Credis%2Ckafka%2Csupabase&theme=dark" height="40">
 </picture>
 
-<br><br>
+<br>
 
-**Infrastructure**<br>
+<p><b>Infrastructure</b></p>
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://skillicons.dev/icons?i=kubernetes%2Cdocker%2Caws%2Clinux%2Cgithubactions&theme=dark">
   <source media="(prefers-color-scheme: light)" srcset="https://skillicons.dev/icons?i=kubernetes%2Cdocker%2Caws%2Clinux%2Cgithubactions&theme=light">
   <img alt="Kubernetes, Docker, AWS, Linux, GitHub Actions" src="https://skillicons.dev/icons?i=kubernetes%2Cdocker%2Caws%2Clinux%2Cgithubactions&theme=dark" height="40">
 </picture>
 
-<br><br>
+<br>
 
-**Machine Learning**<br>
+<p><b>Machine Learning</b></p>
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://skillicons.dev/icons?i=pytorch%2Ctensorflow%2Copencv&theme=dark">
   <source media="(prefers-color-scheme: light)" srcset="https://skillicons.dev/icons?i=pytorch%2Ctensorflow%2Copencv&theme=light">
   <img alt="PyTorch, TensorFlow, OpenCV" src="https://skillicons.dev/icons?i=pytorch%2Ctensorflow%2Copencv&theme=dark" height="40">
 </picture>
+
+</div>
 
 <br><br>
 
