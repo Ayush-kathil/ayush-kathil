@@ -29,6 +29,9 @@ jobs:
             dist/github-snake.svg
             dist/github-snake-dark.svg?palette=github-dark
 
+      - name: Disable Vercel Previews for this branch
+        run: echo '{"github": {"silent": true}, "ignoreCommand": "exit 0"}' > dist/vercel.json
+
       - name: Publish Snake SVGs
         uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
