@@ -32,7 +32,6 @@
 <div align="center">
   <a href="#-github-contribution-journey"><b>Contributions</b></a> &nbsp;&nbsp;&middot;&nbsp;&nbsp;
   <a href="#-open-source-engineering"><b>Open Source</b></a> &nbsp;&nbsp;&middot;&nbsp;&nbsp;
-  <a href="#-featured-engineering-work"><b>Featured Work</b></a> &nbsp;&nbsp;&middot;&nbsp;&nbsp;
   <a href="#-technical-toolkit"><b>Tech Stack</b></a> &nbsp;&nbsp;&middot;&nbsp;&nbsp;
   <a href="#-verified-achievements"><b>Achievements</b></a>
 </div>
@@ -74,60 +73,6 @@
 *Automated Machine Learning Infrastructure*
 
 * **Controller Stability:** Resolved validation pipeline bugs and enhanced unit test coverage for hyperparameter tuning controllers.
-
-<br><br>
-
-<!-- ================= FEATURED PROJECTS (HORIZONTAL/EDITORIAL) ================= -->
-## ✦ Featured Engineering Work
-
-### 01 / CURA
-**Stateful RAG Architecture · LangGraph · Hybrid Retrieval**
-
-Engineered a self-correcting Retrieval-Augmented Generation (RAG) pipeline designed to actively suppress hallucination via cyclic query rewriting and semantic validation.
-* **Architecture:** Combined exact BM25 keyword matching with HNSW semantic vector search using `pgvector`.
-* **Stack:** Next.js, Python, PostgreSQL, Supabase, Gemini AI.
-
-[ <b><a href="https://github.com/Ayush-kathil/cura-assistant-RAG">Explore Repository</a></b> ]
-
-<br><hr><br>
-
-### 02 / SFORA
-**Streaming File Organization · Java 17**
-
-Designed a high-performance, cross-platform file deduplication engine operating within strict O(1) memory bounds, circumventing massive RAM consumption during multi-terabyte directory scans.
-* **Concurrency:** Engineered stream-buffering algorithms directly on top of native `java.nio`.
-* **Safety:** Built a transactional rollback mechanism logging localized file operations to prevent data loss.
-
-[ <b><a href="https://github.com/Ayush-kathil/SFORA-Smart-File-Organizer">Explore Repository</a></b> ]
-
-<br><hr><br>
-
-### 03 / Cyberia
-**Applied ML Threat Analysis · OpenCV · TensorFlow**
-
-Built an integrated analysis pipeline for detecting banking APK forgeries by ingesting application packages and identifying visual steganography.
-* **Computer Vision:** Implemented pixel anomaly detection for UI forgery identification.
-* **Analysis:** Parses and statically analyzes APK metadata in real-time.
-
-[ <b><a href="https://github.com/Ayush-kathil/Cyberia---Detecting-Fake-Banking-APKs">Explore Repository</a></b> ]
-
-<br><hr><br>
-
-### 04 / AI Resume Builder
-**Real-Time State Management · Next.js · NextAuth.js**
-
-A full-stack, real-time responsive resume generation platform ensuring zero-lag state synchronization between the editing panel and the live render tree.
-* **Stack:** Zustand, Next.js, MongoDB, Tailwind.
-
-<div align="center">
-  <br>
-  <a href="https://github.com/Ayush-kathil/resume-builder">
-    <img src="./public/projects/resume-builder.png" alt="Resume Builder Interactive Preview" width="100%" style="max-width: 800px; border-radius: 8px; border: 1px solid #30363D;">
-  </a>
-</div>
-<br>
-
-[ <b><a href="https://github.com/Ayush-kathil/resume-builder">Explore Repository</a></b> ]
 
 <br><br>
 
