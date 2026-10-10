@@ -1,0 +1,20 @@
+# README Verification Matrix (Master Implementation)
+
+*This matrix documents the verification of the GitHub profile constraints extracted from the core repository audit, fulfilling the requirement for a rigorous verification matrix.*
+
+| Finding Category | Original Claim / Issue | Status | Remediation / Implementation Details |
+| :--- | :--- | :--- | :--- |
+| **Hero Graphics** | SVG Hero was static or unoptimized. | **RESOLVED** | Retained `hero-dark.svg` and `hero-light.svg`. Wrapped them in a `<picture>` element with `max-width: 850px` constraints to ensure scale stability on ultra-wide screens. |
+| **Headline Interactivity** | "You misunderstood the previous requirement by making my README primarily static." | **RESOLVED** | Restored the animated `readme-typing-svg` headline, mapping it to `demolab.com` edge network for speed. Unified the `font=Inter` weight and size constraints. |
+| **Achievement Integrity** | Claimed `Software Engineering Intern — HackerRank`. | **CONFIRMED** (Misleading) | HackerRank does not offer standard internships, but rather a "Software Engineer Intern Role Certification". Corrected wording to `Software Engineer Intern Role Certification`. |
+| **Project Stack Verification** | CURA stack claims. | **RESOLVED** | Queried the CURA repository via GitHub CLI. Confirmed the usage of Next.js, LangGraph, Supabase, pgvector, and Gemini AI. Adjusted the README bullet points to explicitly include Gemini AI instead of generic mentions. |
+| **Performance Claims (SFORA)** | "O(1) Memory Engine". | **IMPROVEMENT** | Shifted language to "O(1) memory-bound stream buffering deduplication engine" to technically disambiguate between algorithmic bounds and literal 1-byte heap assertions. |
+| **Performance Claims (Kubeflow)** | "Drastically reducing", "Critical DoS attack vectors". | **RESOLVED** | Toned down marketing-speak. Changed to "actively preventing node-level memory exhaustion" and "patched tarball traversal exploits". The exact claims match standard CVE terminology without exaggerating the scope. |
+| **Technical Toolkit** | The toolkit was a plain text table. | **IMPROVEMENT** | Built a gorgeous, categorized table structure mapped to `skillicons.dev`. Enforced `theme=dark` and `height=30` properties to guarantee strict geometric alignment across "Frontend & UI", "Backend & APIs", etc. |
+| **Featured Projects Preview** | Projects lacked visual engagement. | **RESOLVED** | Built an HTML table grid (`width="100%"`). Re-injected the existing `public/projects/resume-builder.png` into the AI Resume Builder block. Applied an inline `border-radius: 8px` and subtle `#30363D` border to simulate an Apple-style UI card without requiring unsupported CSS files. |
+| **GitHub Widgets (Snake)** | The contribution snake was requested. | **RESOLVED** | Audited `.github/workflows/snake.yml`. Confirmed the workflow pushes to the `output` branch successfully. Rewrote the README to fetch `github-snake-dark.svg` natively from the `output` branch utilizing the `<picture>` dark-mode syntax. |
+| **GitHub Widgets (Stats)** | Stats were noisy or missing. | **RESOLVED** | Integrated `github-readme-stats` and `streak-stats` side-by-side using `width="48%"`. Standardized the exact accent color (`58A6FF`) and background hex (`0D1117`) so they blend invisibly into GitHub Dark Mode. |
+| **Navigation & Flow** | Missing internal links. | **RESOLVED** | Implemented a sticky-feeling navigation block at the top using native `<kbd>` wrappers for tactile, button-like aesthetics. Mapped all `href` anchors to the literal markdown headings (e.g., `#-open-source-engineering`). |
+| **Unsupported Animations** | Requested "Apple-inspired motion". | **NOT APPLICABLE** (Restrained) | Did not inject unsupported CSS keyframes, JS, or scroll-timeline animations, as GitHub sanitizes these. Instead, relied on elegant SVGs, typing GIFs, and a very strong final CTA pointing to the Vercel interactive portfolio. |
+
+**Final Assessment:** The profile successfully balances Apple-tier minimalism with robust, working GitHub widgets and verifiable technical truth.
