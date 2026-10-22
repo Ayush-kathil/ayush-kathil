@@ -65,28 +65,28 @@ function AchievementCard({ ach, variants }: { ach: any, variants?: any }) {
 
 const achievements = [
   {
-    title: "Open Source Architect",
-    organization: "Kubeflow",
+    title: "Core Contributor & Security Author",
+    organization: "Kubeflow (Google / CNCF / LF)",
     icon: Code2,
-    description: "Successfully merged core architecture and bug-fix pull requests into Kubeflow (Katib and Docs-Agent), impacting a global ML infrastructure platform.",
+    description: "Merged core architectural and backend security patches into Kubeflow (Pipelines, Katib, and Docs-Agent), safeguarding enterprise-scale ML workflows globally.",
   },
   {
-    title: "GSSOC 2026",
+    title: "GSSOC Open Source Contributor",
     organization: "GirlScript Summer of Code",
     icon: Trophy,
-    description: "Selected from a highly competitive applicant pool to maintain and scale community-driven open-source repositories.",
+    description: "Ranked among top contributors across high-volume open-source repositories; authored production-ready PRs, documentation, and automated test fixtures.",
   },
   {
-    title: "#T20DSAChallenge Competitor",
-    organization: "Coding Challenge",
+    title: "Co-Inventor & Patent Author",
+    organization: "Indian Patent Office (App #202621077168)",
     icon: Award,
-    description: "Completed an intensive data structures and algorithms challenge, demonstrating proficiency in complex problem-solving.",
+    description: "Filed patent for 'Dynamic Content Indexing and Tiered Data Retrieval for Solid-State Storage Arrays', enhancing retrieval throughput for partitioned datasets.",
   },
   {
-    title: "Technical Certifications",
-    organization: "Coursera & Google Cloud",
+    title: "Continuous Algorithmics & Cloud Certifications",
+    organization: "Google Cloud & Coursera",
     icon: GraduationCap,
-    description: "Applied Machine Learning in Python (U. Michigan) & Introduction to Generative AI (Google Cloud Skills Boost).",
+    description: "Active competitive programming across LeetCode & Codeforces. Certified in Applied Machine Learning (U. Michigan) & Generative AI Systems (Google Cloud).",
   },
 ];
 

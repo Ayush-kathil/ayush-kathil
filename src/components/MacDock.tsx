@@ -48,6 +48,8 @@ function DockItem({
       className="relative group flex items-center justify-center rounded-xl"
     >
       <motion.div
+        whileTap={{ scale: 0.88 }}
+        transition={{ type: "spring", stiffness: 450, damping: 25 }}
         style={{ width }}
         className="flex flex-col items-center justify-center relative"
       >
@@ -96,12 +98,13 @@ export default function MacDock({
 
   return (
     <nav 
-      className={`fixed bottom-6 left-1/2 -translate-x-1/2 z-[9999] px-4 transition-all duration-700 ${isHomeSection ? "opacity-0 translate-y-10 pointer-events-none" : "opacity-100 translate-y-0"}`}
+      className={`fixed bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-[9999] px-2 sm:px-4 w-auto max-w-[calc(100vw-1.5rem)] transition-all duration-700 ${isHomeSection ? "opacity-0 translate-y-10 pointer-events-none" : "opacity-100 translate-y-0"}`}
     >
+      {/* Desktop macOS Dock View */}
       <motion.div
         onMouseMove={(e) => mouseX.set(e.pageX)}
         onMouseLeave={() => mouseX.set(Infinity)}
-        className="flex items-end gap-2 p-2 h-16 rounded-2xl border border-[var(--border-color)] bg-[var(--bg-primary)]/80 backdrop-blur-3xl shadow-[0_20px_40px_rgba(0,0,0,0.15)] mx-auto"
+        className="hidden sm:flex items-end gap-2 p-2 h-16 rounded-2xl border border-[var(--border-color)] bg-[var(--bg-primary)]/80 backdrop-blur-3xl shadow-[0_20px_40px_rgba(0,0,0,0.15)] mx-auto"
       >
         {navItems.map((item) => (
           <DockItem
@@ -112,6 +115,40 @@ export default function MacDock({
             onClick={() => handleNavClick(item.id)}
           />
         ))}
+      </motion.div>
+
+      {/* Mobile Apple Dynamic Island Floating Tab Bar */}
+      <motion.div 
+        initial={{ y: 20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ type: "spring", stiffness: 400, damping: 28 }}
+        className="flex sm:hidden items-center justify-between gap-1 p-1.5 px-3 rounded-full bg-[#0A0F1C]/90 backdrop-blur-2xl border border-white/20 shadow-[0_15px_35px_rgba(0,0,0,0.35)]"
+      >
+        {navItems.map((item) => {
+          const Icon = item.icon;
+          const isActive = activeSection === item.id;
+          return (
+            <motion.button
+              key={item.id}
+              onClick={() => handleNavClick(item.id)}
+              whileTap={{ scale: 0.85 }}
+              transition={{ type: "spring", stiffness: 500, damping: 25 }}
+              className={`relative flex items-center justify-center p-2.5 rounded-full transition-colors duration-300 ${
+                isActive ? "text-white" : "text-white/60 hover:text-white/90"
+              }`}
+              aria-label={item.name}
+            >
+              {isActive && (
+                <motion.div
+                  layoutId="mobile-dock-active-pill"
+                  transition={{ type: "spring", stiffness: 450, damping: 30 }}
+                  className="absolute inset-0 bg-white/15 rounded-full border border-white/30"
+                />
+              )}
+              <Icon className="w-4 h-4 relative z-10" />
+            </motion.button>
+          );
+        })}
       </motion.div>
     </nav>
   );

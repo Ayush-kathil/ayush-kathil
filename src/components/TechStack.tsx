@@ -9,41 +9,46 @@ type TechItem = {
 };
 
 const topRow: TechItem[] = [
-  { name: "Postman", color: "#FF6C37" },
-  { name: "Jest", color: "#C21325" },
-  { name: "Python", color: "#3776AB" },
+  { name: "Go / Golang", color: "#00ADD8" },
+  { name: "Kubernetes", color: "#326CE5" },
+  { name: "Docker", color: "#2496ED" },
   { name: "TypeScript", color: "#3178C6" },
-  { name: "JavaScript", color: "#F7DF1E" },
   { name: "C++", color: "#00599C" },
-  { name: "MySQL", color: "#4479A1" },
-  { name: "C#", color: "#239120" },
+  { name: "Python", color: "#3776AB" },
+  { name: "Linux / POSIX", color: "#FCC624" },
+  { name: "gRPC", color: "#244c5a" },
 ];
 
 const middleRow: TechItem[] = [
-  { name: "Sass", color: "#CC6699" },
-  { name: "Vite", color: "#646CFF" },
-  { name: "Redux", color: "#764ABC" },
-  { name: "Figma", color: "#F24E1E" },
-  { name: "Tailwind CSS", color: "#06B6D4" },
-  { name: "Styled Components", color: "#DB7093" },
-  { name: "React", color: "#61DAFB" },
+  { name: "PostgreSQL", color: "#4169E1" },
+  { name: "Redis", color: "#DC382D" },
   { name: "Next.js", color: "#000000" },
+  { name: "React", color: "#61DAFB" },
+  { name: "Tailwind CSS", color: "#06B6D4" },
+  { name: "Node.js", color: "#339933" },
+  { name: "GraphQL", color: "#E10098" },
+  { name: "MongoDB", color: "#47A248" },
 ];
 
 const bottomRow: TechItem[] = [
-  { name: "Node.js", color: "#339933" },
-  { name: "Express.js", color: "#000000" },
+  { name: "CI/CD & Actions", color: "#2088FF" },
+  { name: "Kafka / Streaming", color: "#231F20" },
   { name: "FastAPI", color: "#009688" },
-  { name: "GraphQL", color: "#E10098" },
   { name: "Nginx", color: "#009639" },
-  { name: "PostgreSQL", color: "#4169E1" },
-  { name: "MongoDB", color: "#47A248" },
-  { name: "Redis", color: "#DC382D" },
+  { name: "Jest / Testing", color: "#C21325" },
+  { name: "Git & Monorepos", color: "#F05032" },
+  { name: "OpenCV / Vision", color: "#5C3EE8" },
+  { name: "Supabase / RLS", color: "#3ECF8E" },
 ];
 
 const Pill = ({ item }: { item: TechItem }) => (
   <Magnetic>
-    <div className="flex items-center gap-3 px-6 py-4 bg-white/5 backdrop-blur-2xl rounded-full border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_40px_rgba(255,255,255,0.1)] hover:-translate-y-1 hover:bg-white/10 transition-all duration-400 cursor-pointer group">
+    <motion.div 
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      transition={{ type: "spring", stiffness: 400, damping: 25 }}
+      className="flex items-center gap-3 px-6 py-4 bg-white/5 backdrop-blur-2xl rounded-full border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_40px_rgba(255,255,255,0.1)] hover:bg-white/10 transition-colors duration-300 cursor-pointer group"
+    >
       <div 
         className="w-4 h-4 rounded-full shadow-[0_0_10px_rgba(255,255,255,0.2)] group-hover:scale-125 group-hover:shadow-[0_0_20px_currentColor] transition-all duration-500 ease-out"
         style={{ backgroundColor: item.color, color: item.color }}
@@ -51,7 +56,7 @@ const Pill = ({ item }: { item: TechItem }) => (
       <span className="font-semibold text-white/90 text-sm sm:text-base tracking-wide group-hover:tracking-widest transition-all duration-500">
         {item.name}
       </span>
-    </div>
+    </motion.div>
   </Magnetic>
 );
 

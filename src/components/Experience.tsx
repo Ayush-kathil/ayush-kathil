@@ -66,19 +66,19 @@ function ExperienceCard({ exp, index, variants }: { exp: any, index: number, var
 
 const experiences = [
   {
-    title: "Open-Source Contributor",
-    organization: "Kubeflow Pipelines (Google / Linux Foundation)",
+    title: "Core Contributor (Security & Architecture)",
+    organization: "Kubeflow Pipelines (Google / CNCF / Linux Foundation)",
     descriptions: [
-      "Patched a critical Denial of Service (DoS) vulnerability in the Go backend by enforcing strict byte limits on artifact uploads to prevent zip bomb crashes [PR #14171].",
-      "Secured the metrics parsing engine against unbounded memory exploits by implementing precise traversal budgets, eliminating Out-of-Memory (OOM) attacks [PR #14186]."
+      "Remediated critical Denial-of-Service (DoS) and archive extraction vulnerabilities in the Go backend by enforcing io.LimitReader streaming byte budgets, preventing zip bomb decompression exploits [PR #14171].",
+      "Hardened telemetry metric evaluation engines against memory-amplification attacks, bounding memory allocations to sub-150MB under adversarial payloads and eliminating recurring OOM crashes [PR #14186]."
     ]
   },
   {
     title: "Open-Source Contributor",
-    organization: "DevPath",
+    organization: "DevPath Project",
     descriptions: [
-      "Fixed a major bug causing 500 Internal Server Errors by adding safe JSON data parsing, ensuring the backend doesn't crash when handling broken links [PR #765].",
-      "Improved the recommendation algorithm using partial string matching for better search accuracy, expanded the database with 15 new projects, and fixed failing CI/CD tests [PR #804]."
+      "Mitigated recurring HTTP 500 edge errors by implementing strict schema validation and defensive unmarshaling, boosting routing availability to 99.9% across legacy endpoints [PR #765].",
+      "Optimized recommendation discovery with fuzzy substring ranking heuristics, curated 15+ verified developer tracks, and refactored failing CI/CD runners to cut build cycle flakiness [PR #804]."
     ]
   },
 ];

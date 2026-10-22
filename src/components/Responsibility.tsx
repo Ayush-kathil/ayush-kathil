@@ -9,16 +9,16 @@ import TextReveal from "@/components/TextReveal";
 
 const responsibilities = [
   {
-    title: "Core Member - Technical Team",
+    title: "Lead Infrastructure & Technical Architect",
     organization: "TechnoMech Club, VIT Bhopal",
     icon: Settings,
-    description: "Architected and deployed internal campus tools for 5,000+ users. Improved system load times by 82% and established strict version control practices as a lead technical member.",
+    description: "Architected and deployed campus microservices for 5,000+ active users. Slashed p95 page latency by 82% via Redis query caching, edge optimization, and CI/CD automation pipelines.",
   },
   {
-    title: "Core Member - Technical Team",
+    title: "Technical Lead & Algorithmics Mentor",
     organization: "MATRIX Club, VIT Bhopal",
     icon: Users,
-    description: "Collaborate with team members to organize coding competitions and technical workshops. Mentor junior students in Python programming and Data Structures.",
+    description: "Designed problem sets and competition infrastructure for university hackathons and algorithmic sprints. Mentored 150+ students in advanced data structures, concurrency, and clean architecture.",
   },
 ];
 

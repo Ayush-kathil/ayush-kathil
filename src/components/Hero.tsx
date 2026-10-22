@@ -110,9 +110,11 @@ export default function Hero({ preloaderComplete = true }: { preloaderComplete?:
 
           {/* SUPPORTING TEXT LAYER */}
           <motion.div style={{ y: textY, opacity: textOpacity }} className="transform-gpu">
-            <motion.p variants={itemVariants} className="mx-auto max-w-4xl text-[var(--text-secondary)] text-[clamp(1rem,4vw,1.4rem)] font-light leading-relaxed mb-10 sm:mb-12">
-              <TypewriterEffect text="Software Engineer specializing in Distributed Systems, GenAI APIs, and High-Concurrency Infrastructure." delay={1} />
-            </motion.p>
+            <motion.div variants={itemVariants} className="mx-auto max-w-4xl mb-10 sm:mb-12">
+              <p className="text-base sm:text-xl md:text-2xl font-light text-[var(--text-secondary)] leading-relaxed tracking-tight">
+                Software Engineer specializing in High-Performance Distributed Systems, Cloud-Native Backends &amp; Open-Source Infrastructure.
+              </p>
+            </motion.div>
           </motion.div>
 
           {/* CTA LAYER */}
@@ -121,27 +123,33 @@ export default function Hero({ preloaderComplete = true }: { preloaderComplete?:
             <motion.div variants={itemVariants} className="flex flex-col items-center gap-6">
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full max-w-md mx-auto sm:max-w-none">
                 <Magnetic>
-                  <Link
-                    href="#projects"
-                    className="group relative w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-[var(--text-primary)] px-8 py-4 text-[var(--bg-primary)] text-base sm:text-lg font-semibold transition-all hover:scale-105 active:scale-95"
-                  >
-                    View Selected Work <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-                  </Link>
+                  <motion.div whileTap={{ scale: 0.95 }} transition={{ type: "spring", stiffness: 400, damping: 25 }}>
+                    <Link
+                      href="#projects"
+                      className="group relative w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-[var(--text-primary)] px-8 py-4 text-[var(--bg-primary)] text-base sm:text-lg font-semibold transition-all hover:scale-105 active:scale-95 shadow-lg hover:shadow-2xl"
+                    >
+                      View Selected Work <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                    </Link>
+                  </motion.div>
                 </Magnetic>
                 <Magnetic>
-                  <a
-                    href="/resume.pdf"
-                    target="_blank"
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-[var(--border-color)] bg-[var(--bg-primary)]/50 backdrop-blur-md px-8 py-4 text-[var(--text-primary)] text-base sm:text-lg font-semibold transition-all hover:bg-[var(--text-secondary)]/10"
-                  >
-                    Download Resume <Download className="h-5 w-5" />
-                  </a>
+                  <motion.div whileTap={{ scale: 0.95 }} transition={{ type: "spring", stiffness: 400, damping: 25 }}>
+                    <a
+                      href="/resume.pdf"
+                      target="_blank"
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-[var(--border-color)] bg-[var(--bg-primary)]/50 backdrop-blur-md px-8 py-4 text-[var(--text-primary)] text-base sm:text-lg font-semibold transition-all hover:bg-[var(--text-secondary)]/10 hover:border-white/40"
+                    >
+                      Download Resume <Download className="h-5 w-5" />
+                    </a>
+                  </motion.div>
                 </Magnetic>
               </div>
-              <div className="flex items-center gap-6 mt-2 opacity-70">
-                <a href="https://github.com/Ayush-kathil" target="_blank" className="hover:text-blue-500 transition-colors uppercase tracking-widest text-[10px] font-semibold">GitHub</a>
-                <a href="https://linkedin.com/in/ayush-gupta-2b7405256" target="_blank" className="hover:text-blue-500 transition-colors uppercase tracking-widest text-[10px] font-semibold">LinkedIn</a>
-                <a href="mailto:kathilshiva@gmail.com" className="hover:text-blue-500 transition-colors uppercase tracking-widest text-[10px] font-semibold">Email</a>
+              <div className="flex items-center gap-6 mt-2 opacity-80">
+                <a href="https://github.com/Ayush-kathil" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors uppercase tracking-widest text-[10px] font-semibold">GitHub</a>
+                <span className="w-1 h-1 rounded-full bg-white/30" />
+                <a href="https://linkedin.com/in/ayush-gupta-2b7405256" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors uppercase tracking-widest text-[10px] font-semibold">LinkedIn</a>
+                <span className="w-1 h-1 rounded-full bg-white/30" />
+                <a href="mailto:kathilshiva@gmail.com" className="hover:text-blue-400 transition-colors uppercase tracking-widest text-[10px] font-semibold">Email</a>
               </div>
             </motion.div>
 
